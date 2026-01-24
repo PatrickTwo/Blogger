@@ -1,0 +1,132 @@
+/* 列表页样式 */
+
+.list-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.module-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* 章节列表 */
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chapter-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+    border-left: 4px solid #3498db;
+    overflow: hidden;
+}
+
+.chapter-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+.chapter-header:hover {
+    background-color: #f8f9fa;
+}
+
+.chapter-title {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 500;
+}
+
+.chapter-arrow {
+    color: #bdc3c7;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* 展开状态样式 */
+.chapter-item.expanded .chapter-arrow {
+    transform: rotate(90deg);
+}
+
+.article-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fcfcfc;
+    border-top: 1px solid #f0f0f0;
+}
+
+.chapter-item.expanded .article-list {
+    max-height: 1000px;
+    /* 足够大的高度以容纳内容 */
+    transition: max-height 0.5s ease-in;
+}
+
+.article-item {
+    padding: 12px 20px 12px 40px;
+    /* 左侧增加缩进 */
+    color: #555;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    position: relative;
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-item:hover {
+    color: #3498db;
+    background-color: #f0f8ff;
+}
+
+.article-item::before {
+    content: "•";
+    position: absolute;
+    left: 25px;
+    color: #bdc3c7;
+}
+
+.article-item.empty {
+    color: #999;
+    font-style: italic;
+    cursor: default;
+}
+
+.article-item.empty:hover {
+    background-color: transparent;
+    color: #999;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 40px;
+    color: #7f8c8d;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.error-message {
+    text-align: center;
+    padding: 40px;
+    color: #e74c3c;
+    background-color: #fff5f5;
+    border-radius: 8px;
+}
