@@ -27,10 +27,13 @@
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     position: sticky;
-    top: 200px;
-    /* 适应 header + breadcrumb 的高度 */
+    top: 150px;
+    /* 限制高度，确保底部留出约 60px 的空间 */
     max-height: calc(100vh - 160px);
     overflow-y: auto;
+    /* 美化滚动条 */
+    scrollbar-width: thin;
+    scrollbar-color: #bdc3c7 #f8f9fa;
 }
 
 .toc-title {
@@ -46,6 +49,8 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    padding-bottom: 10px;
+    /* 底部留白，防止最后一条太靠边 */
 }
 
 .toc-item {
@@ -153,7 +158,7 @@
     font-weight: 600;
     line-height: 1.25;
     /* 解决点击目录跳转时标题被吸顶头部和面包屑遮挡的问题 */
-    scroll-margin-top: 140px;
+    scroll-margin-top: 110px;
 }
 
 /* 特殊标注样式 (Callouts) */

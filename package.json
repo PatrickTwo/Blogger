@@ -1,0 +1,12 @@
+{
+  "name": "my-blogger",
+  "version": "1.0.0",
+  "description": "My Personal Blog",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-data.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

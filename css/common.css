@@ -33,7 +33,7 @@ body {
 }
 
 .header-main {
-    padding: 20px 0;
+    padding: 12px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,9 +45,8 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 10px;
 }
 
 .nav ul {
@@ -88,7 +87,7 @@ body {
     gap: 8px;
     font-size: 0.9rem;
     color: #bdc3c7;
-    padding: 10px 0;
+    padding: 6px 0;
 }
 
 .breadcrumb a {

@@ -1,4 +1,4 @@
-﻿window.BLOG_MODULES = [
+export const BLOG_MODULES = [
     {
         "name": "C#",
         "path": "Resources/Articles/C#",
