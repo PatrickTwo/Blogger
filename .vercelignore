@@ -1,0 +1,14 @@
+# #region 忽略开发脚本和配置文件
+# 忽略脚本目录
+scripts/
+# 忽略包管理文件
+package.json
+package-lock.json
+# #endregion
+
+# #region 忽略临时文件和环境配置
+.DS_Store
+.vscode/
+.idea/
+*.log
+# #endregion
