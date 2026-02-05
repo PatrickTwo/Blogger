@@ -1,4 +1,69 @@
 /* #region 公共样式 */
+/* #region 颜色变量 */
+:root {
+    /* 亮色模式变量 */
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #7f8c8d;
+    --header-bg: #2c3e50;
+    --header-text: #ffffff;
+    --border-color: #eeeeee;
+    --accent-color: #3498db;
+    --toc-border: #3498db;
+    --block-bg: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --breadcrumb-bg: rgba(0, 0, 0, 0.1);
+    --breadcrumb-text: #bdc3c7;
+    --link-color: #2c3e50;
+    --link-hover: #3498db;
+
+    /* 自定义块亮色模式 */
+    --info-bg: #eaf2f8;
+    --info-text: #2980b9;
+    --warning-bg: #fef9e7;
+    --warning-text: #9a7d0a;
+    --danger-bg: #fdedec;
+    --danger-text: #922b21;
+    --hint-bg: #e8f8f5;
+    --hint-text: #27ae60;
+    --abstract-bg: #f2f4f4;
+    --abstract-text: #7f8c8d;
+}
+
+[data-theme="dark"] {
+    /* 暗色模式变量 */
+    --bg-color: #1a1a1a;
+    --card-bg: #242424;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --header-bg: #121212;
+    --header-text: #e0e0e0;
+    --border-color: #333333;
+    --accent-color: #3498db;
+    --toc-border: #3498db;
+    --block-bg: #2d2d2d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --breadcrumb-bg: rgba(255, 255, 255, 0.05);
+    --breadcrumb-text: #888888;
+    --link-color: #e0e0e0;
+    --link-hover: #3498db;
+
+    /* 自定义块暗色模式 */
+    --info-bg: rgba(52, 152, 219, 0.15);
+    --info-text: #5dade2;
+    --warning-bg: rgba(241, 196, 15, 0.15);
+    --warning-text: #f4d03f;
+    --danger-bg: rgba(231, 76, 60, 0.15);
+    --danger-text: #e74c3c;
+    --hint-bg: rgba(46, 204, 113, 0.15);
+    --hint-text: #58d68d;
+    --abstract-bg: rgba(149, 165, 166, 0.15);
+    --abstract-text: #bdc3c7;
+}
+
+/* #endregion */
+
 /* 重置样式 */
 * {
     margin: 0;
@@ -9,8 +74,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+}
+
+/* 防止页面初始化时过渡动画导致的闪烁 */
+.theme-transition *,
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 
 /* 容器样式 */
@@ -23,13 +94,14 @@ body {
 
 /* 头部样式 */
 .header {
-    background-color: #2c3e50;
-    color: #fff;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.3s ease;
 }
 
 .header-main {
@@ -40,7 +112,7 @@ body {
 }
 
 .header-breadcrumb {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--breadcrumb-bg);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -52,19 +124,46 @@ body {
 .nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
 .nav a {
-    color: #fff;
+    color: var(--header-text);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav a:hover {
-    color: #3498db;
+    color: var(--accent-color);
 }
+
+/* #region 优化：黑夜模式切换按钮 */
+.theme-toggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--header-text);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+}
+
+.theme-toggle .icon {
+    font-size: 1rem;
+}
+
+/* #endregion */
 
 /* 主要内容样式 */
 .main {
@@ -73,11 +172,12 @@ body {
 
 /* 页脚样式 */
 .footer {
-    background-color: #2c3e50;
-    color: #fff;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
+    transition: background-color 0.3s ease;
 }
 
 /* 面包屑导航 */
@@ -86,7 +186,7 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--breadcrumb-text);
     padding: 6px 0;
 }
 
@@ -97,7 +197,7 @@ body {
 }
 
 .breadcrumb a:hover {
-    color: #3498db;
+    color: var(--accent-color);
     text-decoration: underline;
 }
 

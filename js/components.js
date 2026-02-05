@@ -174,7 +174,8 @@ export const ArticleView = {
         const scrollTo = (id) => {
             const el = document.getElementById(id);
             if (el) {
-                const headerOffset = 110;
+                // 调整偏移量，确保标题完全可见，不会被头部区域遮挡
+                const headerOffset = 150;
                 const elementPosition = el.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

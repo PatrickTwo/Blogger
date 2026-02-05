@@ -19,8 +19,9 @@
     <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    <!-- Highlight.js: 仅引入核心和 C# 语言包 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs.min.css">
+    <!-- Highlight.js: 使用 Atom One Dark 主题 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js"></script>
 
@@ -29,6 +30,15 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/list.css">
     <link rel="stylesheet" href="css/article.css">
+
+    <!-- Theme Initialization: 置于 head 顶部以防止页面闪烁 -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
     <style>
         /* 简单的路由过渡效果 */
         .fade-enter-active,
@@ -55,6 +65,12 @@
                     <nav class="nav">
                         <ul>
                             <li><router-link to="/">首页</router-link></li>
+                            <li>
+                                <button id="theme-toggle-btn" class="theme-toggle" onclick="AppUtils.toggleTheme()">
+                                    <span class="icon">☀️</span>
+                                    <span class="text">浅色</span>
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -89,6 +105,15 @@
 
     <!-- App Entry -->
     <script type="module" src="js/app.js"></script>
+    <script>
+        // 页面加载后更新按钮状态
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.AppUtils) {
+                const savedTheme = localStorage.getItem('theme') || 'light';
+                AppUtils.updateThemeButton(savedTheme);
+            }
+        });
+    </script>
 </body>
 
 </html>
