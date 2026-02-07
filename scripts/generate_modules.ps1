@@ -23,6 +23,21 @@ $modules = @()
 foreach ($dir in $directories) {
     # 获取子目录（章节），并按名称排序
     $subDirs = Get-ChildItem -Path $dir.FullName -Directory | Sort-Object { [regex]::Replace($_.Name, '\d+', { $args[0].Value.PadLeft(10, '0') }) }
+    
+    # #region 优化：扫描模块根目录下的文章
+    $standaloneFiles = Get-ChildItem -Path $dir.FullName -Filter *.md -File | Sort-Object { [regex]::Replace($_.Name, '\d+', { $args[0].Value.PadLeft(10, '0') }) }
+    $standaloneArticles = @()
+    if ($null -ne $standaloneFiles) {
+        foreach ($file in $standaloneFiles) {
+            Write-Host "Found standalone article: $($file.Name) in $($dir.Name)"
+            $standaloneArticles += [PSCustomObject]@{
+                title = $file.Name
+                path = "Resources/Articles/" + $dir.Name + "/" + $file.Name
+            }
+        }
+    }
+    # #endregion
+
     $chapters = @()
      
     # 遍历每个章节目录
@@ -54,6 +69,7 @@ foreach ($dir in $directories) {
         name = $dir.Name
         path = "Resources/Articles/" + $dir.Name
         chapters = $chapters
+        articles = $standaloneArticles
     }
 }
  

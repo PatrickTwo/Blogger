@@ -45,14 +45,18 @@ export const HomeView = {
         <section class="module-section">
             <h2 class="section-title">知识模块</h2>
             <div class="module-list">
-                <div v-for="module in modules" :key="module.name" 
+                <div v-for="module in modulesWithCounts" :key="module.name" 
                      class="module-card" @click="goToModule(module.name)">
                     <div class="module-icon">
                         <span class="icon-char">{{ module.name.charAt(0) }}</span>
                     </div>
                     <div class="module-info">
                         <h3 class="module-title">{{ module.name }}</h3>
-                        <p class="module-desc">{{ module.chapters.length }} 个章节</p>
+                        <p class="module-desc">
+                            <span>{{ module.chapterCount }} 个章节</span>
+                            <span class="separator">·</span>
+                            <span>{{ module.articleCount }} 篇文章</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -62,11 +66,31 @@ export const HomeView = {
         const modules = ref(BLOG_MODULES || []);
         const router = VueRouter.useRouter();
 
+        // 计算每个模块的章节数和总文章数
+        const modulesWithCounts = computed(() => {
+            return modules.value.map(module => {
+                const chapterCount = module.chapters ? module.chapters.length : 0;
+
+                // 统计所有章节内的文章数
+                const articlesInChapters = module.chapters ?
+                    module.chapters.reduce((sum, ch) => sum + (ch.articles ? ch.articles.length : 0), 0) : 0;
+
+                // 统计根目录下的直属文章数
+                const standaloneArticles = module.articles ? module.articles.length : 0;
+
+                return {
+                    ...module,
+                    chapterCount,
+                    articleCount: articlesInChapters + standaloneArticles
+                };
+            });
+        });
+
         const goToModule = (name) => {
             router.push({ name: 'list', query: { module: name } });
         };
 
-        return { modules, goToModule };
+        return { modulesWithCounts, goToModule };
     }
 };
 
@@ -78,7 +102,8 @@ export const ListView = {
                 <h1 id="module-title">{{ moduleName }}</h1>
             </header>
             
-            <div class="chapter-list">
+            <!-- 如果有章节，显示章节列表 -->
+            <div v-if="chapters && chapters.length > 0" class="chapter-list">
                 <div v-for="(chapter, index) in chapters" :key="chapter.name" 
                      class="chapter-item" :class="{ expanded: activeChapter === index }">
                     <div class="chapter-header" @click="toggleChapter(index)">
@@ -94,6 +119,15 @@ export const ListView = {
                     </div>
                 </div>
             </div>
+
+            <!-- 如果没有章节，直接显示文章列表 -->
+            <div v-else class="article-list standalone">
+                <div v-for="article in standaloneArticles" :key="article.title" 
+                     class="article-item" @click="goToArticle(article)">
+                    <span class="article-icon">📄</span>
+                    <span class="article-title">{{ formatTitle(article.title) }}</span>
+                </div>
+            </div>
         </div>
     `,
     setup() {
@@ -107,6 +141,7 @@ export const ListView = {
         });
 
         const chapters = computed(() => currentModule.value?.chapters || []);
+        const standaloneArticles = computed(() => currentModule.value?.articles || []);
 
         const toggleChapter = (index) => {
             activeChapter.value = activeChapter.value === index ? null : index;
@@ -125,7 +160,7 @@ export const ListView = {
             });
         };
 
-        return { moduleName, chapters, activeChapter, toggleChapter, formatTitle, goToArticle };
+        return { moduleName, chapters, standaloneArticles, activeChapter, toggleChapter, formatTitle, goToArticle };
     }
 };
 // #endregion

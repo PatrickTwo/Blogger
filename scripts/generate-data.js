@@ -53,11 +53,27 @@ function generate() {
 
     const modules = fs.readdirSync(articlesDir)
         .filter(item => fs.statSync(path.join(articlesDir, item)).isDirectory())
-        .map(moduleName => ({
-            name: moduleName,
-            path: `Resources/Articles/${moduleName}`,
-            chapters: scanDirectory(path.join(articlesDir, moduleName))
-        }));
+        .map(moduleName => {
+            const modulePath = path.join(articlesDir, moduleName);
+            // #region 扫描模块根目录下的文章
+            const articles = fs.readdirSync(modulePath)
+                .filter(file => {
+                    const fullPath = path.join(modulePath, file);
+                    return fs.statSync(fullPath).isFile() && file.endsWith('.md');
+                })
+                .map(file => ({
+                    title: file,
+                    path: path.relative(path.join(__dirname, '..'), path.join(modulePath, file)).replace(/\\/g, '/')
+                }));
+            // #endregion
+
+            return {
+                name: moduleName,
+                path: `Resources/Articles/${moduleName}`,
+                chapters: scanDirectory(modulePath),
+                articles: articles
+            };
+        });
 
     const content = `/**
  * 自动生成的文章索引数据

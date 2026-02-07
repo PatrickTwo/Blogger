@@ -136,29 +136,10 @@ export const BLOG_MODULES = [
                                                   "path":  "Resources/Articles/C#/继承/接口.md"
                                               }
                                           ]
-                         },
-                         {
-                             "name":  "网络编程",
-                             "path":  "Resources/Articles/C#/网络编程",
-                             "articles":  [
-                                              {
-                                                  "title":  "1.前置知识.md",
-                                                  "path":  "Resources/Articles/C#/网络编程/1.前置知识.md"
-                                              },
-                                              {
-                                                  "title":  "2.Socket套接字.md",
-                                                  "path":  "Resources/Articles/C#/网络编程/2.Socket套接字.md"
-                                              },
-                                              {
-                                                  "title":  "3.服务端与客户端.md",
-                                                  "path":  "Resources/Articles/C#/网络编程/3.服务端与客户端.md"
-                                              },
-                                              {
-                                                  "title":  "4.消息收发.md",
-                                                  "path":  "Resources/Articles/C#/网络编程/4.消息收发.md"
-                                              }
-                                          ]
                          }
+                     ],
+        "articles":  [
+
                      ]
     },
     {
@@ -175,6 +156,9 @@ export const BLOG_MODULES = [
                                               }
                                           ]
                          }
+                     ],
+        "articles":  [
+
                      ]
     },
     {
@@ -199,6 +183,9 @@ export const BLOG_MODULES = [
                                               }
                                           ]
                          }
+                     ],
+        "articles":  [
+
                      ]
     },
     {
@@ -363,6 +350,9 @@ export const BLOG_MODULES = [
                                               }
                                           ]
                          }
+                     ],
+        "articles":  [
+
                      ]
     },
     {
@@ -370,6 +360,34 @@ export const BLOG_MODULES = [
         "path":  "Resources/Articles/数据结构与算法",
         "chapters":  [
 
+                     ],
+        "articles":  [
+
+                     ]
+    },
+    {
+        "name":  "网络编程",
+        "path":  "Resources/Articles/网络编程",
+        "chapters":  [
+
+                     ],
+        "articles":  [
+                         {
+                             "title":  "1.前置知识.md",
+                             "path":  "Resources/Articles/网络编程/1.前置知识.md"
+                         },
+                         {
+                             "title":  "2.Socket套接字.md",
+                             "path":  "Resources/Articles/网络编程/2.Socket套接字.md"
+                         },
+                         {
+                             "title":  "3.服务端与客户端.md",
+                             "path":  "Resources/Articles/网络编程/3.服务端与客户端.md"
+                         },
+                         {
+                             "title":  "4.消息收发.md",
+                             "path":  "Resources/Articles/网络编程/4.消息收发.md"
+                         }
                      ]
     }
 ];

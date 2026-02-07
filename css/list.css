@@ -1,39 +1,42 @@
 /* 列表页样式 */
 
 .list-header {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
+    padding-bottom: 24px;
 }
 
 .module-title {
-    font-size: 2rem;
+    font-size: 1.875rem;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    line-height: 1.2;
 }
 
 /* 章节列表 */
 .chapter-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
 
 .chapter-item {
     background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px var(--shadow-color);
-    transition: all 0.2s ease;
-    border-left: 4px solid var(--accent-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-color);
     overflow: hidden;
 }
 
 .chapter-item:hover {
-    box-shadow: 0 4px 10px var(--shadow-color);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
 }
 
 .chapter-header {
-    padding: 20px;
+    padding: 20px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,45 +50,63 @@
 }
 
 .chapter-title {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     color: var(--text-primary);
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chapter-title::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    opacity: 0.6;
 }
 
 .chapter-arrow {
     color: var(--text-secondary);
-    font-weight: bold;
-    transition: transform 0.3s ease;
+    font-size: 1.25rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 展开状态样式 */
 .chapter-item.expanded .chapter-arrow {
     transform: rotate(90deg);
+    color: var(--accent-color);
 }
 
 .article-list {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--bg-color);
+    /* Slightly distinct bg for inner list */
     border-top: 1px solid var(--border-color);
 }
 
 .chapter-item.expanded .article-list {
-    max-height: 1000px;
-    /* 足够大的高度以容纳内容 */
+    max-height: 2000px;
+    /* Increase buffer */
     transition: max-height 0.5s ease-in;
 }
 
 .article-item {
-    padding: 12px 20px 12px 40px;
-    /* 左侧增加缩进 */
+    padding: 14px 24px 14px 48px;
+    /* Indent content */
     color: var(--text-primary);
     cursor: pointer;
     border-bottom: 1px solid var(--border-color);
     transition: all 0.2s ease;
     position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
 }
 
 .article-item:last-child {
@@ -95,38 +116,87 @@
 .article-item:hover {
     color: var(--accent-color);
     background-color: var(--block-bg);
+    padding-left: 52px;
+    /* Slight shift */
 }
 
 .article-item::before {
-    content: "•";
+    content: "";
     position: absolute;
-    left: 25px;
-    color: #bdc3c7;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+    transition: all 0.2s ease;
 }
 
+.article-item:hover::before {
+    background-color: var(--accent-color);
+    width: 6px;
+    height: 6px;
+}
+
+/* Removed legacy before pseudo-element since it is handled above */
+
 .article-item.empty {
-    color: #999;
+    color: var(--text-secondary);
     font-style: italic;
     cursor: default;
+    padding-left: 24px;
 }
 
 .article-item.empty:hover {
     background-color: transparent;
-    color: #999;
+    color: var(--text-secondary);
+    padding-left: 24px;
 }
+
+/* #region 优化：无章节时的直属文章列表 */
+.article-list.standalone {
+    max-height: none;
+    overflow: visible;
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.article-list.standalone .article-item {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.article-list.standalone .article-item::before {
+    display: none;
+    /* 移除默认的点 */
+}
+
+.article-list.standalone .article-item:hover {
+    padding-left: 28px;
+    background-color: var(--block-bg);
+}
+
+/* #endregion */
 
 .empty-message {
     text-align: center;
-    padding: 40px;
-    color: #7f8c8d;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    padding: 64px;
+    color: var(--text-secondary);
+    background-color: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border-color);
 }
 
 .error-message {
     text-align: center;
-    padding: 40px;
-    color: #e74c3c;
-    background-color: #fff5f5;
-    border-radius: 8px;
+    padding: 64px;
+    color: var(--danger-text);
+    background-color: var(--danger-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(239, 68, 68, 0.2);
 }

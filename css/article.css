@@ -2,99 +2,105 @@
 
 .article-container {
     background-color: var(--card-bg);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px var(--shadow-color);
+    padding: 48px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     min-height: 500px;
     flex: 1;
     min-width: 0;
-    /* 防止内容撑破 flex 容器 */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-color);
 }
 
 /* 布局：主体内容 + 目录 */
 .article-layout {
     display: flex;
     align-items: flex-start;
-    gap: 30px;
+    gap: 40px;
     position: relative;
 }
 
 /* 目录栏样式 */
 .article-toc {
-    width: 300px;
+    width: 280px;
     background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px var(--shadow-color);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     position: sticky;
-    top: 150px;
-    /* 限制高度，确保底部留出约 60px 的空间 */
-    max-height: calc(100vh - 160px);
+    top: 120px;
+    /* Adjust based on header height */
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
-    /* 美化滚动条 */
     scrollbar-width: thin;
-    scrollbar-color: #bdc3c7 var(--bg-color);
-    transition: background-color 0.3s ease;
+    scrollbar-color: var(--text-secondary) transparent;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-color);
 }
 
 .toc-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .toc-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    padding-bottom: 10px;
-    /* 底部留白，防止最后一条太靠边 */
+    padding-bottom: 8px;
 }
 
 .toc-item {
-    margin-bottom: 8px;
-    line-height: 1.4;
+    margin-bottom: 4px;
+    line-height: 1.5;
 }
 
 .toc-level-1 {
     font-weight: 600;
-    border-left: 3px solid transparent;
+    border-left: 2px solid transparent;
     transition: all 0.2s ease;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .toc-level-1:hover {
     border-left-color: var(--accent-color);
     background-color: var(--block-bg);
+    color: var(--accent-color);
 }
 
 .toc-level-2 {
-    padding-left: 20px;
-    font-size: 0.9rem;
+    padding-left: 16px;
+    font-size: 0.875rem;
     color: var(--text-secondary);
 }
 
 .toc-level-2 a {
-    padding: 4px 15px !important;
+    padding: 4px 12px !important;
 }
 
 .toc-item a {
-    color: var(--text-primary);
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all 0.2s ease;
     display: block;
-    padding: 6px 15px;
+    padding: 6px 12px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-radius: var(--radius-sm);
 }
 
-.toc-item a:hover {
+.toc-item a:hover,
+.toc-item a.active {
     color: var(--accent-color);
+    background-color: var(--block-bg);
 }
 
 /* 响应式：移动端调整布局 */
@@ -106,44 +112,58 @@
     .article-toc {
         width: 100%;
         position: static;
-        margin-top: 20px;
+        margin-top: 32px;
         max-height: none;
         order: -1;
+        /* TOC on top for mobile? Or keep bottom. Let's keep top for now as per prev design */
     }
 }
 
 .article-header {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
 }
 
 #article-title {
-    font-size: 2.2rem;
+    font-size: 2.25rem;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     line-height: 1.3;
+    letter-spacing: -0.02em;
 }
 
 .article-meta {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .category-tag {
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
+    background-color: var(--info-bg);
+    color: var(--info-text);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
     display: inline-block;
+    transition: all 0.2s ease;
 }
+
+.category-tag:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
 
 /* Markdown 内容样式 (类似于 GitHub 风格) */
 .markdown-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
     color: var(--text-primary);
     word-wrap: break-word;
 }
@@ -155,20 +175,109 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-    margin-top: 24px;
-    margin-bottom: 16px;
-    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 700;
     line-height: 1.25;
+    color: var(--text-primary);
     /* 解决点击目录跳转时标题被吸顶头部和面包屑遮挡的问题 */
     scroll-margin-top: 110px;
+}
+
+.markdown-body h1 {
+    font-size: 2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-body h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-body h3 {
+    font-size: 1.25em;
+}
+
+.markdown-body h4 {
+    font-size: 1em;
+}
+
+.markdown-body p {
+    margin-bottom: 1.25em;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin-bottom: 1.25em;
+    padding-left: 1.5em;
+}
+
+.markdown-body li {
+    margin-bottom: 0.25em;
+}
+
+.markdown-body blockquote {
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    color: var(--text-secondary);
+    border-left: 4px solid var(--border-color);
+    background-color: var(--block-bg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.markdown-body pre {
+    background-color: #282c34;
+    /* Atom One Dark bg */
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 1.5em;
+    overflow-x: auto;
+    box-shadow: var(--shadow-sm);
+}
+
+.markdown-body code {
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    font-size: 0.875em;
+    background-color: var(--block-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    color: var(--accent-color);
+}
+
+.markdown-body pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: 0.9em;
+}
+
+.markdown-body a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+    transition: border-bottom-color 0.2s;
+}
+
+.markdown-body a:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    margin: 1.5em 0;
 }
 
 /* 特殊标注样式 (Callouts) */
 .custom-block {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    border-left: 0.5rem solid;
-    border-radius: 4px;
+    border-left: 4px solid;
+    border-radius: var(--radius-md);
     background-color: var(--block-bg);
 }
 
@@ -191,7 +300,7 @@
 
 /* Info 标注 */
 .custom-block.info {
-    border-color: #3498db;
+    border-color: #3b82f6;
     background-color: var(--info-bg);
 }
 
@@ -338,7 +447,8 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background-color: #282c34; /* 采用类似 One Dark 的深色背景 */
+    background-color: #282c34;
+    /* 采用类似 One Dark 的深色背景 */
     border: 1px solid #181a1f;
 }
 
@@ -359,7 +469,8 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: #61afef; /* 蓝色标识语言 */
+    color: #61afef;
+    /* 蓝色标识语言 */
 }
 
 .code-block-copy {
@@ -377,7 +488,8 @@
 }
 
 .code-block-copy.copied {
-    color: #98c379; /* 绿色标识已复制 */
+    color: #98c379;
+    /* 绿色标识已复制 */
     background-color: rgba(152, 195, 121, 0.1);
 }
 
@@ -415,6 +527,7 @@
     font-size: 0.9rem;
     text-shadow: none;
 }
+
 /* #endregion */
 
 .markdown-body img {

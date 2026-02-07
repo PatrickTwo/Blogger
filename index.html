@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="我的开发学习笔记 - 记录 C#、网络编程等技术积累">
-    <meta name="keywords" content="C#, 网络编程, 博客, 开发笔记, Vue3">
-    <meta name="author" content="Your Name">
+    <meta name="description" content="记录 C#、网络编程等技术积累">
+    <meta name="keywords" content="C#, 网络编程, 博客">
+    <meta name="author" content="wangl">
     <title>开发日志</title>
 
     <!-- DNS Preconnect to speed up resource loading -->
@@ -38,19 +38,6 @@
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();
     </script>
-
-    <style>
-        /* 简单的路由过渡效果 */
-        .fade-enter-active,
-        .fade-leave-active {
-            transition: opacity 0.3s ease;
-        }
-
-        .fade-enter-from,
-        .fade-leave-to {
-            opacity: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -59,12 +46,11 @@
         <header class="header">
             <div class="container">
                 <div class="header-main">
-                    <router-link to="/" class="logo" style="text-decoration: none; color: inherit;">
+                    <router-link to="/" class="logo">
                         <h1>日志</h1>
                     </router-link>
                     <nav class="nav">
                         <ul>
-                            <li><router-link to="/">首页</router-link></li>
                             <li>
                                 <button id="theme-toggle-btn" class="theme-toggle" onclick="AppUtils.toggleTheme()">
                                     <span class="icon">☀️</span>
