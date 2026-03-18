@@ -16,15 +16,15 @@ export const MarkdownService = {
         const tocItems = [];
         const renderer = new marked.Renderer();
 
-        // #region 处理自定义容器标签 (:::info, :::warning, :::danger, :::hint, :::abstract)
+        // #region 处理自定义容器标签 (:::info, :::warning, :::danger, :::hint, :::abstract, :::ref)
         /**
-         * 处理自定义容器标签，支持 info, warning, danger, hint, abstract
+         * 处理自定义容器标签，支持 info, warning, danger, hint, abstract, ref
          * @param {string} content - Markdown 内容
          * @returns {string} 处理后的 HTML
          */
         const processCustomBlocks = (content) => {
-            // #region 优化：添加对 abstract 标签的支持，并支持可选标题
-            const blockRegex = /:::(info|warning|danger|hint|abstract)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
+            // #region 优化：添加对 abstract 和 ref 标签的支持，并支持可选标题
+            const blockRegex = /:::(info|warning|danger|hint|abstract|ref)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
 
             return content.replace(blockRegex, (match, type, title, innerContent) => {
                 const parsedInner = marked.parse(innerContent.trim());
@@ -34,7 +34,8 @@ export const MarkdownService = {
                     'warning': '',
                     'danger': '',
                     'hint': '',
-                    'abstract': ''
+                    'abstract': '',
+                    'ref': '引用'
                 }[type];
 
                 return `<div class="custom-block ${type}">

@@ -102,6 +102,10 @@ export const BLOG_MODULES = [
                                                   "path":  "Resources/Articles/C#/概念/协程.md"
                                               },
                                               {
+                                                  "title":  "值类型与引用类型.md",
+                                                  "path":  "Resources/Articles/C#/概念/值类型与引用类型.md"
+                                              },
+                                              {
                                                   "title":  "注释.md",
                                                   "path":  "Resources/Articles/C#/概念/注释.md"
                                               },
@@ -162,6 +166,40 @@ export const BLOG_MODULES = [
                      ]
     },
     {
+        "name":  "Program设计文档",
+        "path":  "Resources/Articles/Program设计文档",
+        "chapters":  [
+                         {
+                             "name":  "Mahjong",
+                             "path":  "Resources/Articles/Program设计文档/Mahjong",
+                             "articles":  [
+                                              {
+                                                  "title":  "Mahjong流程设计-大厅.md",
+                                                  "path":  "Resources/Articles/Program设计文档/Mahjong/Mahjong流程设计-大厅.md"
+                                              },
+                                              {
+                                                  "title":  "Mahjong流程设计-对局.md",
+                                                  "path":  "Resources/Articles/Program设计文档/Mahjong/Mahjong流程设计-对局.md"
+                                              },
+                                              {
+                                                  "title":  "对局流程描述.md",
+                                                  "path":  "Resources/Articles/Program设计文档/Mahjong/对局流程描述.md"
+                                              }
+                                          ]
+                         }
+                     ],
+        "articles":  [
+                         {
+                             "title":  "Mahjong框架设计.md",
+                             "path":  "Resources/Articles/Program设计文档/Mahjong框架设计.md"
+                         },
+                         {
+                             "title":  "Mahjong设计文档.md",
+                             "path":  "Resources/Articles/Program设计文档/Mahjong设计文档.md"
+                         }
+                     ]
+    },
+    {
         "name":  "Unity",
         "path":  "Resources/Articles/Unity",
         "chapters":  [
@@ -183,6 +221,23 @@ export const BLOG_MODULES = [
                                               }
                                           ]
                          }
+                     ],
+        "articles":  [
+                         {
+                             "title":  "Layer.md",
+                             "path":  "Resources/Articles/Unity/Layer.md"
+                         },
+                         {
+                             "title":  "坐标变换系统.md",
+                             "path":  "Resources/Articles/Unity/坐标变换系统.md"
+                         }
+                     ]
+    },
+    {
+        "name":  "工具集",
+        "path":  "Resources/Articles/工具集",
+        "chapters":  [
+
                      ],
         "articles":  [
 
@@ -352,7 +407,10 @@ export const BLOG_MODULES = [
                          }
                      ],
         "articles":  [
-
+                         {
+                             "title":  "依赖注入.md",
+                             "path":  "Resources/Articles/设计模式/依赖注入.md"
+                         }
                      ]
     },
     {
@@ -387,6 +445,19 @@ export const BLOG_MODULES = [
                          {
                              "title":  "4.消息收发.md",
                              "path":  "Resources/Articles/网络编程/4.消息收发.md"
+                         }
+                     ]
+    },
+    {
+        "name":  "杂项",
+        "path":  "Resources/Articles/杂项",
+        "chapters":  [
+
+                     ],
+        "articles":  [
+                         {
+                             "title":  "常用注册表路径.md",
+                             "path":  "Resources/Articles/杂项/常用注册表路径.md"
                          }
                      ]
     }

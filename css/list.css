@@ -162,6 +162,27 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
+    margin-top: 24px;
+}
+
+.standalone-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--block-bg);
+}
+
+.standalone-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.standalone-title::before {
+    content: '📄';
+    font-size: 1rem;
 }
 
 .article-list.standalone .article-item {

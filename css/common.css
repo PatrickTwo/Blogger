@@ -58,6 +58,10 @@
     /* Gray 100 */
     --abstract-text: #4b5563;
     /* Gray 600 */
+    --ref-bg: #faf5ff;
+    /* Purple 50 */
+    --ref-text: #6b21a8;
+    /* Purple 800 */
 }
 
 [data-theme="dark"] {
@@ -103,6 +107,10 @@
     --hint-text: #6ee7b7;
     --abstract-bg: rgba(107, 114, 128, 0.1);
     --abstract-text: #d1d5db;
+    --ref-bg: rgba(147, 51, 234, 0.1);
+    /* Purple 600 with opacity */
+    --ref-text: #d8b4fe;
+    /* Purple 200 */
 }
 
 /* #endregion */

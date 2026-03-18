@@ -120,13 +120,21 @@ export const ListView = {
                 </div>
             </div>
 
-            <!-- 如果没有章节，直接显示文章列表 -->
-            <div v-else class="article-list standalone">
+            <!-- 如果有单独的文章，显示单独文章列表 -->
+            <div v-if="standaloneArticles && standaloneArticles.length > 0" class="article-list standalone">
+                <div class="standalone-header">
+                    <span class="standalone-title">单独文章</span>
+                </div>
                 <div v-for="article in standaloneArticles" :key="article.title" 
                      class="article-item" @click="goToArticle(article)">
                     <span class="article-icon">📄</span>
                     <span class="article-title">{{ formatTitle(article.title) }}</span>
                 </div>
+            </div>
+
+            <!-- 如果既没有章节也没有单独文章，显示空状态 -->
+            <div v-if="(!chapters || chapters.length === 0) && (!standaloneArticles || standaloneArticles.length === 0)" class="empty-message">
+                该模块下暂无文章
             </div>
         </div>
     `,
