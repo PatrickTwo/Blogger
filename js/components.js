@@ -121,10 +121,11 @@ export const ListView = {
             </div>
 
             <!-- 如果有单独的文章，显示单独文章列表 -->
-            <div v-if="standaloneArticles && standaloneArticles.length > 0" class="article-list standalone">
-                <div class="standalone-header">
-                    <span class="standalone-title">单独文章</span>
-                </div>
+            <div
+                v-if="standaloneArticles && standaloneArticles.length > 0"
+                class="article-list standalone"
+                :class="{ 'standalone-only': !hasChapters }"
+            >
                 <div v-for="article in standaloneArticles" :key="article.title" 
                      class="article-item" @click="goToArticle(article)">
                     <span class="article-icon">📄</span>
@@ -150,6 +151,9 @@ export const ListView = {
 
         const chapters = computed(() => currentModule.value?.chapters || []);
         const standaloneArticles = computed(() => currentModule.value?.articles || []);
+        // #region View state helpers
+        const hasChapters = computed(() => chapters.value.length > 0);
+        // #endregion
 
         const toggleChapter = (index) => {
             activeChapter.value = activeChapter.value === index ? null : index;
@@ -168,7 +172,7 @@ export const ListView = {
             });
         };
 
-        return { moduleName, chapters, standaloneArticles, activeChapter, toggleChapter, formatTitle, goToArticle };
+        return { moduleName, chapters, standaloneArticles, hasChapters, activeChapter, toggleChapter, formatTitle, goToArticle };
     }
 };
 // #endregion

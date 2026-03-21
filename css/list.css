@@ -157,7 +157,7 @@
 /* #region 优化：无章节时的直属文章列表 */
 .article-list.standalone {
     max-height: none;
-    overflow: visible;
+    overflow: hidden;
     background-color: var(--card-bg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -165,31 +165,18 @@
     margin-top: 24px;
 }
 
-.standalone-header {
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--block-bg);
+.article-list.standalone.standalone-only {
+    margin-top: 0;
 }
 
-.standalone-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
 
-.standalone-title::before {
-    content: '📄';
-    font-size: 1rem;
-}
 
 .article-list.standalone .article-item {
     padding: 16px 24px;
     display: flex;
     align-items: center;
     gap: 12px;
+    background-color: transparent;
 }
 
 .article-list.standalone .article-item::before {
@@ -198,8 +185,18 @@
 }
 
 .article-list.standalone .article-item:hover {
-    padding-left: 28px;
+    padding-left: 24px;
     background-color: var(--block-bg);
+}
+
+.article-list.standalone .article-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.article-list.standalone .article-item:last-child {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
 }
 
 /* #endregion */
