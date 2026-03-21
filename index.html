@@ -49,7 +49,9 @@
                     <router-link to="/" class="logo">
                         <h1>日志</h1>
                     </router-link>
-                    <nav class="nav">
+                    <div class="header-actions">
+                        <search-box></search-box>
+                        <nav class="nav">
                         <ul>
                             <li>
                                 <button id="theme-toggle-btn" class="theme-toggle" onclick="AppUtils.toggleTheme()">
@@ -58,7 +60,8 @@
                                 </button>
                             </li>
                         </ul>
-                    </nav>
+                        </nav>
+                    </div>
                 </div>
             </div>
             <!-- 集成面包屑，显示在头部最下方 -->

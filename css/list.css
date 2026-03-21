@@ -201,6 +201,93 @@
 
 /* #endregion */
 
+/* #region 搜索结果页 */
+.search-results-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-results-label {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.search-results-summary {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.search-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.search-result-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.search-result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+
+.search-result-content {
+    min-width: 0;
+}
+
+.search-result-title {
+    margin: 0 0 8px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.search-result-meta {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.search-result-arrow {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .search-result-card {
+        padding: 18px 18px;
+    }
+
+    .search-result-title {
+        font-size: 1rem;
+    }
+}
+/* #endregion */
+
 .empty-message {
     text-align: center;
     padding: 64px;

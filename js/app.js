@@ -2,7 +2,7 @@
  * #region Router & App Bootstrap
  */
 
-import { Breadcrumb, HomeView, ListView, ArticleView, NotFoundView } from './components.js';
+import { Breadcrumb, SearchBox, HomeView, ListView, SearchResultsView, ArticleView, NotFoundView } from './components.js';
 
 const { createApp, computed } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
@@ -11,27 +11,23 @@ const { createRouter, createWebHashHistory } = VueRouter;
 const routes = [
     { path: '/', name: 'home', component: HomeView },
     { path: '/list', name: 'list', component: ListView },
+    { path: '/search', name: 'search', component: SearchResultsView },
     { path: '/article', name: 'article', component: ArticleView },
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView }
 ];
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes,
+    routes
 });
 
 // 2. 创建并挂载应用
 const app = createApp({
-    components: { Breadcrumb },
+    components: { Breadcrumb, SearchBox },
     setup() {
         const route = VueRouter.useRoute();
 
-        // 计算当前路由是否需要显示面包屑
-        const showBreadcrumb = computed(() => {
-            return route.name === 'list' || route.name === 'article';
-        });
-
-        // 提取路由参数
+        const showBreadcrumb = computed(() => route.name === 'list' || route.name === 'article');
         const currentModule = computed(() => route.query.module || '');
         const currentArticle = computed(() => route.query.title || '');
 
