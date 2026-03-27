@@ -305,3 +305,151 @@
     border-radius: var(--radius-lg);
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
+
+.list-summary {
+    margin-top: 12px;
+    color: var(--text-secondary);
+}
+
+.filter-toolbar {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.toolbar-select {
+    min-width: 180px;
+    min-height: 42px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.article-feed {
+    display: grid;
+    gap: 16px;
+}
+
+.feed-item,
+.taxonomy-card,
+.archive-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.feed-item,
+.archive-item {
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    cursor: pointer;
+}
+
+.feed-item:hover,
+.taxonomy-card:hover,
+.archive-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+
+.feed-item-main {
+    min-width: 0;
+}
+
+.feed-item-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+}
+
+.feed-title,
+.archive-item-title,
+.taxonomy-title {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.feed-summary,
+.archive-item-meta,
+.taxonomy-meta,
+.search-result-summary {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.feed-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.feed-arrow {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.archive-groups {
+    display: grid;
+    gap: 20px;
+}
+
+.archive-group {
+    display: grid;
+    gap: 12px;
+}
+
+.archive-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-secondary);
+}
+
+.archive-group-list,
+.taxonomy-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.archive-date {
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.taxonomy-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.taxonomy-card {
+    padding: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .feed-item,
+    .archive-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .feed-arrow,
+    .archive-date {
+        display: none;
+    }
+}

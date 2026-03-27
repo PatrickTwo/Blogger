@@ -7,27 +7,182 @@ export const AppUtils = {
      * 目录配置
      */
     TOC_CONFIG: {
-        t1Level: 2,      // 提取的一级标题等级
-        t2Level: 3,      // 提取二级标题等级
-        showSubLevel: true // 是否显示二级标题 (相对于 minLevel)
+        t1Level: 2,
+        t2Level: 3,
+        showSubLevel: true
     },
 
     /**
      * 格式化文章标题，移除扩展名
+     * @param {string} title - 原始标题
+     * @returns {string} 格式化后的标题
      */
     formatTitle(title) {
-        return title ? title.replace('.md', '') : '';
+        return title ? title.replace(/\.md$/i, '') : '';
     },
 
     /**
-     * 对路径进行编码，解决特殊字符问题
+     * 对资源路径进行编码
+     * @param {string} path - 资源路径
+     * @returns {string} 编码后的路径
      */
     encodePath(path) {
-        if (!path) return '';
+        if (!path) {
+            return '';
+        }
+
         return path.split('/').map(segment => encodeURIComponent(segment)).join('/');
     },
 
-    // #region 优化：黑夜模式切换
+    /**
+     * 生成可复用的 slug
+     * @param {string} value - 原始文本
+     * @returns {string} slug
+     */
+    slugify(value) {
+        return String(value || '')
+            .trim()
+            .toLowerCase()
+            .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    },
+
+    /**
+     * 去除 Markdown 中常见标记，提取纯文本
+     * @param {string} markdown - Markdown 文本
+     * @returns {string} 纯文本
+     */
+    stripMarkdown(markdown) {
+        return String(markdown || '')
+            .replace(/```[\s\S]*?```/g, ' ')
+            .replace(/`[^`]*`/g, ' ')
+            .replace(/!\[[^\]]*]\(([^)]+)\)/g, ' ')
+            .replace(/\[([^\]]+)]\(([^)]+)\)/g, '$1')
+            .replace(/^#{1,6}\s+/gm, '')
+            .replace(/^>\s?/gm, '')
+            .replace(/^[-*+]\s+/gm, '')
+            .replace(/^\d+\.\s+/gm, '')
+            .replace(/[*_~>#]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    },
+
+    /**
+     * 解析 Front Matter
+     * @param {string} rawText - 原始 Markdown
+     * @returns {{ metadata: Record<string, any>, body: string }} 解析结果
+     */
+    extractFrontMatter(rawText) {
+        const text = String(rawText || '').replace(/^\uFEFF/, '');
+
+        if (!text.startsWith('---')) {
+            return { metadata: {}, body: text };
+        }
+
+        const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+
+        if (!match) {
+            return { metadata: {}, body: text };
+        }
+
+        const metadata = {};
+        const metadataBlock = match[1];
+
+        const parseScalar = (value) => {
+            const trimmed = value.trim();
+
+            if (!trimmed) {
+                return '';
+            }
+
+            if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith('\'') && trimmed.endsWith('\''))) {
+                return trimmed.slice(1, -1);
+            }
+
+            if (trimmed === 'true') {
+                return true;
+            }
+
+            if (trimmed === 'false') {
+                return false;
+            }
+
+            if (/^-?\d+(\.\d+)?$/.test(trimmed)) {
+                return Number(trimmed);
+            }
+
+            return trimmed;
+        };
+
+        const parseArray = (value) => {
+            const trimmed = value.trim();
+
+            if (!trimmed) {
+                return [];
+            }
+
+            if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
+                return trimmed
+                    .slice(1, -1)
+                    .split(',')
+                    .map(item => String(parseScalar(item)).trim())
+                    .filter(Boolean);
+            }
+
+            return trimmed
+                .split(',')
+                .map(item => String(parseScalar(item)).trim())
+                .filter(Boolean);
+        };
+
+        for (const line of metadataBlock.split(/\r?\n/)) {
+            if (!line.trim() || line.trim().startsWith('#')) {
+                continue;
+            }
+
+            const separatorIndex = line.indexOf(':');
+
+            if (separatorIndex <= 0) {
+                continue;
+            }
+
+            const key = line.slice(0, separatorIndex).trim();
+            const rawValue = line.slice(separatorIndex + 1);
+            const lowerKey = key.toLowerCase();
+
+            if (lowerKey === 'tags' || lowerKey === 'keywords') {
+                metadata[key] = parseArray(rawValue);
+                continue;
+            }
+
+            metadata[key] = parseScalar(rawValue);
+        }
+
+        return {
+            metadata,
+            body: text.slice(match[0].length)
+        };
+    },
+
+    /**
+     * 构建文章锚点分享链接
+     * @param {string} anchorId - 标题锚点
+     * @returns {string} 完整链接
+     */
+    buildAnchorUrl(anchorId) {
+        const hash = window.location.hash || '#/';
+        const routeWithQuery = hash.startsWith('#') ? hash.slice(1) : hash;
+        const [routePath, queryString = ''] = routeWithQuery.split('?');
+        const params = new URLSearchParams(queryString);
+
+        if (anchorId) {
+            params.set('anchor', anchorId);
+        }
+
+        const nextHash = `${routePath}?${params.toString()}`;
+        return `${window.location.origin}${window.location.pathname}${window.location.search}#${nextHash}`;
+    },
+
     /**
      * 初始化主题
      */
@@ -44,68 +199,112 @@ export const AppUtils = {
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-        // 优化：添加过渡动画类
         document.body.classList.add('theme-transition');
-
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         this.updateThemeButton(newTheme);
 
-        // 动画完成后移除类
         setTimeout(() => {
             document.body.classList.remove('theme-transition');
         }, 300);
     },
 
     /**
-     * 更新切换按钮文字/图标
-     * @param {string} theme - 当前主题名称
+     * 更新主题按钮状态
+     * @param {string} theme - 当前主题
      */
     updateThemeButton(theme) {
-        const btn = document.getElementById('theme-toggle-btn');
-        if (btn) {
-            const icon = btn.querySelector('.icon');
-            const text = btn.querySelector('.text');
-            if (theme === 'dark') {
-                icon.innerText = '🌙';
-                text.innerText = '深色';
-            } else {
-                icon.innerText = '☀️';
-                text.innerText = '浅色';
+        const button = document.getElementById('theme-toggle-btn');
+
+        if (!button) {
+            return;
+        }
+
+        const icon = button.querySelector('.icon');
+        const text = button.querySelector('.text');
+
+        if (theme === 'dark') {
+            if (icon) {
+                icon.innerText = '夜';
             }
+
+            if (text) {
+                text.innerText = '深色';
+            }
+
+            return;
+        }
+
+        if (icon) {
+            icon.innerText = '日';
+        }
+
+        if (text) {
+            text.innerText = '浅色';
         }
     },
-    // #endregion
 
-    // #region 优化：添加复制代码功能
     /**
-     * 复制代码到剪贴板
-     * @param {HTMLElement} btn - 点击的按钮元素
+     * 复制代码块内容
+     * @param {HTMLElement} button - 复制按钮
      */
-    copyCode(btn) {
-        const wrapper = btn.closest('.code-block-wrapper');
-        const code = wrapper.querySelector('code').innerText;
+    copyCode(button) {
+        const wrapper = button?.closest('.code-block-wrapper');
+        const code = wrapper?.querySelector('code')?.innerText || '';
 
         navigator.clipboard.writeText(code).then(() => {
-            const originalText = btn.innerText;
-            btn.innerText = '已复制';
-            btn.classList.add('copied');
+            const originalText = button.innerText;
+            button.innerText = '已复制';
+            button.classList.add('copied');
 
             setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove('copied');
+                button.innerText = originalText;
+                button.classList.remove('copied');
             }, 2000);
-        }).catch(err => {
-            console.error('无法复制代码: ', err);
-            btn.innerText = '失败';
+        }).catch(error => {
+            console.error('复制代码失败：', error);
+            button.innerText = '失败';
+        });
+    },
+
+    /**
+     * 复制标题锚点链接
+     * @param {string} anchorId - 标题锚点
+     * @param {HTMLElement} button - 触发按钮
+     */
+    copyAnchorLink(anchorId, button) {
+        const url = this.buildAnchorUrl(anchorId);
+
+        navigator.clipboard.writeText(url).then(() => {
+            if (!button) {
+                return;
+            }
+
+            const originalText = button.innerText;
+            button.innerText = '已复制';
+            button.classList.add('copied');
+
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.classList.remove('copied');
+            }, 1800);
+        }).catch(error => {
+            console.error('复制锚点链接失败：', error);
+        });
+    },
+
+    /**
+     * 平滑滚动到顶部
+     */
+    scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     }
-    // #endregion
 };
 
-// #region 优化：将 AppUtils 暴露到全局，以便在 HTML onclick 中使用
 window.AppUtils = AppUtils;
-// #endregion
 
 /**
  * #endregion

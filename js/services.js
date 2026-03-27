@@ -1,41 +1,89 @@
 /**
- * #region Markdown Service
+ * #region Services
  */
 
 import { AppUtils } from './utils.js';
 
+function escapeHtml(html) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        '\'': '&#039;'
+    };
+
+    return String(html || '').replace(/[&<>"']/g, match => map[match]);
+}
+
 export const MarkdownService = {
     /**
      * 解析 Markdown 内容并提取目录
-     * 标签示例
-     * :::info 这里是标签标题
-     * 这里是标签内容
-     * :::
+     * @param {string} text - 原始 Markdown
+     * @param {string} resourcePath - 当前内容资源路径
+     * @returns {{ htmlContent: string, tocItems: Array, metadata: Record<string, any>, body: string }} 解析结果
      */
-    parse(text) {
+    parse(text, resourcePath = '') {
+        const { metadata, body } = AppUtils.extractFrontMatter(text);
         const tocItems = [];
         const renderer = new marked.Renderer();
 
-        // #region 处理自定义容器标签 (:::info, :::warning, :::danger, :::hint, :::abstract, :::ref)
-        /**
-         * 处理自定义容器标签，支持 info, warning, danger, hint, abstract, ref
-         * @param {string} content - Markdown 内容
-         * @returns {string} 处理后的 HTML
-         */
+        const resolveRelativeMarkdownLinks = (content) => {
+            if (!resourcePath) {
+                return content;
+            }
+
+            const baseSegments = resourcePath.split('/').slice(0, -1);
+
+            const resolveTarget = (target) => {
+                if (!target || /^https?:\/\//i.test(target) || /^mailto:/i.test(target) || target.startsWith('#')) {
+                    return target;
+                }
+
+                const [pathPart, hashPart = ''] = target.split('#');
+                const sameDirectorySegments = [...baseSegments, pathPart].filter(Boolean);
+                const normalizedSegments = [];
+
+                for (const segment of sameDirectorySegments) {
+                    if (segment === '.' || segment === '') {
+                        continue;
+                    }
+
+                    if (segment === '..') {
+                        normalizedSegments.pop();
+                        continue;
+                    }
+
+                    normalizedSegments.push(segment);
+                }
+
+                const normalizedPath = normalizedSegments.join('/');
+                const assetFallbackPath = `Resources/Assets/${pathPart.split('/').pop()}`;
+                const isLikelyAssetShortName = !pathPart.includes('/') && /\.(png|jpg|jpeg|gif|svg|webp|pdf)$/i.test(pathPart);
+                const finalPath = isLikelyAssetShortName ? assetFallbackPath : normalizedPath;
+
+                return hashPart ? `${finalPath}#${hashPart}` : finalPath;
+            };
+
+            return content.replace(/(!?\[[^\]]*]\()([^)]+)(\))/g, (match, prefix, target, suffix) => {
+                return `${prefix}${resolveTarget(target.trim())}${suffix}`;
+            });
+        };
+
         const processCustomBlocks = (content) => {
-            // #region 优化：添加对 abstract 和 ref 标签的支持，并支持可选标题
-            const blockRegex = /:::(info|warning|danger|hint|abstract|ref)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
+            const blockRegex = /:::(info|warning|danger|hint|abstract|ref|summary|updates)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
 
             return content.replace(blockRegex, (match, type, title, innerContent) => {
                 const parsedInner = marked.parse(innerContent.trim());
-                // 如果没有提供标题，则根据类型设置默认标题
                 const displayTitle = title ? title.trim() : {
-                    'info': '',
-                    'warning': '',
-                    'danger': '',
-                    'hint': '',
-                    'abstract': '',
-                    'ref': '引用'
+                    info: '',
+                    warning: '',
+                    danger: '',
+                    hint: '',
+                    abstract: '',
+                    ref: '引用',
+                    summary: '摘要',
+                    updates: '更新记录'
                 }[type];
 
                 return `<div class="custom-block ${type}">
@@ -43,37 +91,10 @@ export const MarkdownService = {
                     <div class="custom-block-content">${parsedInner}</div>
                 </div>`;
             });
-            // #endregion
         };
-        // #endregion
 
-        const processedText = processCustomBlocks(text);
-        
-        // #region 辅助方法：转义 HTML 特殊字符
-        /**
-         * 转义 HTML 特殊字符，防止 XSS 和渲染问题
-         * @param {string} html - 待转义的字符串
-         * @returns {string} 转义后的字符串
-         */
-        const escapeHtml = (html) => {
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            return html.replace(/[&<>"']/g, (m) => map[m]);
-        };
-        // #endregion
+        const processedText = processCustomBlocks(resolveRelativeMarkdownLinks(body));
 
-        // #region 自定义代码块渲染
-        /**
-         * 自定义代码块渲染，添加代码块头部信息
-         * @param {string|object} arg1 - 代码内容或 Token 对象
-         * @param {string} arg2 - 语言标识
-         * @returns {string} 处理后的 HTML
-         */
         renderer.code = function (arg1, arg2) {
             let code = '';
             let language = '';
@@ -87,10 +108,8 @@ export const MarkdownService = {
             }
 
             const lang = language || 'text';
-            // 修复：对代码内容进行 HTML 转义，解决 <set> 等标签不显示的问题
             const escapedCode = escapeHtml(code);
-            
-            // 优化：返回带有包装容器和头部信息的代码块 HTML
+
             return `<div class="code-block-wrapper">
                         <div class="code-block-header">
                             <span class="code-block-lang">${lang}</span>
@@ -99,7 +118,6 @@ export const MarkdownService = {
                         <pre><code class="language-${lang}">${escapedCode}</code></pre>
                     </div>`;
         };
-        // #endregion
 
         renderer.heading = function (arg1, arg2) {
             let titleText = '';
@@ -114,10 +132,8 @@ export const MarkdownService = {
             }
 
             const cleanText = titleText.replace(/\*\*|\*|__|~~/g, '');
-            const id = cleanText.toLowerCase().trim().replace(/[^\w\u4e00-\u9fa5]+/g, '-');
-
+            const id = AppUtils.slugify(cleanText);
             const { t1Level: minLevel, t2Level: maxLevel, showSubLevel } = AppUtils.TOC_CONFIG;
-
             const isWithinRange = level >= minLevel && level <= maxLevel;
             const isLevelAllowed = level === minLevel || showSubLevel;
 
@@ -127,52 +143,204 @@ export const MarkdownService = {
             }
 
             const htmlText = marked.parseInline(titleText, { gfm: true });
-            return `<h${level} id="${id}">${htmlText}</h${level}>`;
+            const anchorButton = `<button class="heading-anchor" type="button" onclick="AppUtils.copyAnchorLink('${id}', this)" aria-label="复制标题链接">#</button>`;
+            return `<h${level} id="${id}">${htmlText}${anchorButton}</h${level}>`;
         };
 
         const htmlContent = marked.parse(processedText, {
-            renderer: renderer,
+            renderer,
             breaks: true,
             gfm: true,
             async: false
         });
 
-        // 兜底逻辑
         if (tocItems.length === 0) {
             const tokens = marked.lexer(processedText);
             const { t1Level: minLevel, t2Level: maxLevel, showSubLevel } = AppUtils.TOC_CONFIG;
 
-            tokens.forEach(token => {
-                if (token.type === 'heading') {
-                    const level = token.depth;
-                    const isWithinRange = level >= minLevel && level <= maxLevel;
-                    const isLevelAllowed = level === minLevel || showSubLevel;
-
-                    if (isWithinRange && isLevelAllowed) {
-                        const cleanText = token.text.replace(/\*\*|\*|__|~~/g, '');
-                        const id = cleanText.toLowerCase().trim().replace(/[^\w\u4e00-\u9fa5]+/g, '-');
-                        const relativeLevel = level - minLevel + 1;
-                        tocItems.push({ id, text: cleanText, level: relativeLevel });
-                    }
+            for (const token of tokens) {
+                if (token.type !== 'heading') {
+                    continue;
                 }
-            });
+
+                const level = token.depth;
+                const isWithinRange = level >= minLevel && level <= maxLevel;
+                const isLevelAllowed = level === minLevel || showSubLevel;
+
+                if (!isWithinRange || !isLevelAllowed) {
+                    continue;
+                }
+
+                const cleanText = token.text.replace(/\*\*|\*|__|~~/g, '');
+                const id = AppUtils.slugify(cleanText);
+                const relativeLevel = level - minLevel + 1;
+                tocItems.push({ id, text: cleanText, level: relativeLevel });
+            }
         }
 
-        return { htmlContent, tocItems };
+        return { htmlContent, tocItems, metadata, body };
     },
 
     /**
-     * 高亮代码块
+     * 代码高亮
      */
     highlightCode() {
         Vue.nextTick(() => {
-            document.querySelectorAll('pre code').forEach((el) => {
-                if (!el.className) {
-                    el.classList.add('language-csharp');
+            document.querySelectorAll('pre code').forEach(element => {
+                if (!element.className) {
+                    element.classList.add('language-text');
                 }
-                hljs.highlightElement(el);
+
+                hljs.highlightElement(element);
             });
         });
+    }
+};
+
+export const SeoService = {
+    /**
+     * 更新页面元信息
+     * @param {{ title?: string, description?: string, keywords?: string[], image?: string, url?: string, type?: string }} payload - 元信息
+     */
+    updateMeta(payload) {
+        const title = payload.title || '开发日志';
+        const description = payload.description || '个人技术博客';
+        const keywords = (payload.keywords || []).join(', ');
+        const image = payload.image || '';
+        const url = payload.url || window.location.href;
+        const type = payload.type || 'website';
+
+        document.title = title;
+
+        const updateTag = (selector, attributeName, value) => {
+            let element = document.head.querySelector(selector);
+
+            if (!element) {
+                element = document.createElement('meta');
+                element.setAttribute(attributeName, selector.includes('property=') ? selector.match(/property="([^"]+)"/)?.[1] || '' : selector.match(/name="([^"]+)"/)?.[1] || '');
+                document.head.appendChild(element);
+            }
+
+            element.setAttribute('content', value);
+        };
+
+        updateTag('meta[name="description"]', 'name', description);
+        updateTag('meta[name="keywords"]', 'name', keywords);
+        updateTag('meta[property="og:title"]', 'property', title);
+        updateTag('meta[property="og:description"]', 'property', description);
+        updateTag('meta[property="og:url"]', 'property', url);
+        updateTag('meta[property="og:type"]', 'property', type);
+
+        if (image) {
+            updateTag('meta[property="og:image"]', 'property', image);
+        }
+    }
+};
+
+export const AnalyticsService = {
+    storageKey: 'blogger-local-analytics',
+    config: {
+        enabled: true,
+        provider: 'local',
+        goatcounterDomain: ''
+    },
+
+    /**
+     * 初始化统计配置
+     * @param {{ enabled?: boolean, provider?: string, goatcounterDomain?: string }} config - 统计配置
+     */
+    init(config) {
+        this.config = {
+            ...this.config,
+            ...(config || {})
+        };
+
+        if (!this.config.enabled || this.config.provider !== 'goatcounter' || !this.config.goatcounterDomain) {
+            return;
+        }
+
+        if (document.querySelector('script[data-analytics="goatcounter"]')) {
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.dataset.analytics = 'goatcounter';
+        script.src = '//gc.zgo.at/count.js';
+        script.dataset.goatcounter = `https://${this.config.goatcounterDomain}.goatcounter.com/count`;
+        document.head.appendChild(script);
+    },
+
+    /**
+     * 记录页面访问
+     * @param {{ key: string, title: string, route: string, type: string }} payload - 页面信息
+     */
+    trackPageView(payload) {
+        if (!this.config.enabled || !payload?.key) {
+            return;
+        }
+
+        let analytics = {
+            pageViews: {},
+            referrers: {}
+        };
+
+        try {
+            analytics = JSON.parse(localStorage.getItem(this.storageKey) || '{"pageViews":{},"referrers":{}}');
+        } catch (error) {
+            console.error('读取本地统计失败：', error);
+        }
+
+        const currentRecord = analytics.pageViews[payload.key] || {
+            count: 0,
+            title: payload.title,
+            route: payload.route,
+            type: payload.type,
+            lastViewedAt: ''
+        };
+
+        currentRecord.count += 1;
+        currentRecord.title = payload.title;
+        currentRecord.route = payload.route;
+        currentRecord.type = payload.type;
+        currentRecord.lastViewedAt = new Date().toISOString();
+        analytics.pageViews[payload.key] = currentRecord;
+
+        if (document.referrer) {
+            try {
+                const referrerUrl = new URL(document.referrer);
+                const host = referrerUrl.hostname;
+                analytics.referrers[host] = (analytics.referrers[host] || 0) + 1;
+            } catch (error) {
+                console.error('记录来源失败：', error);
+            }
+        }
+
+        localStorage.setItem(this.storageKey, JSON.stringify(analytics));
+
+        if (this.config.provider === 'goatcounter' && window.goatcounter?.count) {
+            window.goatcounter.count({
+                path: payload.route,
+                title: payload.title
+            });
+        }
+    },
+
+    /**
+     * 获取本地热门文章
+     * @param {number} limit - 返回数量
+     * @returns {Array} 热门文章列表
+     */
+    getPopularPages(limit = 5) {
+        try {
+            const analytics = JSON.parse(localStorage.getItem(this.storageKey) || '{"pageViews":{}}');
+            return Object.values(analytics.pageViews || {})
+                .sort((left, right) => right.count - left.count)
+                .slice(0, limit);
+        } catch (error) {
+            console.error('读取热门页面失败：', error);
+            return [];
+        }
     }
 };
 

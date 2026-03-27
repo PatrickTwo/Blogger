@@ -1,0 +1,19 @@
+{
+  "title": "开发日志",
+  "description": "记录 C#、Unity、网络编程、设计模式与工程实践的学习和总结。",
+  "author": "wangl",
+  "siteUrl": "https://patricktwo.github.io/Blogger",
+  "defaultKeywords": [
+    "C#",
+    "Unity",
+    "网络编程",
+    "设计模式",
+    "个人博客"
+  ],
+  "socialPreviewImage": "Resources/Assets/image.png",
+  "analytics": {
+    "provider": "local",
+    "enabled": true,
+    "goatcounterDomain": ""
+  }
+}

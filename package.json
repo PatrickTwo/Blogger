@@ -4,7 +4,9 @@
   "description": "My Personal Blog",
   "type": "module",
   "scripts": {
-    "build": "node scripts/generate-data.js"
+    "build": "node scripts/build-site.js",
+    "build:data": "node scripts/generate-data.js",
+    "check:content": "node scripts/check-content.js"
   },
   "keywords": [],
   "author": "",
