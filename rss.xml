@@ -23,6 +23,14 @@
             <category>设计模式</category>
         </item>
         <item>
+            <title>C# LINQ常用查找操作</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</guid>
+            <description>整理 C# 中最常见的 LINQ 查找、筛选、判定和取值操作，帮助快速选对 API。</description>
+            <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
+            <category>C#</category>
+        </item>
+        <item>
             <title>对局流程描述</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2F%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8F%8F%E8%BF%B0.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2F%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8F%8F%E8%BF%B0.md</guid>
@@ -156,14 +164,6 @@
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F5.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.md</guid>
             <description>笔记：软件与游戏程序架构设计心法与思路（Word Matrix 课程导论）</description>
             <pubDate>Sat, 31 Jan 2026 03:07:43 GMT</pubDate>
-            <category>设计模式</category>
-        </item>
-        <item>
-            <title>4.对象池设计浅析</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F4.%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%9E%90.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F4.%E5%AF%B9%E8%B1%A1%E6%B1%A0%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%9E%90.md</guid>
-            <description>定义与目的 对象池 ：预先分配一大块固定内存作为“池”，用于存储可重复使用的对象，取代频繁单独分配和释放对象的方式。 目标 ： 1. 提升性能（减少分配/释放开销）。 2. 优化内存使用，避免内存碎片（尤其在移动端、嵌入式等性能受限平台）。</description>
-            <pubDate>Sat, 31 Jan 2026 03:07:21 GMT</pubDate>
             <category>设计模式</category>
         </item>
     </channel>

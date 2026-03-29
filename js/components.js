@@ -291,125 +291,207 @@ export const SearchBox = {
 
 export const HomeView = {
     template: `
-        <section class="home-hero">
-            <div class="hero-content">
-                <p class="hero-kicker">PERSONAL TECH BLOG</p>
-                <h1 class="hero-title">{{ siteMeta.title }}</h1>
-                <p class="hero-description">{{ siteMeta.description }}</p>
-                <div class="hero-actions">
-                    <router-link class="hero-action primary" :to="{ name: 'archive' }">查看归档</router-link>
-                    <router-link class="hero-action" :to="{ name: 'about' }">关于我</router-link>
-                    <a class="hero-action" href="rss.xml" target="_blank" rel="noopener noreferrer">RSS 订阅</a>
-                </div>
-            </div>
-            <div class="hero-panel">
-                <div class="hero-stat-card">
-                    <span class="hero-stat-label">文章总数</span>
-                    <strong class="hero-stat-value">{{ articles.length }}</strong>
-                </div>
-                <div class="hero-stat-card">
-                    <span class="hero-stat-label">专题系列</span>
-                    <strong class="hero-stat-value">{{ series.length }}</strong>
-                </div>
-                <div class="hero-stat-card">
-                    <span class="hero-stat-label">标签总数</span>
-                    <strong class="hero-stat-value">{{ tags.length }}</strong>
-                </div>
-            </div>
-        </section>
-
-        <section class="home-section">
-            <div class="section-heading">
-                <h2 class="section-title">最近更新</h2>
-                <router-link class="section-link" :to="{ name: 'archive' }">查看全部</router-link>
-            </div>
-            <div class="article-card-grid">
-                <article v-for="article in recentArticles" :key="article.path" class="article-card" @click="goToArticle(article)">
-                    <div class="article-card-top">
-                        <span class="meta-pill">{{ article.moduleName }}</span>
-                        <span class="article-card-date">{{ article.displayUpdatedAt }}</span>
-                    </div>
-                    <h3 class="article-card-title">{{ article.title }}</h3>
-                    <p class="article-card-summary">{{ article.summary }}</p>
-                    <p class="article-card-meta">{{ buildMeta(article) }}</p>
-                    <div class="article-card-tags">
-                        <button
-                            v-for="tag in article.tags.slice(0, 3)"
-                            :key="tag"
-                            class="tag-chip"
-                            type="button"
-                            @click.stop="goToTagByName(tag)"
-                        >
-                            {{ tag }}
-                        </button>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="home-section">
-            <div class="section-heading">
-                <h2 class="section-title">推荐专题</h2>
-                <router-link class="section-link" :to="{ name: 'series' }">查看系列</router-link>
-            </div>
-            <div class="series-card-grid">
-                <article v-for="item in featuredSeries" :key="item.slug" class="series-card" @click="goToSeries(item.slug)">
-                    <p class="series-card-meta">{{ item.moduleName }} / {{ item.count }} 篇</p>
-                    <h3 class="series-card-title">{{ item.name }}</h3>
-                    <p class="series-card-summary">{{ getSeriesLead(item) }}</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="home-section">
-            <div class="section-heading">
-                <h2 class="section-title">常用标签</h2>
-                <router-link class="section-link" :to="{ name: 'tags' }">查看全部标签</router-link>
-            </div>
-            <div class="tag-cloud">
-                <button v-for="tag in featuredTags" :key="tag.slug" type="button" class="tag-cloud-item" @click="goToTag(tag.slug)">
-                    <span>{{ tag.name }}</span>
-                    <span class="count">{{ tag.count }}</span>
-                </button>
-            </div>
-        </section>
-
-        <section class="home-section">
-            <div class="section-heading">
-                <h2 class="section-title">知识模块</h2>
-            </div>
-            <div class="module-list">
-                <div v-for="module in modulesWithCounts" :key="module.name" class="module-card" @click="goToModule(module.name)">
-                    <div class="module-icon">
-                        <span class="icon-char">{{ module.name.charAt(0) }}</span>
-                    </div>
-                    <div class="module-info">
-                        <h3 class="module-title">{{ module.name }}</h3>
-                        <p class="module-desc">
-                            <span>{{ module.chapterCount }} 个章节</span>
-                            <span class="separator">/</span>
-                            <span>{{ module.articleCount }} 篇文章</span>
-                        </p>
+        <div class="home-shell">
+            <section class="home-hero">
+                <div class="hero-content">
+                    <p class="hero-kicker">PERSONAL TECH BLOG</p>
+                    <h1 class="hero-title">{{ siteMeta.title }}</h1>
+                    <p class="hero-description">{{ siteMeta.description }}</p>
+                    <div class="hero-actions">
+                        <router-link class="hero-action primary" :to="{ name: 'archive' }">查看归档</router-link>
+                        <router-link class="hero-action" :to="{ name: 'series' }">专题系列</router-link>
+                        <a class="hero-action" href="rss.xml" target="_blank" rel="noopener noreferrer">RSS 订阅</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section v-if="popularPages.length > 0" class="home-section">
-            <div class="section-heading">
-                <h2 class="section-title">本地热门</h2>
-                <span class="section-muted">基于当前浏览器统计</span>
-            </div>
-            <div class="popular-list">
-                <article v-for="item in popularPages" :key="item.route" class="popular-item" @click="openPopular(item)">
-                    <div>
-                        <h3 class="popular-title">{{ item.title }}</h3>
-                        <p class="popular-meta">{{ item.count }} 次浏览</p>
+                <div class="hero-panel">
+                    <div class="hero-panel-copy">
+                        <p class="hero-panel-kicker">快速开始</p>
+                        <h2 class="hero-panel-title">从最近更新和知识模块进入内容</h2>
+                        <p class="hero-panel-description">首页聚合了最新文章、模块入口、专题和标签，方便你快速回到正在学的内容。</p>
                     </div>
-                    <span class="popular-arrow">→</span>
-                </article>
-            </div>
-        </section>
+                    <div class="hero-stat-grid">
+                        <div class="hero-stat-card">
+                            <span class="hero-stat-label">文章总数</span>
+                            <strong class="hero-stat-value">{{ articles.length }}</strong>
+                        </div>
+                        <div class="hero-stat-card">
+                            <span class="hero-stat-label">知识模块</span>
+                            <strong class="hero-stat-value">{{ modulesWithCounts.length }}</strong>
+                        </div>
+                        <div class="hero-stat-card">
+                            <span class="hero-stat-label">专题系列</span>
+                            <strong class="hero-stat-value">{{ series.length }}</strong>
+                        </div>
+                        <div class="hero-stat-card">
+                            <span class="hero-stat-label">最近更新</span>
+                            <strong class="hero-stat-value hero-stat-value-small">{{ latestUpdateLabel }}</strong>
+                        </div>
+                    </div>
+                    <div class="hero-spotlight">
+                        <p class="hero-spotlight-title">常看模块</p>
+                        <div class="hero-spotlight-list">
+                            <button
+                                v-for="module in spotlightModules"
+                                :key="module.name"
+                                type="button"
+                                class="hero-spotlight-item"
+                                @click="goToModule(module.name)"
+                            >
+                                <span>{{ module.name }}</span>
+                                <span>{{ module.articleCount }} 篇</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-dashboard">
+                <div class="home-dashboard-main">
+                    <section class="home-section">
+                        <div class="section-heading">
+                            <h2 class="section-title">最近更新</h2>
+                            <router-link class="section-link" :to="{ name: 'archive' }">查看全部</router-link>
+                        </div>
+                        <div class="recent-layout">
+                            <article
+                                v-if="featuredArticle"
+                                class="featured-article-card"
+                                @click="goToArticle(featuredArticle)"
+                            >
+                                <div class="featured-article-top">
+                                    <span class="meta-pill">{{ featuredArticle.moduleName }}</span>
+                                    <span class="article-card-date">{{ featuredArticle.displayUpdatedAt }}</span>
+                                </div>
+                                <h3 class="featured-article-title">{{ featuredArticle.title }}</h3>
+                                <p class="featured-article-summary">{{ featuredArticle.summary }}</p>
+                                <p class="featured-article-meta">{{ buildMeta(featuredArticle) }}</p>
+                                <div class="article-card-tags">
+                                    <button
+                                        v-for="tag in featuredArticle.tags.slice(0, 3)"
+                                        :key="tag"
+                                        class="tag-chip"
+                                        type="button"
+                                        @click.stop="goToTagByName(tag)"
+                                    >
+                                        {{ tag }}
+                                    </button>
+                                </div>
+                            </article>
+                            <div class="recent-article-list">
+                                <article
+                                    v-for="article in secondaryRecentArticles"
+                                    :key="article.path"
+                                    class="recent-article-item"
+                                    @click="goToArticle(article)"
+                                >
+                                    <div class="recent-article-main">
+                                        <div class="recent-article-top">
+                                            <span class="meta-pill">{{ article.moduleName }}</span>
+                                            <span class="article-card-date">{{ article.displayUpdatedAt }}</span>
+                                        </div>
+                                        <h3 class="recent-article-title">{{ article.title }}</h3>
+                                        <p class="recent-article-summary">{{ article.summary }}</p>
+                                    </div>
+                                    <span class="recent-article-arrow">→</span>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="home-section">
+                        <div class="section-heading">
+                            <h2 class="section-title">知识模块</h2>
+                            <span class="section-muted">按长期主题浏览内容</span>
+                        </div>
+                        <div class="module-list">
+                            <div v-for="module in modulesWithCounts" :key="module.name" class="module-card" @click="goToModule(module.name)">
+                                <div class="module-icon">
+                                    <span class="icon-char">{{ module.name.charAt(0) }}</span>
+                                </div>
+                                <div class="module-info">
+                                    <h3 class="home-module-title">{{ module.name }}</h3>
+                                    <p class="home-module-desc">
+                                        <span>{{ module.chapterCount }} 个章节</span>
+                                        <span class="separator">/</span>
+                                        <span>{{ module.articleCount }} 篇文章</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="home-section">
+                        <div class="section-heading">
+                            <h2 class="section-title">推荐专题</h2>
+                            <router-link class="section-link" :to="{ name: 'series' }">查看系列</router-link>
+                        </div>
+                        <div class="series-card-grid">
+                            <article v-for="item in featuredSeries" :key="item.slug" class="series-card" @click="goToSeries(item.slug)">
+                                <p class="series-card-meta">{{ item.moduleName }} / {{ item.count }} 篇</p>
+                                <h3 class="series-card-title">{{ item.name }}</h3>
+                                <p class="series-card-summary">{{ getSeriesLead(item) }}</p>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="home-sidebar">
+                    <section class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h2 class="sidebar-card-title">快捷入口</h2>
+                            <router-link class="section-link" :to="{ name: 'about' }">关于我</router-link>
+                        </div>
+                        <div class="quick-nav-grid">
+                            <router-link class="quick-nav-item" :to="{ name: 'archive' }">
+                                <span class="quick-nav-label">归档</span>
+                                <span class="quick-nav-meta">按时间查看全部文章</span>
+                            </router-link>
+                            <router-link class="quick-nav-item" :to="{ name: 'tags' }">
+                                <span class="quick-nav-label">标签</span>
+                                <span class="quick-nav-meta">按主题快速筛选</span>
+                            </router-link>
+                            <router-link class="quick-nav-item" :to="{ name: 'series' }">
+                                <span class="quick-nav-label">系列</span>
+                                <span class="quick-nav-meta">连续阅读专题内容</span>
+                            </router-link>
+                            <router-link class="quick-nav-item" :to="{ name: 'about' }">
+                                <span class="quick-nav-label">关于</span>
+                                <span class="quick-nav-meta">了解站点定位</span>
+                            </router-link>
+                        </div>
+                    </section>
+
+                    <section class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h2 class="sidebar-card-title">常用标签</h2>
+                            <router-link class="section-link" :to="{ name: 'tags' }">更多标签</router-link>
+                        </div>
+                        <div class="tag-cloud sidebar-tag-cloud">
+                            <button v-for="tag in featuredTags" :key="tag.slug" type="button" class="tag-cloud-item" @click="goToTag(tag.slug)">
+                                <span>{{ tag.name }}</span>
+                                <span class="count">{{ tag.count }}</span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section v-if="popularPages.length > 0" class="sidebar-card">
+                        <div class="sidebar-card-header">
+                            <h2 class="sidebar-card-title">本地热门</h2>
+                            <span class="section-muted">基于当前浏览器统计</span>
+                        </div>
+                        <div class="popular-list compact">
+                            <article v-for="item in popularPages" :key="item.route" class="popular-item" @click="openPopular(item)">
+                                <div>
+                                    <h3 class="popular-title">{{ item.title }}</h3>
+                                    <p class="popular-meta">{{ item.count }} 次浏览</p>
+                                </div>
+                                <span class="popular-arrow">→</span>
+                            </article>
+                        </div>
+                    </section>
+                </aside>
+            </section>
+        </div>
     `,
     setup() {
         const router = VueRouter.useRouter();
@@ -419,9 +501,11 @@ export const HomeView = {
         const series = BLOG_SERIES || [];
         const popularPages = ref([]);
 
-        const recentArticles = computed(() => [...articles]
-            .sort((left, right) => right.updatedAt.localeCompare(left.updatedAt))
-            .slice(0, 6));
+        // #region 首页数据分组
+        const sortedArticlesByUpdated = computed(() => [...articles]
+            .sort((left, right) => right.updatedAt.localeCompare(left.updatedAt)));
+        const featuredArticle = computed(() => sortedArticlesByUpdated.value[0] || null);
+        const secondaryRecentArticles = computed(() => sortedArticlesByUpdated.value.slice(1, 5));
 
         const featuredTags = computed(() => tags.slice(0, 12));
         const featuredSeries = computed(() => series.slice(0, 4));
@@ -441,6 +525,9 @@ export const HomeView = {
                 };
             });
         });
+        const spotlightModules = computed(() => modulesWithCounts.value.slice(0, 4));
+        const latestUpdateLabel = computed(() => featuredArticle.value?.displayUpdatedAt || '持续更新');
+        // #endregion
 
         const goToArticle = article => navigateToArticle(router, article);
         const goToModule = moduleName => router.push({ name: 'list', query: { module: moduleName } });
@@ -481,10 +568,13 @@ export const HomeView = {
             articles,
             tags,
             series,
-            recentArticles,
+            featuredArticle,
+            secondaryRecentArticles,
             featuredTags,
             featuredSeries,
             modulesWithCounts,
+            spotlightModules,
+            latestUpdateLabel,
             popularPages,
             buildMeta: buildArticleCardMeta,
             goToArticle,

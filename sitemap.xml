@@ -44,6 +44,9 @@
         <loc>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F7.Unity%E3%80%81%E5%89%8D%E7%AB%AF%E3%80%81WinForm%E4%B8%AD%E6%9B%B4%E9%80%82%E5%90%88%E7%94%A8%E5%93%AA%E4%B8%80%E7%A7%8D%E6%9E%B6%E6%9E%84.md</loc>
     </url>
     <url>
+        <loc>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</loc>
+    </url>
+    <url>
         <loc>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2F%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8F%8F%E8%BF%B0.md</loc>
     </url>
     <url>
@@ -332,6 +335,12 @@
         <loc>https://patricktwo.github.io/Blogger/#/tags?tag=mvvm</loc>
     </url>
     <url>
+        <loc>https://patricktwo.github.io/Blogger/#/tags?tag=%E6%9F%A5%E8%AF%A2</loc>
+    </url>
+    <url>
+        <loc>https://patricktwo.github.io/Blogger/#/tags?tag=%E9%9B%86%E5%90%88</loc>
+    </url>
+    <url>
         <loc>https://patricktwo.github.io/Blogger/#/tags?tag=%E5%89%8D%E7%AB%AF</loc>
     </url>
     <url>
@@ -348,6 +357,9 @@
     </url>
     <url>
         <loc>https://patricktwo.github.io/Blogger/#/tags?tag=ioc</loc>
+    </url>
+    <url>
+        <loc>https://patricktwo.github.io/Blogger/#/tags?tag=linq</loc>
     </url>
     <url>
         <loc>https://patricktwo.github.io/Blogger/#/tags?tag=winform</loc>

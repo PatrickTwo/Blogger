@@ -1839,8 +1839,8 @@ export const BLOG_MODULES = [
                         "nextPath": "Resources/Articles/C#/多线程与异步编程/2.C#异步编程的入门概念及核心理念.md",
                         "relatedPaths": [
                             "Resources/Articles/C#/多线程与异步编程/2.C#异步编程的入门概念及核心理念.md",
-                            "Resources/Articles/C#/概念/值类型与引用类型.md",
-                            "Resources/Articles/C#/概念/扩展方法.md"
+                            "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+                            "Resources/Articles/C#/概念/值类型与引用类型.md"
                         ],
                         "seriesPaths": []
                     },
@@ -1882,8 +1882,8 @@ export const BLOG_MODULES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/C#/多线程与异步编程/1.C#多线程入门概念及技巧.md",
-                            "Resources/Articles/C#/概念/值类型与引用类型.md",
-                            "Resources/Articles/C#/概念/扩展方法.md"
+                            "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+                            "Resources/Articles/C#/概念/值类型与引用类型.md"
                         ],
                         "seriesPaths": []
                     }
@@ -2721,6 +2721,77 @@ export const BLOG_MODULES = [
                         "displayDate": "2026-01-22",
                         "displayUpdatedAt": "2025-05-29",
                         "previousPath": "Resources/Articles/C#/概念/注释.md",
+                        "nextPath": "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+                        "relatedPaths": [
+                            "Resources/Articles/C#/概念/值类型与引用类型.md",
+                            "Resources/Articles/C#/概念/扩展方法.md",
+                            "Resources/Articles/C#/概念/注释.md"
+                        ],
+                        "seriesPaths": []
+                    },
+                    {
+                        "title": "C# LINQ常用查找操作",
+                        "summary": "整理 C# 中最常见的 LINQ 查找、筛选、判定和取值操作，帮助快速选对 API。",
+                        "tags": [
+                            "C#",
+                            "LINQ",
+                            "查询",
+                            "集合"
+                        ],
+                        "category": "C#",
+                        "moduleName": "C#",
+                        "chapterName": "概念",
+                        "series": "",
+                        "seriesSlug": "",
+                        "order": null,
+                        "date": "2026-03-27T00:00:00.000Z",
+                        "updatedAt": "2026-03-27T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+                        "slug": "c-linq常用查找操作",
+                        "route": "#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md",
+                        "readMinutes": 6,
+                        "headings": [
+                            "1-为什么要区分不同的查找操作",
+                            "2-准备一个示例集合",
+                            "3-返回多个结果",
+                            "3-1-where-筛选所有符合条件的数据",
+                            "3-2-take-只取前几个结果",
+                            "4-返回单个结果",
+                            "4-1-first-取第一个符合条件的元素",
+                            "4-2-firstordefault-取第一个-找不到时返回默认值",
+                            "4-3-last-与-lastordefault",
+                            "4-4-single-必须且只能有一个",
+                            "4-5-singleordefault-允许没有-但不允许重复",
+                            "5-判定是否存在",
+                            "5-1-any-判断是否至少存在一条",
+                            "5-2-all-判断是否全部满足条件",
+                            "6-获取数量",
+                            "6-1-count-统计符合条件的元素数量",
+                            "6-2-longcount-当数据量可能非常大时使用",
+                            "7-获取最大值-最小值",
+                            "7-1-max-和-min",
+                            "7-2-maxby-和-minby",
+                            "8-按键快速查找",
+                            "8-1-todictionary-先转字典-再高频查找",
+                            "8-2-tolookup-一个键对应多个结果",
+                            "9-常见写法对比",
+                            "9-1-找一个用户",
+                            "9-2-判断是否存在激活用户",
+                            "9-3-找全部上海用户",
+                            "9-4-查找唯一用户",
+                            "10-实战中的选择建议",
+                            "10-1-只判断存在时优先用-any",
+                            "10-2-只拿第一条时优先用-firstordefault",
+                            "10-3-明确表达唯一性时用-single",
+                            "10-4-高频按键查询时转成字典",
+                            "10-5-不要滥用-where-firstordefault",
+                            "11-总结"
+                        ],
+                        "displayDate": "2026-03-27",
+                        "displayUpdatedAt": "2026-03-27",
+                        "previousPath": "Resources/Articles/C#/概念/字符串.md",
                         "nextPath": "Resources/Articles/C#/概念/empty.md",
                         "relatedPaths": [
                             "Resources/Articles/C#/概念/值类型与引用类型.md",
@@ -2753,7 +2824,7 @@ export const BLOG_MODULES = [
                         "headings": [],
                         "displayDate": "2026-01-22",
                         "displayUpdatedAt": "2025-05-29",
-                        "previousPath": "Resources/Articles/C#/概念/字符串.md",
+                        "previousPath": "Resources/Articles/C#/概念/LINQ常用查找操作.md",
                         "nextPath": "Resources/Articles/C#/概念/static和const关键字.md",
                         "relatedPaths": [
                             "Resources/Articles/C#/概念/值类型与引用类型.md",
@@ -5455,8 +5526,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "Resources/Articles/C#/多线程与异步编程/2.C#异步编程的入门概念及核心理念.md",
         "relatedPaths": [
             "Resources/Articles/C#/多线程与异步编程/2.C#异步编程的入门概念及核心理念.md",
-            "Resources/Articles/C#/概念/值类型与引用类型.md",
-            "Resources/Articles/C#/概念/扩展方法.md"
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+            "Resources/Articles/C#/概念/值类型与引用类型.md"
         ],
         "seriesPaths": []
     },
@@ -5498,8 +5569,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/C#/多线程与异步编程/1.C#多线程入门概念及技巧.md",
-            "Resources/Articles/C#/概念/值类型与引用类型.md",
-            "Resources/Articles/C#/概念/扩展方法.md"
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+            "Resources/Articles/C#/概念/值类型与引用类型.md"
         ],
         "seriesPaths": []
     },
@@ -6331,6 +6402,77 @@ export const BLOG_ARTICLES = [
         "displayDate": "2026-01-22",
         "displayUpdatedAt": "2025-05-29",
         "previousPath": "Resources/Articles/C#/概念/注释.md",
+        "nextPath": "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+        "relatedPaths": [
+            "Resources/Articles/C#/概念/值类型与引用类型.md",
+            "Resources/Articles/C#/概念/扩展方法.md",
+            "Resources/Articles/C#/概念/注释.md"
+        ],
+        "seriesPaths": []
+    },
+    {
+        "title": "C# LINQ常用查找操作",
+        "summary": "整理 C# 中最常见的 LINQ 查找、筛选、判定和取值操作，帮助快速选对 API。",
+        "tags": [
+            "C#",
+            "LINQ",
+            "查询",
+            "集合"
+        ],
+        "category": "C#",
+        "moduleName": "C#",
+        "chapterName": "概念",
+        "series": "",
+        "seriesSlug": "",
+        "order": null,
+        "date": "2026-03-27T00:00:00.000Z",
+        "updatedAt": "2026-03-27T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/C#/概念/LINQ常用查找操作.md",
+        "slug": "c-linq常用查找操作",
+        "route": "#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md",
+        "readMinutes": 6,
+        "headings": [
+            "1-为什么要区分不同的查找操作",
+            "2-准备一个示例集合",
+            "3-返回多个结果",
+            "3-1-where-筛选所有符合条件的数据",
+            "3-2-take-只取前几个结果",
+            "4-返回单个结果",
+            "4-1-first-取第一个符合条件的元素",
+            "4-2-firstordefault-取第一个-找不到时返回默认值",
+            "4-3-last-与-lastordefault",
+            "4-4-single-必须且只能有一个",
+            "4-5-singleordefault-允许没有-但不允许重复",
+            "5-判定是否存在",
+            "5-1-any-判断是否至少存在一条",
+            "5-2-all-判断是否全部满足条件",
+            "6-获取数量",
+            "6-1-count-统计符合条件的元素数量",
+            "6-2-longcount-当数据量可能非常大时使用",
+            "7-获取最大值-最小值",
+            "7-1-max-和-min",
+            "7-2-maxby-和-minby",
+            "8-按键快速查找",
+            "8-1-todictionary-先转字典-再高频查找",
+            "8-2-tolookup-一个键对应多个结果",
+            "9-常见写法对比",
+            "9-1-找一个用户",
+            "9-2-判断是否存在激活用户",
+            "9-3-找全部上海用户",
+            "9-4-查找唯一用户",
+            "10-实战中的选择建议",
+            "10-1-只判断存在时优先用-any",
+            "10-2-只拿第一条时优先用-firstordefault",
+            "10-3-明确表达唯一性时用-single",
+            "10-4-高频按键查询时转成字典",
+            "10-5-不要滥用-where-firstordefault",
+            "11-总结"
+        ],
+        "displayDate": "2026-03-27",
+        "displayUpdatedAt": "2026-03-27",
+        "previousPath": "Resources/Articles/C#/概念/字符串.md",
         "nextPath": "Resources/Articles/C#/概念/empty.md",
         "relatedPaths": [
             "Resources/Articles/C#/概念/值类型与引用类型.md",
@@ -6363,7 +6505,7 @@ export const BLOG_ARTICLES = [
         "headings": [],
         "displayDate": "2026-01-22",
         "displayUpdatedAt": "2025-05-29",
-        "previousPath": "Resources/Articles/C#/概念/字符串.md",
+        "previousPath": "Resources/Articles/C#/概念/LINQ常用查找操作.md",
         "nextPath": "Resources/Articles/C#/概念/static和const关键字.md",
         "relatedPaths": [
             "Resources/Articles/C#/概念/值类型与引用类型.md",
@@ -7301,7 +7443,7 @@ export const BLOG_TAGS = [
     {
         "name": "C#",
         "slug": "c",
-        "count": 30,
+        "count": 31,
         "articlePaths": [
             "Resources/Articles/C#/多线程与异步编程/1.C#多线程入门概念及技巧.md",
             "Resources/Articles/C#/多线程与异步编程/2.C#异步编程的入门概念及核心理念.md",
@@ -7324,6 +7466,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/C#/概念/值类型与引用类型.md",
             "Resources/Articles/C#/概念/注释.md",
             "Resources/Articles/C#/概念/字符串.md",
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md",
             "Resources/Articles/C#/概念/empty.md",
             "Resources/Articles/C#/概念/static和const关键字.md",
             "Resources/Articles/C#/概念/switch.md",
@@ -7334,7 +7477,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/C#/继承/接口.md",
             "Resources/Articles/C++/数据结构/数据结构.md"
         ],
-        "latestUpdatedAt": "2026-02-09T10:20:25.000Z"
+        "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
         "name": "概念",
@@ -7555,6 +7698,24 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "查询",
+        "slug": "查询",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md"
+        ],
+        "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
+    },
+    {
+        "name": "集合",
+        "slug": "集合",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md"
+        ],
+        "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
+    },
+    {
         "name": "前端",
         "slug": "前端",
         "count": 1,
@@ -7609,6 +7770,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-12T00:00:00.000Z"
     },
     {
+        "name": "LINQ",
+        "slug": "linq",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md"
+        ],
+        "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
+    },
+    {
         "name": "WinForm",
         "slug": "winform",
         "count": 1,
@@ -7646,12 +7816,13 @@ export const BLOG_ARCHIVES = [
         "key": "2026-03",
         "year": "2026",
         "month": "03",
-        "count": 11,
+        "count": 12,
         "articlePaths": [
             "Resources/Articles/设计模式/依赖注入.md",
             "Resources/Articles/设计模式/E.附录/6.MVC、MVP、MVVM架构的异同.md",
             "Resources/Articles/设计模式/E.附录/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/杂项/常用注册表路径.md",
+            "Resources/Articles/C#/概念/LINQ常用查找操作.md",
             "Resources/Articles/Program设计文档/Mahjong框架设计.md",
             "Resources/Articles/Program设计文档/Mahjong设计文档.md",
             "Resources/Articles/Program设计文档/Mahjong/对局流程描述.md",
