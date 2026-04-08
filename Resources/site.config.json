@@ -10,10 +10,5 @@
     "设计模式",
     "个人博客"
   ],
-  "socialPreviewImage": "Resources/Assets/image.png",
-  "analytics": {
-    "provider": "local",
-    "enabled": true,
-    "goatcounterDomain": ""
-  }
+  "socialPreviewImage": "Resources/Assets/image.png"
 }

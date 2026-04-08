@@ -12,10 +12,13 @@
     <meta property="og:type" content="website">
     <title>开发日志</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="alternate" type="application/rss+xml" title="开发日志 RSS" href="rss.xml">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         window.__resourceLoadErrors = [];
@@ -23,11 +26,6 @@
         function registerResourceLoadError(resourceName) {
             window.__resourceLoadErrors.push(resourceName);
         }
-
-        (function () {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
     </script>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" onerror="registerResourceLoadError('Vue')"></script>
@@ -72,12 +70,6 @@
                                 <li><router-link :to="{ name: 'series' }">系列</router-link></li>
                                 <li><router-link :to="{ name: 'about' }">关于</router-link></li>
                                 <li><a href="rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li>
-                                <li>
-                                    <button id="theme-toggle-btn" class="theme-toggle" onclick="AppUtils.toggleTheme()">
-                                        <span class="icon">日</span>
-                                        <span class="text">浅色</span>
-                                    </button>
-                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -86,7 +78,7 @@
 
             <div class="header-breadcrumb" v-if="showBreadcrumb">
                 <div class="container">
-                    <Breadcrumb :module-name="currentModule" :article-title="currentArticle" />
+                    <Breadcrumb :category-name="currentCategory" :article-title="currentArticle" />
                 </div>
             </div>
         </header>
@@ -123,10 +115,6 @@
     <script type="module" src="js/app.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            if (window.AppUtils) {
-                AppUtils.updateThemeButton(localStorage.getItem('theme') || 'light');
-            }
-
             const banner = document.getElementById('runtime-error-banner');
             const hasRuntimeDependencyError = window.__resourceLoadErrors.length > 0 || !window.Vue || !window.VueRouter || !window.marked;
 

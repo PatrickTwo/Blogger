@@ -6,12 +6,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { extractFrontMatter, slugify, stripMarkdown } from '../js/text-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.join(__dirname, '..');
 const articlesDir = path.join(projectRoot, 'Resources', 'Articles');
-const pagesDir = path.join(projectRoot, 'Resources', 'Pages');
 const configFile = path.join(projectRoot, 'Resources', 'site.config.json');
 const dataOutputFile = path.join(projectRoot, 'js', 'modules_data.js');
 const rssOutputFile = path.join(projectRoot, 'rss.xml');
@@ -24,12 +24,7 @@ const defaultConfig = {
     author: 'wangl',
     siteUrl: 'https://patricktwo.github.io/Blogger',
     defaultKeywords: ['C#', 'Unity', '网络编程', '设计模式', '个人博客'],
-    socialPreviewImage: 'Resources/Assets/image.png',
-    analytics: {
-        provider: 'local',
-        enabled: true,
-        goatcounterDomain: ''
-    }
+    socialPreviewImage: 'Resources/Assets/image.png'
 };
 
 function readUtf8(filePath) {
@@ -65,112 +60,6 @@ function sanitizeText(value) {
         .replace(/\n+/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
-}
-
-function slugify(value) {
-    return sanitizeText(value)
-        .toLowerCase()
-        .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-}
-
-function stripMarkdown(markdown) {
-    return sanitizeText(
-        markdown
-            .replace(/^---[\s\S]*?---\s*/m, '')
-            .replace(/```[\s\S]*?```/g, ' ')
-            .replace(/`[^`]*`/g, ' ')
-            .replace(/!\[[^\]]*]\(([^)]+)\)/g, ' ')
-            .replace(/\[([^\]]+)]\(([^)]+)\)/g, '$1')
-            .replace(/^#{1,6}\s+/gm, '')
-            .replace(/^>\s?/gm, '')
-            .replace(/^[-*+]\s+/gm, '')
-            .replace(/^\d+\.\s+/gm, '')
-            .replace(/[*_~>#]/g, ' ')
-    );
-}
-
-function parseScalar(rawValue) {
-    const value = rawValue.trim();
-
-    if (!value) {
-        return '';
-    }
-
-    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith('\'') && value.endsWith('\''))) {
-        return value.slice(1, -1);
-    }
-
-    if (value === 'true') {
-        return true;
-    }
-
-    if (value === 'false') {
-        return false;
-    }
-
-    if (/^-?\d+(\.\d+)?$/.test(value)) {
-        return Number(value);
-    }
-
-    return value;
-}
-
-function parseArrayValue(rawValue) {
-    const trimmed = rawValue.trim();
-
-    if (!trimmed) {
-        return [];
-    }
-
-    if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
-        const items = trimmed.slice(1, -1).split(',').map(item => parseScalar(item)).filter(Boolean);
-        return [...new Set(items.map(item => String(item).trim()).filter(Boolean))];
-    }
-
-    return [...new Set(trimmed.split(',').map(item => String(parseScalar(item)).trim()).filter(Boolean))];
-}
-
-function parseFrontMatter(rawText) {
-    const text = rawText.replace(/^\uFEFF/, '');
-
-    if (!text.startsWith('---')) {
-        return { metadata: {}, body: text };
-    }
-
-    const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
-
-    if (!match) {
-        return { metadata: {}, body: text };
-    }
-
-    const metadataBlock = match[1];
-    const body = text.slice(match[0].length);
-    const metadata = {};
-
-    for (const line of metadataBlock.split(/\r?\n/)) {
-        if (!line.trim() || line.trim().startsWith('#')) {
-            continue;
-        }
-
-        const separatorIndex = line.indexOf(':');
-        if (separatorIndex <= 0) {
-            continue;
-        }
-
-        const key = line.slice(0, separatorIndex).trim();
-        const rawValue = line.slice(separatorIndex + 1);
-        const lowerKey = key.toLowerCase();
-
-        if (['tags', 'keywords'].includes(lowerKey)) {
-            metadata[key] = parseArrayValue(rawValue);
-            continue;
-        }
-
-        metadata[key] = parseScalar(rawValue);
-    }
-
-    return { metadata, body };
 }
 
 function normalizeDate(rawValue, fallbackDate) {
@@ -294,39 +183,42 @@ function collectMarkdownLinks(markdownText) {
     return links;
 }
 
-function collectPageEntries(directoryPath) {
-    if (!fileExists(directoryPath)) {
-        return [];
-    }
-
-    return fs.readdirSync(directoryPath)
-        .filter(fileName => fileName.endsWith('.md'))
-        .map(fileName => path.join(directoryPath, fileName));
-}
-
 function loadSiteConfig() {
     if (!fileExists(configFile)) {
         return defaultConfig;
     }
 
     const rawConfig = JSON.parse(readUtf8(configFile));
+    const { analytics, ...restConfig } = rawConfig;
+
     return {
         ...defaultConfig,
-        ...rawConfig,
-        analytics: {
-            ...defaultConfig.analytics,
-            ...(rawConfig.analytics || {})
-        }
+        ...restConfig
     };
 }
 
-function createArticleRecord(filePath, moduleName, chapterName, siteConfig) {
+function inferArticleClassification(filePath, metadata) {
+    const relativePath = path.relative(articlesDir, filePath);
+    const pathSegments = relativePath.split(path.sep).filter(Boolean);
+    const legacyCategory = pathSegments.length > 1 ? sanitizeText(pathSegments[0]) : '';
+    const legacySubcategory = pathSegments.length > 2 ? sanitizeText(pathSegments[1]) : '';
+    const category = sanitizeText(metadata.category || legacyCategory || '未分类');
+    const subcategory = sanitizeText(metadata.subcategory || metadata.chapter || legacySubcategory || '');
+
+    return {
+        category,
+        subcategory
+    };
+}
+
+function createArticleRecord(filePath, siteConfig) {
     const rawText = readUtf8(filePath);
-    const { metadata, body } = parseFrontMatter(rawText);
+    const { metadata, body } = extractFrontMatter(rawText);
     const stats = fs.statSync(filePath);
+    const { category, subcategory } = inferArticleClassification(filePath, metadata);
     const titleFromFile = path.basename(filePath, '.md');
     const explicitTags = Array.isArray(metadata.tags) ? metadata.tags : [];
-    const fallbackTags = [moduleName, cleanChapterLabel(chapterName)].filter(Boolean);
+    const fallbackTags = [category, cleanChapterLabel(subcategory)].filter(Boolean);
     const tags = [...new Set((explicitTags.length > 0 ? explicitTags : fallbackTags).map(tag => sanitizeText(tag)).filter(Boolean))];
     const orderMatch = titleFromFile.match(/^(\d+)\./);
     const order = metadata.order ?? (orderMatch ? Number(orderMatch[1]) : null);
@@ -335,8 +227,6 @@ function createArticleRecord(filePath, moduleName, chapterName, siteConfig) {
     const pathRelativeToProject = path.relative(projectRoot, filePath).replace(/\\/g, '/');
     const title = sanitizeText(metadata.title || titleFromFile);
     const summary = extractSummary(body, metadata.summary);
-    const chapterLabel = chapterName ? sanitizeText(chapterName) : '';
-    const category = sanitizeText(metadata.category || moduleName);
     const series = sanitizeText(metadata.series || '');
     const slug = slugify(title);
     const routeQuery = { path: pathRelativeToProject };
@@ -346,8 +236,7 @@ function createArticleRecord(filePath, moduleName, chapterName, siteConfig) {
         summary,
         tags,
         category,
-        moduleName,
-        chapterName: chapterLabel,
+        subcategory,
         series,
         seriesSlug: series ? slugify(series) : '',
         order,
@@ -366,57 +255,36 @@ function createArticleRecord(filePath, moduleName, chapterName, siteConfig) {
     };
 }
 
-function createPageRecord(filePath, siteConfig) {
-    const rawText = readUtf8(filePath);
-    const { metadata, body } = parseFrontMatter(rawText);
-    const stats = fs.statSync(filePath);
-    const slug = slugify(metadata.slug || path.basename(filePath, '.md'));
-    const title = sanitizeText(metadata.title || path.basename(filePath, '.md'));
-    const summary = extractSummary(body, metadata.summary);
+function collectArticleFilePaths(directoryPath) {
+    if (!fileExists(directoryPath)) {
+        return [];
+    }
 
-    return {
-        slug,
-        title,
-        summary,
-        path: path.relative(projectRoot, filePath).replace(/\\/g, '/'),
-        route: createHashRoute('/about'),
-        url: createAbsoluteUrl(siteConfig.siteUrl, '/about'),
-        updatedAt: normalizeDate(metadata.updatedAt, stats.mtime)
-    };
-}
+    const articleFilePaths = [];
 
-function collectArticles(siteConfig) {
-    const moduleDirectories = fs.readdirSync(articlesDir)
-        .filter(item => fs.statSync(path.join(articlesDir, item)).isDirectory());
+    const visit = (currentDirectoryPath) => {
+        const directoryEntries = fs.readdirSync(currentDirectoryPath, { withFileTypes: true });
 
-    const articles = [];
+        for (const entry of directoryEntries) {
+            const entryPath = path.join(currentDirectoryPath, entry.name);
 
-    for (const moduleName of moduleDirectories) {
-        const modulePath = path.join(articlesDir, moduleName);
-        const moduleItems = fs.readdirSync(modulePath);
-
-        for (const itemName of moduleItems) {
-            const itemPath = path.join(modulePath, itemName);
-            const itemStats = fs.statSync(itemPath);
-
-            if (itemStats.isFile() && itemName.endsWith('.md')) {
-                articles.push(createArticleRecord(itemPath, moduleName, '', siteConfig));
+            if (entry.isDirectory()) {
+                visit(entryPath);
                 continue;
             }
 
-            if (itemStats.isDirectory()) {
-                const childFiles = fs.readdirSync(itemPath)
-                    .filter(fileName => fileName.endsWith('.md'))
-                    .map(fileName => path.join(itemPath, fileName));
-
-                for (const childFile of childFiles) {
-                    articles.push(createArticleRecord(childFile, moduleName, itemName, siteConfig));
-                }
+            if (entry.isFile() && entry.name.endsWith('.md')) {
+                articleFilePaths.push(entryPath);
             }
         }
-    }
+    };
 
-    return articles;
+    visit(directoryPath);
+    return articleFilePaths;
+}
+
+function collectArticles(siteConfig) {
+    return collectArticleFilePaths(articlesDir).map(filePath => createArticleRecord(filePath, siteConfig));
 }
 
 function sortArticles(articles) {
@@ -424,12 +292,12 @@ function sortArticles(articles) {
         const leftOrder = left.order ?? Number.MAX_SAFE_INTEGER;
         const rightOrder = right.order ?? Number.MAX_SAFE_INTEGER;
 
-        if (left.moduleName !== right.moduleName) {
-            return left.moduleName.localeCompare(right.moduleName, 'zh-CN');
+        if (left.category !== right.category) {
+            return left.category.localeCompare(right.category, 'zh-CN');
         }
 
-        if ((left.chapterName || '') !== (right.chapterName || '')) {
-            return (left.chapterName || '').localeCompare(right.chapterName || '', 'zh-CN');
+        if ((left.subcategory || '') !== (right.subcategory || '')) {
+            return (left.subcategory || '').localeCompare(right.subcategory || '', 'zh-CN');
         }
 
         if (leftOrder !== rightOrder) {
@@ -443,14 +311,14 @@ function sortArticles(articles) {
 function buildArticleRelations(publishedArticles) {
     const articleMap = new Map(publishedArticles.map(article => [article.path, article]));
     const relations = new Map();
-    const groupedByChapter = new Map();
+    const groupedByCategory = new Map();
     const groupedBySeries = new Map();
 
     for (const article of publishedArticles) {
-        const chapterKey = `${article.moduleName}::${article.chapterName || '__root__'}`;
-        const chapterArticles = groupedByChapter.get(chapterKey) || [];
-        chapterArticles.push(article);
-        groupedByChapter.set(chapterKey, chapterArticles);
+        const categoryKey = `${article.category}::${article.subcategory || '__root__'}`;
+        const categoryArticles = groupedByCategory.get(categoryKey) || [];
+        categoryArticles.push(article);
+        groupedByCategory.set(categoryKey, categoryArticles);
 
         if (article.seriesSlug) {
             const seriesArticles = groupedBySeries.get(article.seriesSlug) || [];
@@ -459,7 +327,7 @@ function buildArticleRelations(publishedArticles) {
         }
     }
 
-    for (const articles of groupedByChapter.values()) {
+    for (const articles of groupedByCategory.values()) {
         const sorted = [...articles].sort((left, right) => {
             const leftOrder = left.order ?? Number.MAX_SAFE_INTEGER;
             const rightOrder = right.order ?? Number.MAX_SAFE_INTEGER;
@@ -490,9 +358,9 @@ function buildArticleRelations(publishedArticles) {
             .filter(candidate => candidate.path !== article.path)
             .map(candidate => {
                 const sharedTags = candidate.tags.filter(tag => article.tags.includes(tag)).length;
-                const sameModule = candidate.moduleName === article.moduleName ? 1 : 0;
-                const sameChapter = candidate.chapterName && candidate.chapterName === article.chapterName ? 1 : 0;
-                const score = sharedTags * 10 + sameModule * 3 + sameChapter * 2;
+                const sameCategory = candidate.category === article.category ? 1 : 0;
+                const sameSubcategory = candidate.subcategory && candidate.subcategory === article.subcategory ? 1 : 0;
+                const score = sharedTags * 10 + sameCategory * 3 + sameSubcategory * 2;
 
                 return { candidate, score };
             })
@@ -517,38 +385,40 @@ function buildArticleRelations(publishedArticles) {
     return relations;
 }
 
-function buildModules(publishedArticles) {
-    const moduleMap = new Map();
+function buildCategories(publishedArticles) {
+    const categoryMap = new Map();
 
     for (const article of sortArticles(publishedArticles)) {
-        const currentModule = moduleMap.get(article.moduleName) || {
-            name: article.moduleName,
-            path: `Resources/Articles/${article.moduleName}`,
-            chapters: [],
+        const currentCategory = categoryMap.get(article.category) || {
+            name: article.category,
+            slug: slugify(article.category),
+            path: createHashRoute('/list', { category: article.category }),
+            subcategories: [],
             articles: []
         };
 
-        if (article.chapterName) {
-            let chapter = currentModule.chapters.find(item => item.name === article.chapterName);
+        if (article.subcategory) {
+            let subcategory = currentCategory.subcategories.find(item => item.name === article.subcategory);
 
-            if (!chapter) {
-                chapter = {
-                    name: article.chapterName,
-                    path: `Resources/Articles/${article.moduleName}/${article.chapterName}`,
+            if (!subcategory) {
+                subcategory = {
+                    name: article.subcategory,
+                    slug: slugify(article.subcategory),
+                    path: createHashRoute('/list', { category: article.category, subcategory: article.subcategory }),
                     articles: []
                 };
-                currentModule.chapters.push(chapter);
+                currentCategory.subcategories.push(subcategory);
             }
 
-            chapter.articles.push(article);
+            subcategory.articles.push(article);
         } else {
-            currentModule.articles.push(article);
+            currentCategory.articles.push(article);
         }
 
-        moduleMap.set(article.moduleName, currentModule);
+        categoryMap.set(article.category, currentCategory);
     }
 
-    return [...moduleMap.values()].sort((left, right) => left.name.localeCompare(right.name, 'zh-CN'));
+    return [...categoryMap.values()].sort((left, right) => left.name.localeCompare(right.name, 'zh-CN'));
 }
 
 function buildTags(publishedArticles) {
@@ -587,12 +457,17 @@ function buildSeries(publishedArticles) {
             name: article.series,
             slug: article.seriesSlug,
             count: 0,
-            moduleName: article.moduleName,
+            categoryNames: [],
+            categoryLabel: '',
             articlePaths: [],
             updatedAt: article.updatedAt
         };
 
         currentSeries.count += 1;
+        currentSeries.categoryNames = [...new Set([...currentSeries.categoryNames, article.category])];
+        currentSeries.categoryLabel = currentSeries.categoryNames.length === 1
+            ? currentSeries.categoryNames[0]
+            : `${currentSeries.categoryNames[0]} 等 ${currentSeries.categoryNames.length} 个分类`;
         currentSeries.articlePaths.push(article.path);
         currentSeries.updatedAt = currentSeries.updatedAt > article.updatedAt ? currentSeries.updatedAt : article.updatedAt;
         seriesMap.set(article.seriesSlug, currentSeries);
@@ -627,19 +502,10 @@ function buildArchives(publishedArticles) {
     return [...archiveMap.values()].sort((left, right) => right.key.localeCompare(left.key));
 }
 
-function validateContent(allArticles, pageRecords) {
+function validateContent(allArticles) {
     const warnings = [];
     const errors = [];
     const titleMap = new Map();
-    const pageSlugs = new Set();
-
-    for (const pageRecord of pageRecords) {
-        if (pageSlugs.has(pageRecord.slug)) {
-            errors.push(`页面 slug 重复：${pageRecord.slug}`);
-        }
-
-        pageSlugs.add(pageRecord.slug);
-    }
 
     for (const article of allArticles) {
         const duplicatedPath = titleMap.get(article.title);
@@ -652,10 +518,6 @@ function validateContent(allArticles, pageRecords) {
 
         if (!article.metadata.title) {
             warnings.push(`文章缺少 Front Matter title，已降级使用文件名：${article.path}`);
-        }
-
-        if (!article.metadata.summary) {
-            warnings.push(`文章缺少 Front Matter summary，已自动提取摘要：${article.path}`);
         }
 
         if (!article.metadata.date) {
@@ -739,7 +601,7 @@ function buildRss(siteConfig, publishedArticles) {
             <guid>${escapeXml(article.url)}</guid>
             <description>${escapeXml(article.summary)}</description>
             <pubDate>${new Date(article.updatedAt).toUTCString()}</pubDate>
-            <category>${escapeXml(article.moduleName)}</category>
+            <category>${escapeXml(article.category)}</category>
         </item>`)
         .join('');
 
@@ -756,20 +618,17 @@ function buildRss(siteConfig, publishedArticles) {
 `;
 }
 
-function buildSitemap(siteConfig, modules, articles, tags, series, pages) {
+function buildSitemap(siteConfig, categories, articles, tags, series) {
     const urls = [];
 
     urls.push(siteConfig.siteUrl);
     urls.push(createAbsoluteUrl(siteConfig.siteUrl, '/archive'));
     urls.push(createAbsoluteUrl(siteConfig.siteUrl, '/tags'));
     urls.push(createAbsoluteUrl(siteConfig.siteUrl, '/series'));
+    urls.push(createAbsoluteUrl(siteConfig.siteUrl, '/about'));
 
-    for (const page of pages) {
-        urls.push(page.url);
-    }
-
-    for (const module of modules) {
-        urls.push(createAbsoluteUrl(siteConfig.siteUrl, '/list', { module: module.name }));
+    for (const category of categories) {
+        urls.push(createAbsoluteUrl(siteConfig.siteUrl, '/list', { category: category.name }));
     }
 
     for (const article of articles) {
@@ -805,7 +664,7 @@ Sitemap: ${siteConfig.siteUrl.replace(/\/+$/, '')}/sitemap.xml
 `;
 }
 
-function createSiteDataModule(siteConfig, modules, articles, tags, series, archives, pages, validationResult) {
+function createSiteDataModule(siteConfig, categories, articles, tags, series, archives) {
     const exportComment = `/**
  * 自动生成的站点数据
  * 请勿手动修改此文件，使用 node scripts/build-site.js 重新生成
@@ -813,13 +672,11 @@ function createSiteDataModule(siteConfig, modules, articles, tags, series, archi
 
     return `${exportComment}
 export const SITE_META = ${JSON.stringify(siteConfig, null, 4)};
-export const BLOG_MODULES = ${JSON.stringify(modules, null, 4)};
+export const BLOG_CATEGORIES = ${JSON.stringify(categories, null, 4)};
 export const BLOG_ARTICLES = ${JSON.stringify(articles, null, 4)};
 export const BLOG_TAGS = ${JSON.stringify(tags, null, 4)};
 export const BLOG_SERIES = ${JSON.stringify(series, null, 4)};
 export const BLOG_ARCHIVES = ${JSON.stringify(archives, null, 4)};
-export const BLOG_PAGES = ${JSON.stringify(pages, null, 4)};
-export const BUILD_DIAGNOSTICS = ${JSON.stringify(validationResult, null, 4)};
 `;
 }
 
@@ -828,8 +685,7 @@ export function buildSite() {
 
     const siteConfig = loadSiteConfig();
     const allArticles = collectArticles(siteConfig);
-    const pageRecords = collectPageEntries(pagesDir).map(filePath => createPageRecord(filePath, siteConfig));
-    const validationResult = validateContent(allArticles, pageRecords);
+    const validationResult = validateContent(allArticles);
 
     if (validationResult.errors.length > 0) {
         throw new Error(`内容校验失败：\n${validationResult.errors.map(item => `- ${item}`).join('\n')}`);
@@ -847,13 +703,13 @@ export function buildSite() {
         displayUpdatedAt: toDisplayDate(article.updatedAt),
         ...relations.get(article.path)
     }));
-    const modules = buildModules(enrichedArticles);
+    const categories = buildCategories(enrichedArticles);
     const tags = buildTags(enrichedArticles);
     const series = buildSeries(enrichedArticles);
     const archives = buildArchives(enrichedArticles);
-    const siteDataModule = createSiteDataModule(siteConfig, modules, enrichedArticles, tags, series, archives, pageRecords, validationResult);
+    const siteDataModule = createSiteDataModule(siteConfig, categories, enrichedArticles, tags, series, archives);
     const rssContent = buildRss(siteConfig, enrichedArticles);
-    const sitemapContent = buildSitemap(siteConfig, modules, enrichedArticles, tags, series, pageRecords);
+    const sitemapContent = buildSitemap(siteConfig, categories, enrichedArticles, tags, series);
     const robotsContent = buildRobots(siteConfig);
 
     writeUtf8(dataOutputFile, siteDataModule);
@@ -863,7 +719,7 @@ export function buildSite() {
 
     return {
         articleCount: enrichedArticles.length,
-        pageCount: pageRecords.length,
+        pageCount: 1,
         warningCount: validationResult.warnings.length,
         warnings: validationResult.warnings
     };
@@ -872,8 +728,7 @@ export function buildSite() {
 export function checkContent() {
     const siteConfig = loadSiteConfig();
     const allArticles = collectArticles(siteConfig);
-    const pageRecords = collectPageEntries(pagesDir).map(filePath => createPageRecord(filePath, siteConfig));
-    return validateContent(allArticles, pageRecords);
+    return validateContent(allArticles);
 }
 
 /**

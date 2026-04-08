@@ -2,24 +2,16 @@
  * #region Router & App Bootstrap
  */
 
-import { SITE_META, BLOG_ARTICLES, BLOG_TAGS, BLOG_SERIES } from './modules_data.js';
-import { Breadcrumb, SearchBox, HomeView, ListView, SearchResultsView, ArticleView, ArchiveView, TagsView, SeriesView, AboutView, NotFoundView } from './components.js';
-import { AnalyticsService, SeoService } from './services.js';
+import { SITE_META } from './modules_data.js';
+import { SeoService } from './services.js';
+import { findArticleByPath, findSeriesBySlug, findTagBySlug } from './view-helpers.js';
+import { AboutView, ArticleView } from './views/article.js';
+import { Breadcrumb, NotFoundView, SearchBox } from './views/common.js';
+import { HomeView } from './views/home.js';
+import { ArchiveView, ListView, SearchResultsView, SeriesView, TagsView } from './views/taxonomy.js';
 
 const { createApp, computed } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
-
-function findArticleByPath(articlePath) {
-    return (BLOG_ARTICLES || []).find(article => article.path === articlePath) || null;
-}
-
-function findTagBySlug(tagSlug) {
-    return (BLOG_TAGS || []).find(tag => tag.slug === tagSlug) || null;
-}
-
-function findSeriesBySlug(seriesSlug) {
-    return (BLOG_SERIES || []).find(series => series.slug === seriesSlug) || null;
-}
 
 const routes = [
     { path: '/', name: 'home', component: HomeView },
@@ -49,51 +41,33 @@ function buildSeoPayload(route) {
 
             if (!article) {
                 return {
-                title: `${SITE_META.title} - 文章不存在`,
-                description: SITE_META.description,
-                keywords: SITE_META.defaultKeywords,
-                image: defaultImage,
-                url: window.location.href,
-                type: 'article',
-                analytics: {
-                        key: window.location.hash,
-                        title: '文章不存在',
-                        route: window.location.hash,
-                        type: 'article'
-                    }
+                    title: `${SITE_META.title} - 文章不存在`,
+                    description: SITE_META.description,
+                    keywords: SITE_META.defaultKeywords,
+                    image: defaultImage,
+                    url: window.location.href,
+                    type: 'article'
                 };
             }
 
             return {
                 title: `${article.title} - ${SITE_META.title}`,
                 description: article.summary,
-                keywords: [...new Set([...(article.tags || []), article.moduleName, article.series, ...SITE_META.defaultKeywords].filter(Boolean))],
+                keywords: [...new Set([...(article.tags || []), article.category, article.subcategory, article.series, ...SITE_META.defaultKeywords].filter(Boolean))],
                 image: defaultImage,
                 url: article.url || window.location.href,
-                type: 'article',
-                analytics: {
-                    key: article.path,
-                    title: article.title,
-                    route: article.route || window.location.hash,
-                    type: 'article'
-                }
+                type: 'article'
             };
         }
         case 'list': {
-            const moduleName = String(route.query.module || '知识模块');
+            const categoryName = String(route.query.category || '文章分类');
             return {
-                title: `${moduleName} - ${SITE_META.title}`,
-                description: `浏览 ${moduleName} 模块下的文章内容。`,
-                keywords: [moduleName, ...SITE_META.defaultKeywords],
+                title: `${categoryName} - ${SITE_META.title}`,
+                description: `浏览分类“${categoryName}”下的文章内容。`,
+                keywords: [categoryName, String(route.query.subcategory || ''), ...SITE_META.defaultKeywords].filter(Boolean),
                 image: defaultImage,
                 url: window.location.href,
-                type: 'website',
-                analytics: {
-                    key: window.location.hash,
-                    title: `${moduleName} 列表`,
-                    route: window.location.hash,
-                    type: 'list'
-                }
+                type: 'website'
             };
         }
         case 'search': {
@@ -104,13 +78,7 @@ function buildSeoPayload(route) {
                 keywords: keyword ? [keyword, ...SITE_META.defaultKeywords] : SITE_META.defaultKeywords,
                 image: defaultImage,
                 url: window.location.href,
-                type: 'website',
-                analytics: {
-                    key: window.location.hash,
-                    title: keyword ? `搜索 ${keyword}` : '搜索页',
-                    route: window.location.hash,
-                    type: 'search'
-                }
+                type: 'website'
             };
         }
         case 'tags': {
@@ -121,13 +89,7 @@ function buildSeoPayload(route) {
                 keywords: currentTag ? [currentTag.name, ...SITE_META.defaultKeywords] : SITE_META.defaultKeywords,
                 image: defaultImage,
                 url: window.location.href,
-                type: 'website',
-                analytics: {
-                    key: window.location.hash,
-                    title: currentTag ? `标签 ${currentTag.name}` : '标签页',
-                    route: window.location.hash,
-                    type: 'taxonomy'
-                }
+                type: 'website'
             };
         }
         case 'series': {
@@ -138,13 +100,7 @@ function buildSeoPayload(route) {
                 keywords: currentSeries ? [currentSeries.name, ...SITE_META.defaultKeywords] : SITE_META.defaultKeywords,
                 image: defaultImage,
                 url: window.location.href,
-                type: 'website',
-                analytics: {
-                    key: window.location.hash,
-                    title: currentSeries ? `系列 ${currentSeries.name}` : '系列页',
-                    route: window.location.hash,
-                    type: 'taxonomy'
-                }
+                type: 'website'
             };
         }
         case 'archive':
@@ -154,13 +110,7 @@ function buildSeoPayload(route) {
                 keywords: ['归档', ...SITE_META.defaultKeywords],
                 image: defaultImage,
                 url: window.location.href,
-                type: 'website',
-                analytics: {
-                    key: window.location.hash,
-                    title: '归档页',
-                    route: window.location.hash,
-                    type: 'archive'
-                }
+                type: 'website'
             };
         case 'about':
             return {
@@ -169,13 +119,7 @@ function buildSeoPayload(route) {
                 keywords: ['关于我', ...SITE_META.defaultKeywords],
                 image: defaultImage,
                 url: window.location.href,
-                type: 'profile',
-                analytics: {
-                    key: window.location.hash,
-                    title: '关于我',
-                    route: window.location.hash,
-                    type: 'page'
-                }
+                type: 'profile'
             };
         default:
             return {
@@ -184,23 +128,14 @@ function buildSeoPayload(route) {
                 keywords: SITE_META.defaultKeywords,
                 image: defaultImage,
                 url: window.location.href,
-                type: 'website',
-                analytics: {
-                    key: window.location.hash || '#/',
-                    title: SITE_META.title,
-                    route: window.location.hash || '#/',
-                    type: 'home'
-                }
+                type: 'website'
             };
     }
 }
 
-AnalyticsService.init(SITE_META.analytics);
-
 router.afterEach(to => {
     const payload = buildSeoPayload(to);
     SeoService.updateMeta(payload);
-    AnalyticsService.trackPageView(payload.analytics);
 });
 
 const app = createApp({
@@ -210,21 +145,21 @@ const app = createApp({
 
         const article = computed(() => findArticleByPath(String(route.query.path || '')));
         const showBreadcrumb = computed(() => route.name === 'list' || route.name === 'article');
-        const currentModule = computed(() => {
+        const currentCategory = computed(() => {
             if (route.name === 'article') {
-                return article.value?.moduleName || '';
+                return article.value?.category || '';
             }
 
-            return String(route.query.module || '');
+            return String(route.query.category || '');
         });
         const currentArticle = computed(() => article.value?.title || '');
         const currentYear = computed(() => new Date().getFullYear());
 
-        return { showBreadcrumb, currentModule, currentArticle, siteMeta: SITE_META, currentYear };
+        return { showBreadcrumb, currentCategory, currentArticle, siteMeta: SITE_META, currentYear };
     }
 });
 
-app.config.errorHandler = (error, vm, info) => {
+app.config.errorHandler = (error, _vm, info) => {
     console.error('全局捕获到错误：', error, info);
 };
 

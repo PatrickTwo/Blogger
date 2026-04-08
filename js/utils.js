@@ -2,6 +2,8 @@
  * #region Utilities & Constants
  */
 
+import { extractFrontMatter, slugify, stripMarkdown } from './text-utils.js';
+
 export const AppUtils = {
     /**
      * 目录配置
@@ -10,15 +12,6 @@ export const AppUtils = {
         t1Level: 2,
         t2Level: 3,
         showSubLevel: true
-    },
-
-    /**
-     * 格式化文章标题，移除扩展名
-     * @param {string} title - 原始标题
-     * @returns {string} 格式化后的标题
-     */
-    formatTitle(title) {
-        return title ? title.replace(/\.md$/i, '') : '';
     },
 
     /**
@@ -39,130 +32,21 @@ export const AppUtils = {
      * @param {string} value - 原始文本
      * @returns {string} slug
      */
-    slugify(value) {
-        return String(value || '')
-            .trim()
-            .toLowerCase()
-            .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
-            .replace(/^-+|-+$/g, '');
-    },
+    slugify,
 
     /**
      * 去除 Markdown 中常见标记，提取纯文本
      * @param {string} markdown - Markdown 文本
      * @returns {string} 纯文本
      */
-    stripMarkdown(markdown) {
-        return String(markdown || '')
-            .replace(/```[\s\S]*?```/g, ' ')
-            .replace(/`[^`]*`/g, ' ')
-            .replace(/!\[[^\]]*]\(([^)]+)\)/g, ' ')
-            .replace(/\[([^\]]+)]\(([^)]+)\)/g, '$1')
-            .replace(/^#{1,6}\s+/gm, '')
-            .replace(/^>\s?/gm, '')
-            .replace(/^[-*+]\s+/gm, '')
-            .replace(/^\d+\.\s+/gm, '')
-            .replace(/[*_~>#]/g, ' ')
-            .replace(/\s+/g, ' ')
-            .trim();
-    },
+    stripMarkdown,
 
     /**
      * 解析 Front Matter
      * @param {string} rawText - 原始 Markdown
      * @returns {{ metadata: Record<string, any>, body: string }} 解析结果
      */
-    extractFrontMatter(rawText) {
-        const text = String(rawText || '').replace(/^\uFEFF/, '');
-
-        if (!text.startsWith('---')) {
-            return { metadata: {}, body: text };
-        }
-
-        const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
-
-        if (!match) {
-            return { metadata: {}, body: text };
-        }
-
-        const metadata = {};
-        const metadataBlock = match[1];
-
-        const parseScalar = (value) => {
-            const trimmed = value.trim();
-
-            if (!trimmed) {
-                return '';
-            }
-
-            if ((trimmed.startsWith('"') && trimmed.endsWith('"')) || (trimmed.startsWith('\'') && trimmed.endsWith('\''))) {
-                return trimmed.slice(1, -1);
-            }
-
-            if (trimmed === 'true') {
-                return true;
-            }
-
-            if (trimmed === 'false') {
-                return false;
-            }
-
-            if (/^-?\d+(\.\d+)?$/.test(trimmed)) {
-                return Number(trimmed);
-            }
-
-            return trimmed;
-        };
-
-        const parseArray = (value) => {
-            const trimmed = value.trim();
-
-            if (!trimmed) {
-                return [];
-            }
-
-            if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
-                return trimmed
-                    .slice(1, -1)
-                    .split(',')
-                    .map(item => String(parseScalar(item)).trim())
-                    .filter(Boolean);
-            }
-
-            return trimmed
-                .split(',')
-                .map(item => String(parseScalar(item)).trim())
-                .filter(Boolean);
-        };
-
-        for (const line of metadataBlock.split(/\r?\n/)) {
-            if (!line.trim() || line.trim().startsWith('#')) {
-                continue;
-            }
-
-            const separatorIndex = line.indexOf(':');
-
-            if (separatorIndex <= 0) {
-                continue;
-            }
-
-            const key = line.slice(0, separatorIndex).trim();
-            const rawValue = line.slice(separatorIndex + 1);
-            const lowerKey = key.toLowerCase();
-
-            if (lowerKey === 'tags' || lowerKey === 'keywords') {
-                metadata[key] = parseArray(rawValue);
-                continue;
-            }
-
-            metadata[key] = parseScalar(rawValue);
-        }
-
-        return {
-            metadata,
-            body: text.slice(match[0].length)
-        };
-    },
+    extractFrontMatter,
 
     /**
      * 构建文章锚点分享链接
@@ -181,67 +65,6 @@ export const AppUtils = {
 
         const nextHash = `${routePath}?${params.toString()}`;
         return `${window.location.origin}${window.location.pathname}${window.location.search}#${nextHash}`;
-    },
-
-    /**
-     * 初始化主题
-     */
-    initTheme() {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        this.updateThemeButton(savedTheme);
-    },
-
-    /**
-     * 切换主题
-     */
-    toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        document.body.classList.add('theme-transition');
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        this.updateThemeButton(newTheme);
-
-        setTimeout(() => {
-            document.body.classList.remove('theme-transition');
-        }, 300);
-    },
-
-    /**
-     * 更新主题按钮状态
-     * @param {string} theme - 当前主题
-     */
-    updateThemeButton(theme) {
-        const button = document.getElementById('theme-toggle-btn');
-
-        if (!button) {
-            return;
-        }
-
-        const icon = button.querySelector('.icon');
-        const text = button.querySelector('.text');
-
-        if (theme === 'dark') {
-            if (icon) {
-                icon.innerText = '夜';
-            }
-
-            if (text) {
-                text.innerText = '深色';
-            }
-
-            return;
-        }
-
-        if (icon) {
-            icon.innerText = '日';
-        }
-
-        if (text) {
-            text.innerText = '浅色';
-        }
     },
 
     /**

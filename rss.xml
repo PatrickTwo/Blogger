@@ -7,163 +7,163 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity 中 VContainer 的详细用法</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-VContainer%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-VContainer%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95.md</guid>
+            <description>面向 Unity 开发者，讲解 VContainer 依赖注入框架的推荐落地方式、常见误区，以及与场景、Prefab、异步加载之间的关系。</description>
+            <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
+            <title>Unity 中 UniTask 的详细用法</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-UniTask%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-UniTask%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95.md</guid>
+            <description>面向 Unity 开发者，讲解 UniTask 异步框架的使用规范，包括协程替代、资源加载、取消控制、超时、并发等待等场景。</description>
+            <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
+            <title>Unity 中 Lua 与 HybridCLR 热更新的详细教学</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Lua%E4%B8%8EHybridCLR%E7%83%AD%E6%9B%B4%E6%96%B0%E8%AF%A6%E7%BB%86%E6%95%99%E5%AD%A6.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Lua%E4%B8%8EHybridCLR%E7%83%AD%E6%9B%B4%E6%96%B0%E8%AF%A6%E7%BB%86%E6%95%99%E5%AD%A6.md</guid>
+            <description>面向 Unity 项目的热更新教学文档，详细讲解 Lua(xLua) 和 HybridCLR 两条主流热更新路线的原理、接入方式与适用场景。</description>
+            <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
+            <title>Mahjong流程设计-大厅</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E5%8E%85.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E5%8E%85.md</guid>
+            <description>一、PageUI: LobbyPageUI</description>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+            <category>Program设计文档</category>
+        </item>
+        <item>
             <title>MVC、MVP、MVVM架构的异同</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F6.MVC%E3%80%81MVP%E3%80%81MVVM%E6%9E%B6%E6%9E%84%E7%9A%84%E5%BC%82%E5%90%8C.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F6.MVC%E3%80%81MVP%E3%80%81MVVM%E6%9E%B6%E6%9E%84%E7%9A%84%E5%BC%82%E5%90%8C.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F6.MVC%E3%80%81MVP%E3%80%81MVVM%E6%9E%B6%E6%9E%84%E7%9A%84%E5%BC%82%E5%90%8C.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F6.MVC%E3%80%81MVP%E3%80%81MVVM%E6%9E%B6%E6%9E%84%E7%9A%84%E5%BC%82%E5%90%8C.md</guid>
             <description>从职责拆分、数据绑定、可测试性和适用场景几个角度，对比 MVC、MVP、MVVM 三种常见界面架构。</description>
             <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
             <category>设计模式</category>
         </item>
         <item>
             <title>Unity、前端、WinForm中更适合用哪一种架构</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F7.Unity%E3%80%81%E5%89%8D%E7%AB%AF%E3%80%81WinForm%E4%B8%AD%E6%9B%B4%E9%80%82%E5%90%88%E7%94%A8%E5%93%AA%E4%B8%80%E7%A7%8D%E6%9E%B6%E6%9E%84.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F7.Unity%E3%80%81%E5%89%8D%E7%AB%AF%E3%80%81WinForm%E4%B8%AD%E6%9B%B4%E9%80%82%E5%90%88%E7%94%A8%E5%93%AA%E4%B8%80%E7%A7%8D%E6%9E%B6%E6%9E%84.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F7.Unity%E3%80%81%E5%89%8D%E7%AB%AF%E3%80%81WinForm%E4%B8%AD%E6%9B%B4%E9%80%82%E5%90%88%E7%94%A8%E5%93%AA%E4%B8%80%E7%A7%8D%E6%9E%B6%E6%9E%84.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F7.Unity%E3%80%81%E5%89%8D%E7%AB%AF%E3%80%81WinForm%E4%B8%AD%E6%9B%B4%E9%80%82%E5%90%88%E7%94%A8%E5%93%AA%E4%B8%80%E7%A7%8D%E6%9E%B6%E6%9E%84.md</guid>
             <description>结合技术栈特性，对比 Unity、现代前端和 WinForm 在 MVC、MVP、MVVM 之间更合适的实践选择。</description>
             <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
             <category>设计模式</category>
         </item>
         <item>
             <title>C# LINQ常用查找操作</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</guid>
             <description>整理 C# 中最常见的 LINQ 查找、筛选、判定和取值操作，帮助快速选对 API。</description>
             <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
             <category>C#</category>
         </item>
         <item>
-            <title>对局流程描述</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2F%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8F%8F%E8%BF%B0.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2F%E5%AF%B9%E5%B1%80%E6%B5%81%E7%A8%8B%E6%8F%8F%E8%BF%B0.md</guid>
-            <description>Host端玩家点击开始游戏并成功进入GameScene后 先进入BankerSelection状态，四名player一直掷骰子，点数最大为初始Banker 确定初始Banker后</description>
-            <pubDate>Tue, 17 Mar 2026 09:55:41 GMT</pubDate>
-            <category>Program设计文档</category>
-        </item>
-        <item>
-            <title>Mahjong流程设计-大厅</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E5%8E%85.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%A4%A7%E5%8E%85.md</guid>
-            <description>一、PageUI: LobbyPageUI</description>
-            <pubDate>Sat, 14 Mar 2026 15:13:58 GMT</pubDate>
-            <category>Program设计文档</category>
-        </item>
-        <item>
             <title>Mahjong流程设计-对局</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%AF%B9%E5%B1%80.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%AF%B9%E5%B1%80.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%AF%B9%E5%B1%80.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%AF%B9%E5%B1%80.md</guid>
             <description>1.1 界面布局 左上角区域 : - 返回大厅按钮(ReturnLobbyBtn)</description>
-            <pubDate>Sat, 14 Mar 2026 09:01:15 GMT</pubDate>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
             <category>Program设计文档</category>
-        </item>
-        <item>
-            <title>Mahjong框架设计</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1.md</guid>
-            <description>一、设计目标 可扩展 ：规则、流程、UI、联网/单机、AI 等能力可逐步加入而不推翻架构。 可维护 ：核心规则与表现层解耦，减少“到处拿单例改状态”的隐式依赖。 可测试 ：核心逻辑尽量不依赖 Unity 场景对象，可做纯逻辑验证与回放。 可迭代 ：优先保证最小闭环可运行，后续以模</description>
-            <pubDate>Sat, 14 Mar 2026 02:53:20 GMT</pubDate>
-            <category>Program设计文档</category>
-        </item>
-        <item>
-            <title>常用注册表路径</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%9D%82%E9%A1%B9%2F%E5%B8%B8%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%9D%82%E9%A1%B9%2F%E5%B8%B8%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84.md</guid>
-            <description>右键菜单修改 文件夹内空白处右键 HKEY CLASSES ROOT\Directory\Background\shell 文件夹右键 HKEY CLASSES ROOT\Directory\shell</description>
-            <pubDate>Thu, 12 Mar 2026 10:20:01 GMT</pubDate>
-            <category>杂项</category>
         </item>
         <item>
             <title>依赖注入</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md</guid>
             <description>从问题背景、注入方式和 IoC 容器几个角度理解依赖注入，以及它为什么能降低耦合与提升可测试性。</description>
             <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
             <category>设计模式</category>
         </item>
         <item>
+            <title>常用注册表路径</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%B8%B8%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%B8%B8%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84.md</guid>
+            <description>右键菜单修改 文件夹内空白处右键 HKEY CLASSES ROOT\Directory\Background\shell 文件夹右键 HKEY CLASSES ROOT\Directory\shell</description>
+            <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+            <category>杂项</category>
+        </item>
+        <item>
             <title>坐标变换系统</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%2F%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E7%B3%BB%E7%BB%9F.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%2F%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E7%B3%BB%E7%BB%9F.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E7%B3%BB%E7%BB%9F.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E7%B3%BB%E7%BB%9F.md</guid>
             <description>Unity中的坐标变换系统 Unity的Inspector面板中的左边空间是当前所处的坐标空间的值 如果该物体没有父物体（或父物体的变换为0），那么该物体的坐标空间就是世界坐标空间 如果该物体有父物体，那么该物体会使用父物体的坐标空间进行变换 :::ref 文档原文参考 任何子游</description>
-            <pubDate>Sat, 07 Mar 2026 03:06:11 GMT</pubDate>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
             <category>Unity</category>
         </item>
         <item>
             <title>Layer</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%2FLayer.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%2FLayer.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLayer.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLayer.md</guid>
             <description>Unity 中的 LayerMask 详解</description>
-            <pubDate>Tue, 03 Mar 2026 02:46:03 GMT</pubDate>
+            <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
             <category>Unity</category>
         </item>
         <item>
-            <title>Mahjong设计文档</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FProgram%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%2FMahjong%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3.md</guid>
+            <title>Mahjong规则文档</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E8%A7%84%E5%88%99%E6%96%87%E6%A1%A3.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E8%A7%84%E5%88%99%E6%96%87%E6%A1%A3.md</guid>
             <description>牌种分类 ： - 饼牌：1-9饼，各4张 - 万牌：1-9万，各4张 - 条牌：1-9条，各4张 - 风牌：东、南、西、北，其中东风为风头，各4张 - 将牌：中、发、白，其中红中为将头，各4张 总计 ：136张牌</description>
-            <pubDate>Mon, 02 Mar 2026 03:10:11 GMT</pubDate>
+            <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
             <category>Program设计文档</category>
         </item>
         <item>
             <title>值类型与引用类型</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2F%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2F%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.md</guid>
             <description>最根本的区别在于它们在内存中存储和传递的方式不同。</description>
-            <pubDate>Mon, 09 Feb 2026 10:20:25 GMT</pubDate>
+            <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
             <category>C#</category>
         </item>
         <item>
             <title>数据结构</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%2B%2B%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%2B%2B%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%2B%2B-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%2B%2B-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md</guid>
             <description>一、集合（set） 在C++中，主要的集合类有 、 、 、 。以下是它们的常用操作：</description>
-            <pubDate>Sat, 07 Feb 2026 02:32:12 GMT</pubDate>
+            <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
             <category>C++</category>
         </item>
         <item>
             <title>扩展方法</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2F%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2F%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95.md</guid>
             <description>:::abstract 最后修改时间：2026年2月3日11:28:39 笔记来源：Bilibli 十月的寒流 ::: 一、扩展方法基础概念</description>
-            <pubDate>Tue, 03 Feb 2026 03:29:05 GMT</pubDate>
+            <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
             <category>C#</category>
         </item>
         <item>
             <title>概述</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FA.%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0%2F%E6%A6%82%E8%BF%B0.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FA.%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0%2F%E6%A6%82%E8%BF%B0.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%A6%82%E8%BF%B0.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%A6%82%E8%BF%B0.md</guid>
             <description>Single Responsibility Principle: 单一职责原则 Open/Closed Principle：开闭原则 Liskov Substitution Principle：里氏替换原则 Interface Segregation Principle：接口隔离</description>
-            <pubDate>Mon, 02 Feb 2026 06:29:26 GMT</pubDate>
+            <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
             <category>设计模式</category>
         </item>
         <item>
             <title>注释</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2F%E6%B3%A8%E9%87%8A.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FC%23%2F%E6%A6%82%E5%BF%B5%2F%E6%B3%A8%E9%87%8A.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%B3%A8%E9%87%8A.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%B3%A8%E9%87%8A.md</guid>
             <description>:::abstract 最后更新时间：2026年2月2日14:06:01&lt;br 笔记来源：Bilibili 十月的寒流 C 注释的正确写法 :::</description>
-            <pubDate>Mon, 02 Feb 2026 06:07:48 GMT</pubDate>
+            <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
             <category>C#</category>
         </item>
         <item>
             <title>Addressables</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%2F%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%2FAddressables.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%2F%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%2FAddressables.md</guid>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAddressables.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAddressables.md</guid>
             <description>:::abstract 最后更新时间：2026年2月2日11:21:35&lt;br 笔记来源：Youtube CodeMonkey How to use Addressables FASTER Loading FREE Memory SMALL Download :::</description>
-            <pubDate>Mon, 02 Feb 2026 05:39:10 GMT</pubDate>
+            <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
             <category>Unity</category>
         </item>
         <item>
-            <title>6.观察者模式</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FD.%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F%2F6.%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FD.%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F%2F6.%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md</guid>
-            <description>基础概念 定义 建立对象间一对多的依赖关系，当一个对象（主题/被观察者）状态变化时，自动通知所有依赖它的对象（观察者）并更新。</description>
-            <pubDate>Sat, 31 Jan 2026 06:18:35 GMT</pubDate>
-            <category>设计模式</category>
-        </item>
-        <item>
-            <title>5.架构设计</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F5.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2FE.%E9%99%84%E5%BD%95%2F5.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.md</guid>
-            <description>笔记：软件与游戏程序架构设计心法与思路（Word Matrix 课程导论）</description>
-            <pubDate>Sat, 31 Jan 2026 03:07:43 GMT</pubDate>
+            <title>5.单例模式</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F5.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F5.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md</guid>
+            <description>暂无摘要</description>
+            <pubDate>Sat, 31 Jan 2026 00:00:00 GMT</pubDate>
             <category>设计模式</category>
         </item>
     </channel>
