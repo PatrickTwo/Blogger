@@ -462,4 +462,35 @@
         display: none;
     }
 }
+
+[data-theme="dark"] .toolbar-select,
+[data-theme="dark"] .feed-item:nth-child(4n + 1),
+[data-theme="dark"] .search-result-card:nth-child(4n + 1),
+[data-theme="dark"] .taxonomy-card:nth-child(4n + 1),
+[data-theme="dark"] .archive-item:nth-child(4n + 1),
+[data-theme="dark"] .chapter-item,
+[data-theme="dark"] .article-list.standalone .article-item:nth-child(4n + 1),
+[data-theme="dark"] .article-item:hover {
+    background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .toolbar-select:hover,
+[data-theme="dark"] .toolbar-select:focus,
+[data-theme="dark"] .feed-arrow,
+[data-theme="dark"] .search-result-arrow,
+[data-theme="dark"] .article-item::before {
+    background-color: rgba(148, 163, 184, 0.14);
+}
+
+[data-theme="dark"] .article-list {
+    background-color: rgba(15, 23, 42, 0.72);
+}
+
+[data-theme="dark"] .article-item {
+    border-top-color: rgba(51, 65, 85, 0.92);
+}
+
+[data-theme="dark"] .article-item:hover::before {
+    background-color: var(--accent-color);
+}
 /* #endregion */

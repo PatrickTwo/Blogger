@@ -242,6 +242,7 @@ export function useMarkdownContent(resourcePath) {
         } finally {
             loading.value = false;
             MarkdownService.highlightCode();
+            MarkdownService.renderMermaid();
         }
     };
 

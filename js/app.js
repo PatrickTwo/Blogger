@@ -3,14 +3,14 @@
  */
 
 import { SITE_META } from './modules_data.js';
-import { SeoService } from './services.js';
+import { MarkdownService, SeoService } from './services.js';
 import { findArticleByPath, findSeriesBySlug, findTagBySlug } from './view-helpers.js';
 import { AboutView, ArticleView } from './views/article.js';
 import { Breadcrumb, NotFoundView, SearchBox } from './views/common.js';
 import { HomeView } from './views/home.js';
 import { ArchiveView, ListView, SearchResultsView, SeriesView, TagsView } from './views/taxonomy.js';
 
-const { createApp, computed } = Vue;
+const { createApp, computed, ref } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
 
 const routes = [
@@ -29,6 +29,49 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes
 });
+
+/**
+ * #region 主题模式
+ */
+
+const THEME_STORAGE_KEY = 'blog-theme';
+
+/**
+ * 解析页面初始化时的主题状态。
+ * @returns {'light' | 'dark'} 当前页面应使用的主题。
+ */
+function resolveInitialTheme() {
+    return window.__initialTheme === 'dark' ? 'dark' : 'light';
+}
+
+/**
+ * 将主题应用到根节点，供全站样式变量读取。
+ * @param {'light' | 'dark'} theme 要应用的主题名称。
+ */
+function applyTheme(theme) {
+    const rootElement = document.documentElement;
+
+    // 切换前暂时关闭过渡，避免整页闪烁。
+    rootElement.classList.add('theme-transition');
+    rootElement.setAttribute('data-theme', theme);
+    rootElement.style.colorScheme = theme;
+
+    window.setTimeout(() => {
+        rootElement.classList.remove('theme-transition');
+    }, 0);
+}
+
+/**
+ * 将用户选择持久化到本地存储。
+ * @param {'light' | 'dark'} theme 用户当前选择的主题。
+ */
+function persistTheme(theme) {
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+}
+
+/**
+ * #endregion
+ */
 
 function buildSeoPayload(route) {
     const defaultImage = SITE_META.socialPreviewImage
@@ -142,6 +185,7 @@ const app = createApp({
     components: { Breadcrumb, SearchBox },
     setup() {
         const route = VueRouter.useRoute();
+        const currentTheme = ref(resolveInitialTheme());
 
         const article = computed(() => findArticleByPath(String(route.query.path || '')));
         const showBreadcrumb = computed(() => route.name === 'list' || route.name === 'article');
@@ -154,8 +198,35 @@ const app = createApp({
         });
         const currentArticle = computed(() => article.value?.title || '');
         const currentYear = computed(() => new Date().getFullYear());
+        const isDarkTheme = computed(() => currentTheme.value === 'dark');
+        const themeToggleText = computed(() => isDarkTheme.value ? '浅色模式' : '深色模式');
+        const themeToggleTitle = computed(() => isDarkTheme.value ? '切换到浅色模式' : '切换到深色模式');
 
-        return { showBreadcrumb, currentCategory, currentArticle, siteMeta: SITE_META, currentYear };
+        /**
+         * 切换站点主题并保存用户选择。
+         */
+        const toggleTheme = () => {
+            const nextTheme = isDarkTheme.value ? 'light' : 'dark';
+
+            currentTheme.value = nextTheme;
+            applyTheme(nextTheme);
+            persistTheme(nextTheme);
+            MarkdownService.renderMermaid();
+        };
+
+        applyTheme(currentTheme.value);
+
+        return {
+            showBreadcrumb,
+            currentCategory,
+            currentArticle,
+            siteMeta: SITE_META,
+            currentYear,
+            isDarkTheme,
+            themeToggleText,
+            themeToggleTitle,
+            toggleTheme
+        };
     }
 });
 

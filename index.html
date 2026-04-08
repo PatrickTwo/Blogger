@@ -26,11 +26,21 @@
         function registerResourceLoadError(resourceName) {
             window.__resourceLoadErrors.push(resourceName);
         }
+
+        const storedTheme = window.localStorage.getItem('blog-theme');
+        const initialTheme = storedTheme === 'dark' || storedTheme === 'light'
+            ? storedTheme
+            : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        document.documentElement.setAttribute('data-theme', initialTheme);
+        document.documentElement.style.colorScheme = initialTheme;
+        window.__initialTheme = initialTheme;
     </script>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" onerror="registerResourceLoadError('Vue')"></script>
     <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js" onerror="registerResourceLoadError('Vue Router')"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" onerror="registerResourceLoadError('marked')"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
         onerror="registerResourceLoadError('Highlight.js 样式')">
@@ -72,6 +82,19 @@
                                 <li><a href="rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li>
                             </ul>
                         </nav>
+                        <button
+                            class="theme-toggle"
+                            type="button"
+                            :class="{ active: isDarkTheme }"
+                            :aria-pressed="isDarkTheme"
+                            :title="themeToggleTitle"
+                            @click="toggleTheme"
+                        >
+                            <span class="theme-toggle-track">
+                                <span class="theme-toggle-thumb"></span>
+                            </span>
+                            <span class="theme-toggle-label">{{ themeToggleText }}</span>
+                        </button>
                     </div>
                 </div>
             </div>

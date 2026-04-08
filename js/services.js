@@ -70,31 +70,6 @@ export const MarkdownService = {
             });
         };
 
-        const processCustomBlocks = (content) => {
-            const blockRegex = /:::(info|warning|danger|hint|abstract|ref|summary|updates)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
-
-            return content.replace(blockRegex, (match, type, title, innerContent) => {
-                const parsedInner = marked.parse(innerContent.trim());
-                const displayTitle = title ? title.trim() : {
-                    info: '',
-                    warning: '',
-                    danger: '',
-                    hint: '',
-                    abstract: '',
-                    ref: '引用',
-                    summary: '摘要',
-                    updates: '更新记录'
-                }[type];
-
-                return `<div class="custom-block ${type}">
-                    <p class="custom-block-title">${displayTitle}</p>
-                    <div class="custom-block-content">${parsedInner}</div>
-                </div>`;
-            });
-        };
-
-        const processedText = processCustomBlocks(resolveRelativeMarkdownLinks(body));
-
         renderer.code = function (arg1, arg2) {
             let code = '';
             let language = '';
@@ -107,8 +82,15 @@ export const MarkdownService = {
                 language = arg2 || '';
             }
 
-            const lang = language || 'text';
+            const normalizedLanguage = String(language || '').trim().toLowerCase();
+            const lang = normalizedLanguage || 'text';
             const escapedCode = escapeHtml(code);
+
+            if (normalizedLanguage === 'mermaid') {
+                return `<div class="mermaid-wrapper" data-mermaid-source="${escapedCode}">
+                            <div class="mermaid-diagram"></div>
+                        </div>`;
+            }
 
             return `<div class="code-block-wrapper">
                         <div class="code-block-header">
@@ -147,12 +129,44 @@ export const MarkdownService = {
             return `<h${level} id="${id}">${htmlText}${anchorButton}</h${level}>`;
         };
 
-        const htmlContent = marked.parse(processedText, {
+        /**
+         * 统一解析 Markdown 片段，确保正文和自定义块内部使用相同的 renderer。
+         * @param {string} content - 要解析的 Markdown 文本
+         * @returns {string}
+         */
+        const parseMarkdownFragment = (content) => marked.parse(content, {
             renderer,
             breaks: true,
             gfm: true,
             async: false
         });
+
+        const processCustomBlocks = (content) => {
+            const blockRegex = /:::(info|warning|danger|hint|abstract|ref|summary|updates)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
+
+            return content.replace(blockRegex, (match, type, title, innerContent) => {
+                const parsedInner = parseMarkdownFragment(innerContent.trim());
+                const displayTitle = title ? title.trim() : {
+                    info: '',
+                    warning: '',
+                    danger: '',
+                    hint: '',
+                    abstract: '',
+                    ref: '引用',
+                    summary: '摘要',
+                    updates: '更新记录'
+                }[type];
+
+                return `<div class="custom-block ${type}">
+                    <p class="custom-block-title">${displayTitle}</p>
+                    <div class="custom-block-content">${parsedInner}</div>
+                </div>`;
+            });
+        };
+
+        const processedText = processCustomBlocks(resolveRelativeMarkdownLinks(body));
+
+        const htmlContent = parseMarkdownFragment(processedText);
 
         if (tocItems.length === 0) {
             const tokens = marked.lexer(processedText);
@@ -193,6 +207,65 @@ export const MarkdownService = {
 
                 hljs.highlightElement(element);
             });
+        });
+    },
+
+    /**
+     * 渲染页面中的 Mermaid 图表。
+     * 当 Mermaid 运行失败时，回退为可读的源码展示，避免文章内容完全丢失。
+     */
+    renderMermaid() {
+        Vue.nextTick(async () => {
+            const mermaidWrappers = [...document.querySelectorAll('.mermaid-wrapper')];
+
+            if (mermaidWrappers.length === 0) {
+                return;
+            }
+
+            if (!window.mermaid) {
+                mermaidWrappers.forEach(wrapper => {
+                    const source = wrapper.getAttribute('data-mermaid-source') || '';
+                    wrapper.classList.add('is-error');
+                    wrapper.innerHTML = `<p class="mermaid-error-title">Mermaid 运行时未加载，无法渲染图表。</p>
+                        <pre class="mermaid-source-code"><code>${source}</code></pre>`;
+                });
+                return;
+            }
+
+            const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+
+            window.mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: isDarkTheme ? 'dark' : 'default'
+            });
+
+            for (let index = 0; index < mermaidWrappers.length; index += 1) {
+                const wrapper = mermaidWrappers[index];
+                const diagramHost = wrapper.querySelector('.mermaid-diagram');
+                const source = wrapper.getAttribute('data-mermaid-source') || '';
+
+                if (!diagramHost || !source) {
+                    continue;
+                }
+
+                try {
+                    const renderId = `mermaid-diagram-${Date.now()}-${index}`;
+                    const { svg, bindFunctions } = await window.mermaid.render(renderId, source);
+
+                    wrapper.classList.remove('is-error');
+                    diagramHost.innerHTML = svg;
+
+                    if (typeof bindFunctions === 'function') {
+                        bindFunctions(diagramHost);
+                    }
+                } catch (error) {
+                    console.error('Mermaid 图表渲染失败：', error);
+                    wrapper.classList.add('is-error');
+                    wrapper.innerHTML = `<p class="mermaid-error-title">Mermaid 图表渲染失败，请检查语法。</p>
+                        <pre class="mermaid-source-code"><code>${source}</code></pre>`;
+                }
+            }
         });
     }
 };
