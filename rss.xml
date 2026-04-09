@@ -7,6 +7,14 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity高级开发工程师应掌握的技术栈</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md</guid>
+            <description>从语言基础、引擎能力、架构设计、性能优化、资源管理、热更新、网络与工程化等维度，系统梳理 Unity 高级开发工程师应掌握的核心技术栈。</description>
+            <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>Unity 中 VContainer 的详细用法</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-VContainer%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-VContainer%E8%AF%A6%E7%BB%86%E7%94%A8%E6%B3%95.md</guid>
@@ -157,14 +165,6 @@
             <description>:::abstract 最后更新时间：2026年2月2日11:21:35&lt;br 笔记来源：Youtube CodeMonkey How to use Addressables FASTER Loading FREE Memory SMALL Download :::</description>
             <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
             <category>Unity</category>
-        </item>
-        <item>
-            <title>5.单例模式</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F5.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F5.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md</guid>
-            <description>暂无摘要</description>
-            <pubDate>Sat, 31 Jan 2026 00:00:00 GMT</pubDate>
-            <category>设计模式</category>
         </item>
     </channel>
 </rss>

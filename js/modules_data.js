@@ -1318,8 +1318,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "Resources/Articles/3.ECS架构设计.md",
                         "relatedPaths": [
                             "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
-                            "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/依赖注入.md"
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity-VContainer详细用法.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md"
@@ -3363,6 +3363,77 @@ export const BLOG_CATEGORIES = [
         "path": "#/list?category=Unity",
         "subcategories": [
             {
+                "name": "工程实践",
+                "slug": "工程实践",
+                "path": "#/list?category=Unity&subcategory=%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5",
+                "articles": [
+                    {
+                        "title": "Unity高级开发工程师应掌握的技术栈",
+                        "summary": "从语言基础、引擎能力、架构设计、性能优化、资源管理、热更新、网络与工程化等维度，系统梳理 Unity 高级开发工程师应掌握的核心技术栈。",
+                        "tags": [
+                            "Unity",
+                            "技术栈",
+                            "高级开发",
+                            "性能优化",
+                            "架构设计",
+                            "热更新"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "工程实践",
+                        "series": "Unity 工程进阶",
+                        "seriesSlug": "unity-工程进阶",
+                        "order": null,
+                        "date": "2026-04-09T00:00:00.000Z",
+                        "updatedAt": "2026-04-09T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                        "slug": "unity高级开发工程师应掌握的技术栈",
+                        "route": "#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md",
+                        "readMinutes": 14,
+                        "headings": [
+                            "unity高级开发工程师应掌握的技术栈",
+                            "1-先说结论",
+                            "2-整体能力地图",
+                            "3-第一层-语言与计算机基础",
+                            "3-1-c-必须扎实",
+                            "3-2-数据结构与算法不能缺位",
+                            "4-第二层-unity-引擎核心能力",
+                            "4-1-必须理解引擎生命周期",
+                            "4-2-常用系统要能独立落地",
+                            "4-3-资源加载流程要成体系",
+                            "5-第三层-图形-渲染与性能优化",
+                            "5-1-不要求人人都写复杂-shader-但必须能读懂渲染链路",
+                            "5-2-高级工程师必须具备完整的性能诊断能力",
+                            "5-3-性能优化的核心不是技巧-而是方法论",
+                            "6-第四层-架构设计与工程组织能力",
+                            "6-1-必须能设计可维护的业务结构",
+                            "6-2-常见架构思想需要会选型-不是死记名字",
+                            "7-第五层-资源管理-热更新与版本迭代",
+                            "7-1-热更新能力在商业项目里几乎是刚需",
+                            "7-2-不只要会接方案-还要理解版本管理",
+                            "8-第六层-网络-工具链与工程化能力",
+                            "8-1-网络知识决定你能否和服务端高效协作",
+                            "8-2-编辑器工具与自动化能力非常重要",
+                            "8-3-工程化能力决定团队效率上限",
+                            "9-第七层-团队协作与跨岗位沟通能力",
+                            "10-一个更实用的学习优先级",
+                            "11-总结"
+                        ],
+                        "displayDate": "2026-04-09",
+                        "displayUpdatedAt": "2026-04-09",
+                        "previousPath": "",
+                        "nextPath": "",
+                        "relatedPaths": [
+                            "Resources/Articles/Unity-VContainer详细用法.md",
+                            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
+                            "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
+                        ],
+                        "seriesPaths": []
+                    }
+                ]
+            },
+            {
                 "name": "框架与工具",
                 "slug": "框架与工具",
                 "path": "#/list?category=Unity&subcategory=%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%B7%A5%E5%85%B7",
@@ -3489,9 +3560,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "Resources/Articles/Unity-UniTask详细用法.md",
                         "relatedPaths": [
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
-                            "Resources/Articles/依赖注入.md",
-                            "Resources/Articles/Unity-UniTask详细用法.md"
+                            "Resources/Articles/依赖注入.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-UniTask详细用法.md",
@@ -3624,8 +3695,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                            "Resources/Articles/坐标变换系统.md"
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -3773,9 +3844,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/Unity-UniTask详细用法.md",
-                            "Resources/Articles/坐标变换系统.md"
+                            "Resources/Articles/Unity-UniTask详细用法.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -3828,7 +3899,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
                             "Resources/Articles/Unity中的特殊文件夹.md",
-                            "Resources/Articles/Unity-VContainer详细用法.md"
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ],
                         "seriesPaths": []
                     },
@@ -3880,7 +3951,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Addressables.md",
                             "Resources/Articles/Unity中的特殊文件夹.md",
-                            "Resources/Articles/Unity-VContainer详细用法.md"
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ],
                         "seriesPaths": []
                     },
@@ -3932,7 +4003,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Addressables.md",
                             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-                            "Resources/Articles/Unity-VContainer详细用法.md"
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ],
                         "seriesPaths": []
                     }
@@ -3967,9 +4038,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
+                    "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                     "Resources/Articles/Unity-VContainer详细用法.md",
-                    "Resources/Articles/Unity-UniTask详细用法.md",
-                    "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
+                    "Resources/Articles/Unity-UniTask详细用法.md"
                 ],
                 "seriesPaths": []
             },
@@ -4010,9 +4081,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
+                    "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                     "Resources/Articles/Unity-VContainer详细用法.md",
-                    "Resources/Articles/Unity-UniTask详细用法.md",
-                    "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
+                    "Resources/Articles/Unity-UniTask详细用法.md"
                 ],
                 "seriesPaths": []
             }
@@ -5330,8 +5401,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "Resources/Articles/3.ECS架构设计.md",
         "relatedPaths": [
             "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
-            "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/依赖注入.md"
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity-VContainer详细用法.md"
         ],
         "seriesPaths": [
             "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md"
@@ -7267,9 +7338,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity-UniTask详细用法.md",
-            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
+            "Resources/Articles/Unity-UniTask详细用法.md"
         ],
         "seriesPaths": []
     },
@@ -7310,9 +7381,73 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity-UniTask详细用法.md",
-            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
+            "Resources/Articles/Unity-UniTask详细用法.md"
+        ],
+        "seriesPaths": []
+    },
+    {
+        "title": "Unity高级开发工程师应掌握的技术栈",
+        "summary": "从语言基础、引擎能力、架构设计、性能优化、资源管理、热更新、网络与工程化等维度，系统梳理 Unity 高级开发工程师应掌握的核心技术栈。",
+        "tags": [
+            "Unity",
+            "技术栈",
+            "高级开发",
+            "性能优化",
+            "架构设计",
+            "热更新"
+        ],
+        "category": "Unity",
+        "subcategory": "工程实践",
+        "series": "Unity 工程进阶",
+        "seriesSlug": "unity-工程进阶",
+        "order": null,
+        "date": "2026-04-09T00:00:00.000Z",
+        "updatedAt": "2026-04-09T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+        "slug": "unity高级开发工程师应掌握的技术栈",
+        "route": "#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md",
+        "readMinutes": 14,
+        "headings": [
+            "unity高级开发工程师应掌握的技术栈",
+            "1-先说结论",
+            "2-整体能力地图",
+            "3-第一层-语言与计算机基础",
+            "3-1-c-必须扎实",
+            "3-2-数据结构与算法不能缺位",
+            "4-第二层-unity-引擎核心能力",
+            "4-1-必须理解引擎生命周期",
+            "4-2-常用系统要能独立落地",
+            "4-3-资源加载流程要成体系",
+            "5-第三层-图形-渲染与性能优化",
+            "5-1-不要求人人都写复杂-shader-但必须能读懂渲染链路",
+            "5-2-高级工程师必须具备完整的性能诊断能力",
+            "5-3-性能优化的核心不是技巧-而是方法论",
+            "6-第四层-架构设计与工程组织能力",
+            "6-1-必须能设计可维护的业务结构",
+            "6-2-常见架构思想需要会选型-不是死记名字",
+            "7-第五层-资源管理-热更新与版本迭代",
+            "7-1-热更新能力在商业项目里几乎是刚需",
+            "7-2-不只要会接方案-还要理解版本管理",
+            "8-第六层-网络-工具链与工程化能力",
+            "8-1-网络知识决定你能否和服务端高效协作",
+            "8-2-编辑器工具与自动化能力非常重要",
+            "8-3-工程化能力决定团队效率上限",
+            "9-第七层-团队协作与跨岗位沟通能力",
+            "10-一个更实用的学习优先级",
+            "11-总结"
+        ],
+        "displayDate": "2026-04-09",
+        "displayUpdatedAt": "2026-04-09",
+        "previousPath": "",
+        "nextPath": "",
+        "relatedPaths": [
+            "Resources/Articles/Unity-VContainer详细用法.md",
+            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
+            "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
         ],
         "seriesPaths": []
     },
@@ -7438,9 +7573,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Unity-UniTask详细用法.md",
         "relatedPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
-            "Resources/Articles/依赖注入.md",
-            "Resources/Articles/Unity-UniTask详细用法.md"
+            "Resources/Articles/依赖注入.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-UniTask详细用法.md",
@@ -7573,8 +7708,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/坐标变换系统.md"
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -7715,9 +7850,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity-UniTask详细用法.md",
-            "Resources/Articles/坐标变换系统.md"
+            "Resources/Articles/Unity-UniTask详细用法.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -7763,7 +7898,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md",
-            "Resources/Articles/Unity-VContainer详细用法.md"
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
         "seriesPaths": []
     },
@@ -7815,7 +7950,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Addressables.md",
             "Resources/Articles/Unity中的特殊文件夹.md",
-            "Resources/Articles/Unity-VContainer详细用法.md"
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
         "seriesPaths": []
     },
@@ -7867,7 +8002,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Addressables.md",
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-            "Resources/Articles/Unity-VContainer详细用法.md"
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
         "seriesPaths": []
     }
@@ -8008,11 +8143,12 @@ export const BLOG_TAGS = [
     {
         "name": "Unity",
         "slug": "unity",
-        "count": 9,
+        "count": 10,
         "articlePaths": [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/坐标变换系统.md",
             "Resources/Articles/Layer.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
@@ -8020,7 +8156,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md"
         ],
-        "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
     },
     {
         "name": "结构型设计模式",
@@ -8081,14 +8217,15 @@ export const BLOG_TAGS = [
     {
         "name": "架构设计",
         "slug": "架构设计",
-        "count": 4,
+        "count": 5,
         "articlePaths": [
             "Resources/Articles/依赖注入.md",
             "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md"
         ],
-        "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
     },
     {
         "name": "网络编程",
@@ -8133,6 +8270,16 @@ export const BLOG_TAGS = [
             "Resources/Articles/2.C#异步编程的入门概念及核心理念.md"
         ],
         "latestUpdatedAt": "2026-01-24T00:00:00.000Z"
+    },
+    {
+        "name": "热更新",
+        "slug": "热更新",
+        "count": 2,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
+        ],
+        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
     },
     {
         "name": "依赖注入",
@@ -8194,6 +8341,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "高级开发",
+        "slug": "高级开发",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+        ],
+        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
+    },
+    {
         "name": "集合",
         "slug": "集合",
         "count": 1,
@@ -8203,6 +8359,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "技术栈",
+        "slug": "技术栈",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+        ],
+        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
+    },
+    {
         "name": "前端",
         "slug": "前端",
         "count": 1,
@@ -8210,15 +8375,6 @@ export const BLOG_TAGS = [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
         ],
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
-    },
-    {
-        "name": "热更新",
-        "slug": "热更新",
-        "count": 1,
-        "articlePaths": [
-            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"
-        ],
-        "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
     },
     {
         "name": "设计原则与设计模式概述",
@@ -8246,6 +8402,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-UniTask详细用法.md"
         ],
         "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
+    },
+    {
+        "name": "性能优化",
+        "slug": "性能优化",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+        ],
+        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
     },
     {
         "name": "异步编程",
@@ -8398,6 +8563,19 @@ export const BLOG_SERIES = [
             "Resources/Articles/依赖注入.md"
         ],
         "updatedAt": "2026-03-12T00:00:00.000Z"
+    },
+    {
+        "name": "Unity 工程进阶",
+        "slug": "unity-工程进阶",
+        "count": 1,
+        "categoryNames": [
+            "Unity"
+        ],
+        "categoryLabel": "Unity",
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+        ],
+        "updatedAt": "2026-04-09T00:00:00.000Z"
     }
 ];
 export const BLOG_ARCHIVES = [
@@ -8405,8 +8583,9 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 3,
+        "count": 4,
         "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md"

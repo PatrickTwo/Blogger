@@ -135,11 +135,18 @@ export const ArticleView = {
                     </section>
                 </article>
 
-                <aside v-if="!loading && toc.length > 0" class="article-toc">
+                <aside v-if="!loading && toc.length > 0" ref="tocRoot" class="article-toc">
                     <div class="toc-title">目录</div>
                     <ul class="toc-list">
                         <li v-for="item in toc" :key="item.id" :class="['toc-item', 'toc-level-' + item.level]">
-                            <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)">{{ item.text }}</a>
+                            <a
+                                :href="'#' + item.id"
+                                :class="{ active: activeTocId === item.id }"
+                                :data-toc-id="item.id"
+                                @click.prevent="scrollTo(item.id)"
+                            >
+                                {{ item.text }}
+                            </a>
                         </li>
                     </ul>
                 </aside>
@@ -154,6 +161,8 @@ export const ArticleView = {
         const article = computed(() => findArticleByPath(String(route.query.path || '')));
         const progress = ref(0);
         const showBackToTop = ref(false);
+        const activeTocId = ref('');
+        const tocRoot = ref(null);
         const resourcePath = computed(() => article.value?.path || '');
         const { renderedContent, toc, loading, error } = useMarkdownContent(resourcePath);
 
@@ -162,7 +171,28 @@ export const ArticleView = {
         const seriesArticles = computed(() => findArticlesByPaths(article.value?.seriesPaths || []));
         const relatedArticles = computed(() => findArticlesByPaths(article.value?.relatedPaths || []));
 
+        /**
+         * 让当前激活的目录项尽量保持在目录可视区域内。
+         */
+        const syncActiveTocIntoView = () => {
+            Vue.nextTick(() => {
+                const tocElement = tocRoot.value;
+                const activeLink = tocElement?.querySelector('.toc-item a.active');
+
+                if (!tocElement || !activeLink) {
+                    return;
+                }
+
+                activeLink.scrollIntoView({
+                    block: 'nearest',
+                    inline: 'nearest'
+                });
+            });
+        };
+
         const scrollTo = id => {
+            activeTocId.value = id;
+            syncActiveTocIntoView();
             scrollToHeading(id);
         };
 
@@ -186,24 +216,72 @@ export const ArticleView = {
             showBackToTop.value = scrollTop > 480;
         };
 
+        /**
+         * 根据当前页面滚动位置，计算应当高亮的目录项。
+         */
+        const updateActiveToc = () => {
+            const contentElement = document.getElementById('article-content');
+
+            if (!contentElement || toc.value.length === 0) {
+                activeTocId.value = '';
+                return;
+            }
+
+            const headerOffset = 160;
+            const scrollTop = window.pageYOffset;
+            const articleStart = contentElement.offsetTop - headerOffset;
+
+            if (scrollTop < articleStart) {
+                activeTocId.value = '';
+                return;
+            }
+
+            let nextActiveId = toc.value[0]?.id || '';
+
+            for (const item of toc.value) {
+                const headingElement = document.getElementById(item.id);
+
+                if (!headingElement) {
+                    continue;
+                }
+
+                if (headingElement.getBoundingClientRect().top <= headerOffset) {
+                    nextActiveId = item.id;
+                    continue;
+                }
+
+                break;
+            }
+
+            if (activeTocId.value !== nextActiveId) {
+                activeTocId.value = nextActiveId;
+                syncActiveTocIntoView();
+            }
+        };
+
         const applyAnchorScroll = () => {
             const anchor = String(route.query.anchor || '');
 
             if (!anchor) {
                 updateReadingProgress();
+                updateActiveToc();
                 return;
             }
 
             Vue.nextTick(() => {
                 setTimeout(() => {
+                    activeTocId.value = anchor;
+                    syncActiveTocIntoView();
                     scrollTo(anchor);
                     updateReadingProgress();
+                    updateActiveToc();
                 }, 80);
             });
         };
 
         const handleScroll = () => {
             updateReadingProgress();
+            updateActiveToc();
         };
 
         watch(() => route.query.anchor, () => {
@@ -214,9 +292,16 @@ export const ArticleView = {
             applyAnchorScroll();
         });
 
+        watch(toc, () => {
+            Vue.nextTick(() => {
+                updateActiveToc();
+            });
+        });
+
         onMounted(() => {
             window.addEventListener('scroll', handleScroll);
             window.addEventListener('resize', handleScroll);
+            handleScroll();
         });
 
         onBeforeUnmount(() => {
@@ -250,6 +335,8 @@ export const ArticleView = {
             relatedArticles,
             progress,
             showBackToTop,
+            activeTocId,
+            tocRoot,
             scrollTo,
             goToArticle,
             goToSeries,
