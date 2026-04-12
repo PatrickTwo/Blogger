@@ -7,6 +7,14 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity Lua 热更新从入门到进阶实战详解</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Lua%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Lua%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3.md</guid>
+            <description>面向 Unity 开发者系统讲解 Lua/xLua 热更新，从原理、接入、桥接、脚本组织、Hotfix、性能、调试、打包到线上治理，尽量把陌生 API 和运行机制一次讲清。</description>
+            <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>Unity高级开发工程师应掌握的技术栈</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E9%AB%98%E7%BA%A7%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E6%8E%8C%E6%8F%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88.md</guid>
@@ -157,14 +165,6 @@
             <description>:::abstract 最后更新时间：2026年2月2日14:06:01&lt;br 笔记来源：Bilibili 十月的寒流 C 注释的正确写法 :::</description>
             <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
             <category>C#</category>
-        </item>
-        <item>
-            <title>Addressables</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAddressables.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAddressables.md</guid>
-            <description>:::abstract 最后更新时间：2026年2月2日11:21:35&lt;br 笔记来源：Youtube CodeMonkey How to use Addressables FASTER Loading FREE Memory SMALL Download :::</description>
-            <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
-            <category>Unity</category>
         </item>
     </channel>
 </rss>
