@@ -10,7 +10,7 @@ import { Breadcrumb, NotFoundView, SearchBox } from './views/common.js';
 import { HomeView } from './views/home.js';
 import { ArchiveView, ListView, SearchResultsView, SeriesView, TagsView } from './views/taxonomy.js';
 
-const { createApp, computed, ref } = Vue;
+const { createApp, computed, ref, watch, onMounted, onBeforeUnmount } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
 
 const routes = [
@@ -186,6 +186,8 @@ const app = createApp({
     setup() {
         const route = VueRouter.useRoute();
         const currentTheme = ref(resolveInitialTheme());
+        const isMobileNavOpen = ref(false);
+        const mobileMediaQuery = window.matchMedia('(max-width: 720px)');
 
         const article = computed(() => findArticleByPath(String(route.query.path || '')));
         const showBreadcrumb = computed(() => route.name === 'list' || route.name === 'article');
@@ -214,7 +216,35 @@ const app = createApp({
             MarkdownService.renderMermaid();
         };
 
+        /**
+         * 切换移动端导航面板的展开状态。
+         */
+        const toggleMobileNav = () => {
+            isMobileNavOpen.value = !isMobileNavOpen.value;
+        };
+
+        /**
+         * 在离开移动端布局时自动收起导航，避免桌面端出现遗留状态。
+         */
+        const handleViewportChange = event => {
+            if (!event.matches) {
+                isMobileNavOpen.value = false;
+            }
+        };
+
         applyTheme(currentTheme.value);
+
+        watch(() => route.fullPath, () => {
+            isMobileNavOpen.value = false;
+        });
+
+        onMounted(() => {
+            mobileMediaQuery.addEventListener('change', handleViewportChange);
+        });
+
+        onBeforeUnmount(() => {
+            mobileMediaQuery.removeEventListener('change', handleViewportChange);
+        });
 
         return {
             showBreadcrumb,
@@ -223,9 +253,11 @@ const app = createApp({
             siteMeta: SITE_META,
             currentYear,
             isDarkTheme,
+            isMobileNavOpen,
             themeToggleText,
             themeToggleTitle,
-            toggleTheme
+            toggleTheme,
+            toggleMobileNav
         };
     }
 });

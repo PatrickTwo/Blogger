@@ -24,7 +24,7 @@ export const AboutView = {
                     <div v-else id="article-content" class="markdown-body" v-html="renderedContent"></div>
                 </article>
 
-                <aside v-if="!loading && toc.length > 0" class="article-toc">
+                <aside v-if="!loading && toc.length > 0 && !isCompactTocMode" class="article-toc">
                     <div class="toc-title">目录</div>
                     <ul class="toc-list">
                         <li v-for="item in toc" :key="item.id" :class="['toc-item', 'toc-level-' + item.level]">
@@ -36,10 +36,26 @@ export const AboutView = {
         </section>
     `,
     setup() {
+        const isCompactTocMode = ref(window.matchMedia('(max-width: 1024px)').matches);
         const resourcePath = computed(() => 'Resources/Pages/about.md');
         const { renderedContent, toc, metadata, loading, error } = useMarkdownContent(resourcePath);
         const pageTitle = computed(() => String(metadata.value.title || '关于我'));
         const pageSummary = computed(() => String(metadata.value.summary || ''));
+
+        /**
+         * 同步当前视口是否应隐藏目录。
+         */
+        const handleViewportChange = () => {
+            isCompactTocMode.value = window.matchMedia('(max-width: 1024px)').matches;
+        };
+
+        onMounted(() => {
+            window.addEventListener('resize', handleViewportChange);
+        });
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('resize', handleViewportChange);
+        });
 
         const scrollTo = id => {
             scrollToHeading(id);
@@ -52,6 +68,7 @@ export const AboutView = {
             toc,
             loading,
             error,
+            isCompactTocMode,
             scrollTo
         };
     }
@@ -135,7 +152,7 @@ export const ArticleView = {
                     </section>
                 </article>
 
-                <aside v-if="!loading && toc.length > 0" ref="tocRoot" class="article-toc">
+                <aside v-if="showDesktopToc" ref="tocRoot" class="article-toc">
                     <div class="toc-title">目录</div>
                     <ul class="toc-list">
                         <li v-for="item in toc" :key="item.id" :class="['toc-item', 'toc-level-' + item.level]">
@@ -163,8 +180,10 @@ export const ArticleView = {
         const showBackToTop = ref(false);
         const activeTocId = ref('');
         const tocRoot = ref(null);
+        const isCompactTocMode = ref(window.matchMedia('(max-width: 1024px)').matches);
         const resourcePath = computed(() => article.value?.path || '');
         const { renderedContent, toc, loading, error } = useMarkdownContent(resourcePath);
+        const showDesktopToc = computed(() => !loading.value && toc.value.length > 0 && !isCompactTocMode.value);
 
         const previousArticle = computed(() => findArticleByPath(article.value?.previousPath || ''));
         const nextArticle = computed(() => findArticleByPath(article.value?.nextPath || ''));
@@ -175,6 +194,10 @@ export const ArticleView = {
          * 让当前激活的目录项尽量保持在目录可视区域内。
          */
         const syncActiveTocIntoView = () => {
+            if (isCompactTocMode.value) {
+                return;
+            }
+
             Vue.nextTick(() => {
                 const tocElement = tocRoot.value;
                 const activeLink = tocElement?.querySelector('.toc-item a.active');
@@ -214,6 +237,13 @@ export const ArticleView = {
 
             progress.value = Math.max(0, Math.min(100, currentProgress));
             showBackToTop.value = scrollTop > 480;
+        };
+
+        /**
+         * 同步当前视口是否处于紧凑模式，并在移动端关闭目录联动行为。
+         */
+        const handleViewportChange = () => {
+            isCompactTocMode.value = window.matchMedia('(max-width: 1024px)').matches;
         };
 
         /**
@@ -298,15 +328,25 @@ export const ArticleView = {
             });
         });
 
+        watch(isCompactTocMode, () => {
+            if (isCompactTocMode.value) {
+                return;
+            }
+
+            syncActiveTocIntoView();
+        });
+
         onMounted(() => {
             window.addEventListener('scroll', handleScroll);
             window.addEventListener('resize', handleScroll);
+            window.addEventListener('resize', handleViewportChange);
             handleScroll();
         });
 
         onBeforeUnmount(() => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleScroll);
+            window.removeEventListener('resize', handleViewportChange);
         });
 
         const goToArticle = item => navigateToArticle(router, item);
@@ -333,6 +373,7 @@ export const ArticleView = {
             nextArticle,
             seriesArticles,
             relatedArticles,
+            showDesktopToc,
             progress,
             showBackToTop,
             activeTocId,

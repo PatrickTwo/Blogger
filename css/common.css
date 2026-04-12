@@ -259,6 +259,14 @@ textarea:focus-visible {
     min-width: 0;
 }
 
+.header-mobile-bar {
+    display: contents;
+}
+
+.header-panel {
+    display: contents;
+}
+
 .header-search {
     position: relative;
     width: min(340px, 100%);
@@ -402,6 +410,58 @@ textarea:focus-visible {
 }
 
 .theme-toggle-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.mobile-menu-toggle:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.mobile-menu-toggle-line {
+    position: relative;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 999px;
+}
+
+.mobile-menu-toggle-line::before,
+.mobile-menu-toggle-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 999px;
+}
+
+.mobile-menu-toggle-line::before {
+    top: -5px;
+}
+
+.mobile-menu-toggle-line::after {
+    top: 5px;
+}
+
+.mobile-menu-toggle-text {
     font-size: 0.9rem;
     font-weight: 700;
     white-space: nowrap;
@@ -596,6 +656,7 @@ textarea:focus-visible {
     }
 
     .header-actions {
+        gap: 12px;
         flex-direction: column;
         align-items: stretch;
     }
@@ -604,17 +665,58 @@ textarea:focus-visible {
         width: 100%;
     }
 
+    .header-mobile-bar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .mobile-menu-toggle {
+        display: inline-flex;
+    }
+
+    .header-panel {
+        display: none;
+    }
+
+    .header-panel.open {
+        display: block;
+    }
+
     .theme-toggle {
         justify-content: center;
+        width: 100%;
+        padding: 0 12px;
     }
 
     .nav ul {
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .nav a {
+        justify-content: center;
+        width: 100%;
+        padding: 0 12px;
+        background-color: var(--block-bg);
+    }
+
+    .header-panel {
+        padding: 14px;
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        background-color: var(--card-bg);
     }
 
     .search-submit {
         min-width: 80px;
         padding: 0 12px;
+    }
+
+    .footer-copy {
+        white-space: normal;
     }
 }
 /* #endregion */

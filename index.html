@@ -67,37 +67,51 @@
     <div id="app">
         <header class="header">
             <div class="container">
-                <div class="header-main">
-                    <router-link to="/" class="logo">
-                        <h1>{{ siteMeta.title }}</h1>
-                    </router-link>
-                    <div class="header-actions">
-                        <search-box></search-box>
-                        <nav class="nav">
-                            <ul>
-                                <li><router-link :to="{ name: 'archive' }">归档</router-link></li>
-                                <li><router-link :to="{ name: 'tags' }">标签</router-link></li>
-                                <li><router-link :to="{ name: 'series' }">系列</router-link></li>
-                                <li><router-link :to="{ name: 'about' }">关于</router-link></li>
-                                <li><a href="rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li>
-                            </ul>
-                        </nav>
-                        <button
-                            class="theme-toggle"
-                            type="button"
-                            :class="{ active: isDarkTheme }"
-                            :aria-pressed="isDarkTheme"
-                            :title="themeToggleTitle"
-                            @click="toggleTheme"
-                        >
-                            <span class="theme-toggle-track">
-                                <span class="theme-toggle-thumb"></span>
-                            </span>
-                            <span class="theme-toggle-label">{{ themeToggleText }}</span>
-                        </button>
+                    <div class="header-main">
+                        <router-link to="/" class="logo">
+                            <h1>{{ siteMeta.title }}</h1>
+                        </router-link>
+                        <div class="header-actions">
+                            <search-box></search-box>
+                            <div class="header-mobile-bar">
+                                <button
+                                    class="mobile-menu-toggle"
+                                    type="button"
+                                    :aria-expanded="isMobileNavOpen"
+                                    aria-controls="site-nav-panel"
+                                    @click="toggleMobileNav"
+                                >
+                                    <span class="mobile-menu-toggle-line"></span>
+                                    <span class="mobile-menu-toggle-text">{{ isMobileNavOpen ? '收起导航' : '展开导航' }}</span>
+                                </button>
+                                <button
+                                    class="theme-toggle"
+                                    type="button"
+                                    :class="{ active: isDarkTheme }"
+                                    :aria-pressed="isDarkTheme"
+                                    :title="themeToggleTitle"
+                                    @click="toggleTheme"
+                                >
+                                    <span class="theme-toggle-track">
+                                        <span class="theme-toggle-thumb"></span>
+                                    </span>
+                                    <span class="theme-toggle-label">{{ themeToggleText }}</span>
+                                </button>
+                            </div>
+                            <div id="site-nav-panel" class="header-panel" :class="{ open: isMobileNavOpen }">
+                                <nav class="nav">
+                                    <ul>
+                                        <li><router-link :to="{ name: 'archive' }">归档</router-link></li>
+                                        <li><router-link :to="{ name: 'tags' }">标签</router-link></li>
+                                        <li><router-link :to="{ name: 'series' }">系列</router-link></li>
+                                        <li><router-link :to="{ name: 'about' }">关于</router-link></li>
+                                        <li><a href="rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             <div class="header-breadcrumb" v-if="showBreadcrumb">
                 <div class="container">
