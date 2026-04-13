@@ -1,5 +1,5 @@
 ---
-title: "Lua 语言入门到进阶详解（面向 Unity 热更新开发者）"
+title: "Lua 语言入门到进阶详解"
 summary: "面向有 C# 基础、准备做 Unity Lua 热更新的开发者，系统讲解 Lua 的语法、数据结构、函数、模块、元表、面向对象写法与工程实践，并尽量用 C# 对照帮助理解。"
 category: "Unity"
 subcategory: "热更新"

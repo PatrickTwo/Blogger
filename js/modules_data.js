@@ -3425,7 +3425,7 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                             "Resources/Articles/Unity-VContainer详细用法.md"
                         ],
@@ -3568,7 +3568,7 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ]
                     },
                     {
@@ -3697,14 +3697,14 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ]
                     }
                 ]
@@ -3848,7 +3848,7 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                         "relatedPaths": [
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ],
@@ -3856,7 +3856,7 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-VContainer详细用法.md",
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ]
                     },
                     {
@@ -3966,9 +3966,9 @@ export const BLOG_CATEGORIES = [
                         "displayDate": "2026-04-12",
                         "displayUpdatedAt": "2026-04-12",
                         "previousPath": "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                        "nextPath": "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                        "nextPath": "Resources/Articles/Lua语言入门到进阶详解.md",
                         "relatedPaths": [
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ],
@@ -3976,11 +3976,11 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-VContainer详细用法.md",
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ]
                     },
                     {
-                        "title": "Lua 语言入门到进阶详解（面向 Unity 热更新开发者）",
+                        "title": "Lua 语言入门到进阶详解",
                         "summary": "面向有 C# 基础、准备做 Unity Lua 热更新的开发者，系统讲解 Lua 的语法、数据结构、函数、模块、元表、面向对象写法与工程实践，并尽量用 C# 对照帮助理解。",
                         "tags": [
                             "Unity",
@@ -3998,10 +3998,10 @@ export const BLOG_CATEGORIES = [
                         "date": "2026-04-13T00:00:00.000Z",
                         "updatedAt": "2026-04-13T00:00:00.000Z",
                         "draft": false,
-                        "path": "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
-                        "slug": "lua-语言入门到进阶详解-面向-unity-热更新开发者",
-                        "route": "#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%9D%A2%E5%90%91Unity%E7%83%AD%E6%9B%B4%E6%96%B0%E5%BC%80%E5%8F%91%E8%80%85%EF%BC%89.md",
-                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%9D%A2%E5%90%91Unity%E7%83%AD%E6%9B%B4%E6%96%B0%E5%BC%80%E5%8F%91%E8%80%85%EF%BC%89.md",
+                        "path": "Resources/Articles/Lua语言入门到进阶详解.md",
+                        "slug": "lua-语言入门到进阶详解",
+                        "route": "#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
                         "readMinutes": 19,
                         "headings": [
                             "lua-语言入门到进阶详解-面向-unity-热更新开发者",
@@ -4145,7 +4145,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
                             "Resources/Articles/Unity中的特殊文件夹.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ],
                         "seriesPaths": []
                     },
@@ -4197,7 +4197,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Addressables.md",
                             "Resources/Articles/Unity中的特殊文件夹.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ],
                         "seriesPaths": []
                     },
@@ -4249,7 +4249,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Addressables.md",
                             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-                            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ],
                         "seriesPaths": []
                     }
@@ -4284,7 +4284,7 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
-                    "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                    "Resources/Articles/Lua语言入门到进阶详解.md",
                     "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                     "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                 ],
@@ -4327,7 +4327,7 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
-                    "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+                    "Resources/Articles/Lua语言入门到进阶详解.md",
                     "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                     "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                 ],
@@ -7584,7 +7584,7 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
@@ -7627,7 +7627,7 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
@@ -7691,7 +7691,7 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Unity-VContainer详细用法.md"
         ],
@@ -7827,7 +7827,7 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ]
     },
     {
@@ -7956,14 +7956,14 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ]
     },
     {
@@ -8100,7 +8100,7 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
         "relatedPaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
@@ -8108,7 +8108,7 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ]
     },
     {
@@ -8218,9 +8218,9 @@ export const BLOG_ARTICLES = [
         "displayDate": "2026-04-12",
         "displayUpdatedAt": "2026-04-12",
         "previousPath": "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-        "nextPath": "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+        "nextPath": "Resources/Articles/Lua语言入门到进阶详解.md",
         "relatedPaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
@@ -8228,11 +8228,11 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ]
     },
     {
-        "title": "Lua 语言入门到进阶详解（面向 Unity 热更新开发者）",
+        "title": "Lua 语言入门到进阶详解",
         "summary": "面向有 C# 基础、准备做 Unity Lua 热更新的开发者，系统讲解 Lua 的语法、数据结构、函数、模块、元表、面向对象写法与工程实践，并尽量用 C# 对照帮助理解。",
         "tags": [
             "Unity",
@@ -8250,10 +8250,10 @@ export const BLOG_ARTICLES = [
         "date": "2026-04-13T00:00:00.000Z",
         "updatedAt": "2026-04-13T00:00:00.000Z",
         "draft": false,
-        "path": "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
-        "slug": "lua-语言入门到进阶详解-面向-unity-热更新开发者",
-        "route": "#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%9D%A2%E5%90%91Unity%E7%83%AD%E6%9B%B4%E6%96%B0%E5%BC%80%E5%8F%91%E8%80%85%EF%BC%89.md",
-        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3%EF%BC%88%E9%9D%A2%E5%90%91Unity%E7%83%AD%E6%9B%B4%E6%96%B0%E5%BC%80%E5%8F%91%E8%80%85%EF%BC%89.md",
+        "path": "Resources/Articles/Lua语言入门到进阶详解.md",
+        "slug": "lua-语言入门到进阶详解",
+        "route": "#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
         "readMinutes": 19,
         "headings": [
             "lua-语言入门到进阶详解-面向-unity-热更新开发者",
@@ -8390,7 +8390,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "seriesPaths": []
     },
@@ -8442,7 +8442,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Addressables.md",
             "Resources/Articles/Unity中的特殊文件夹.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "seriesPaths": []
     },
@@ -8494,7 +8494,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Addressables.md",
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "seriesPaths": []
     }
@@ -8645,7 +8645,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md"
@@ -8729,7 +8729,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
@@ -8763,7 +8763,7 @@ export const BLOG_TAGS = [
         "articlePaths": [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
@@ -8785,7 +8785,7 @@ export const BLOG_TAGS = [
         "articlePaths": [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
@@ -8854,7 +8854,7 @@ export const BLOG_TAGS = [
         "slug": "编程基础",
         "count": 1,
         "articlePaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
@@ -8917,7 +8917,7 @@ export const BLOG_TAGS = [
         "slug": "脚本语言",
         "count": 1,
         "articlePaths": [
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
@@ -9071,7 +9071,7 @@ export const BLOG_SERIES = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "updatedAt": "2026-04-13T00:00:00.000Z"
     },
@@ -9128,7 +9128,7 @@ export const BLOG_ARCHIVES = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解（面向Unity热更新开发者）.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ]
     },
     {
