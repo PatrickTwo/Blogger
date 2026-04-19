@@ -7,6 +7,14 @@
         <language>zh-CN</language>
         
         <item>
+            <title>AssetBundle 从入门到进阶详解</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</guid>
+            <description>面向从未接触过 AB 包概念的 Unity 开发者，系统讲解 AssetBundle 的基本概念、打包流程、加载方式、依赖管理、Manifest、卸载、热更新、压缩策略、内存治理与工程实践。</description>
+            <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>Lua 语言入门到进阶详解</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLua%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</guid>
@@ -157,14 +165,6 @@
             <description>:::abstract 最后修改时间：2026年2月3日11:28:39 笔记来源：Bilibli 十月的寒流 ::: 一、扩展方法基础概念</description>
             <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
             <category>C#</category>
-        </item>
-        <item>
-            <title>概述</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%A6%82%E8%BF%B0.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%A6%82%E8%BF%B0.md</guid>
-            <description>Single Responsibility Principle: 单一职责原则 Open/Closed Principle：开闭原则 Liskov Substitution Principle：里氏替换原则 Interface Segregation Principle：接口隔离</description>
-            <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
-            <category>设计模式</category>
         </item>
     </channel>
 </rss>

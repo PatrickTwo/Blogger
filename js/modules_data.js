@@ -3425,9 +3425,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
                             "Resources/Articles/Lua语言入门到进阶详解.md",
-                            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                            "Resources/Articles/Unity-VContainer详细用法.md"
+                            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
                         ],
                         "seriesPaths": []
                     }
@@ -3697,8 +3697,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md",
-                            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4107,6 +4107,111 @@ export const BLOG_CATEGORIES = [
                 "path": "#/list?category=Unity&subcategory=%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD",
                 "articles": [
                     {
+                        "title": "AssetBundle 从入门到进阶详解",
+                        "summary": "面向从未接触过 AB 包概念的 Unity 开发者，系统讲解 AssetBundle 的基本概念、打包流程、加载方式、依赖管理、Manifest、卸载、热更新、压缩策略、内存治理与工程实践。",
+                        "tags": [
+                            "Unity",
+                            "AssetBundle",
+                            "AB包",
+                            "资源加载",
+                            "资源热更新",
+                            "性能优化"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "资源加载",
+                        "series": "Unity 资源管理",
+                        "seriesSlug": "unity-资源管理",
+                        "order": 1,
+                        "date": "2026-04-19T00:00:00.000Z",
+                        "updatedAt": "2026-04-19T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/AssetBundle从入门到进阶详解.md",
+                        "slug": "assetbundle-从入门到进阶详解",
+                        "route": "#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+                        "readMinutes": 21,
+                        "headings": [
+                            "assetbundle-从入门到进阶详解",
+                            "1-这篇文章解决什么问题",
+                            "2-为什么需要-assetbundle",
+                            "2-1-传统资源放进主包的问题",
+                            "2-2-ab-包解决的核心问题",
+                            "2-3-ab-包和-resources-的区别",
+                            "3-ab-包到底是什么",
+                            "3-1-从文件角度看",
+                            "3-2-从资源角度看",
+                            "3-3-从运行时角度看",
+                            "4-一个最小-ab-工作流",
+                            "5-给资源设置-assetbundle-名称",
+                            "5-1-inspector-设置方式",
+                            "5-2-用代码批量设置",
+                            "5-3-关键-api-解释",
+                            "6-构建-assetbundle",
+                            "6-1-最小构建脚本",
+                            "6-2-buildpipeline-buildassetbundles-详解",
+                            "6-3-常见构建选项",
+                            "7-加载-assetbundle",
+                            "7-1-从本地文件同步加载",
+                            "7-2-assetbundle-loadfromfile-是什么",
+                            "7-3-loadasset-t-是什么",
+                            "8-异步加载-assetbundle-和资源",
+                            "8-1-关键异步对象解释",
+                            "9-从网络下载-assetbundle",
+                            "9-1-unitywebrequestassetbundle-getassetbundle-是什么",
+                            "10-assetbundle-依赖关系",
+                            "10-1-什么是依赖",
+                            "10-2-不加载依赖会怎样",
+                            "10-3-为什么依赖管理是-ab-最核心难点",
+                            "11-assetbundlemanifest",
+                            "11-1-manifest-是什么",
+                            "11-2-加载-manifest",
+                            "11-3-查询依赖",
+                            "12-带依赖加载的最小管理器",
+                            "12-1-这个示例还缺什么",
+                            "13-卸载-assetbundle",
+                            "13-1-unload-false-和-unload-true",
+                            "13-2-什么时候用-unload-false",
+                            "13-3-什么时候用-unload-true",
+                            "13-4-resources-unloadunusedassets",
+                            "14-压缩方式怎么选",
+                            "14-1-为什么常推荐-lz4",
+                            "15-assetbundle-热更新流程",
+                            "15-1-清单文件通常包含什么",
+                            "15-2-本地目录优先级",
+                            "16-ab-包划分策略",
+                            "16-1-常见划分方式",
+                            "16-2-一个实用建议",
+                            "16-3-过大和过小都不好",
+                            "17-shader-和材质问题",
+                            "17-1-粉色材质常见原因",
+                            "17-2-常见处理方式",
+                            "18-场景-assetbundle",
+                            "19-assetbundle-与-addressables-的关系",
+                            "20-常见坑总结",
+                            "20-1-依赖包没加载",
+                            "20-2-bundle-重复加载",
+                            "20-3-过早-unload-true",
+                            "20-4-平台-bundle-混用",
+                            "20-5-包划分不合理",
+                            "21-从入门到进阶的学习路线",
+                            "21-1-入门阶段",
+                            "21-2-进阶阶段",
+                            "21-3-实战阶段",
+                            "22-推荐的一套最小工程结构",
+                            "23-总结"
+                        ],
+                        "displayDate": "2026-04-19",
+                        "displayUpdatedAt": "2026-04-19",
+                        "previousPath": "",
+                        "nextPath": "Resources/Articles/Addressables.md",
+                        "relatedPaths": [
+                            "Resources/Articles/Addressables.md",
+                            "Resources/Articles/AssetBundle 与 Addressables 对比.md",
+                            "Resources/Articles/Unity中的特殊文件夹.md"
+                        ],
+                        "seriesPaths": []
+                    },
+                    {
                         "title": "Addressables",
                         "summary": ":::abstract 最后更新时间：2026年2月2日11:21:35<br 笔记来源：Youtube CodeMonkey How to use Addressables FASTER Loading FREE Memory SMALL Download :::",
                         "tags": [
@@ -4140,12 +4245,12 @@ export const BLOG_CATEGORIES = [
                         ],
                         "displayDate": "2026-01-30",
                         "displayUpdatedAt": "2026-02-02",
-                        "previousPath": "",
+                        "previousPath": "Resources/Articles/AssetBundle从入门到进阶详解.md",
                         "nextPath": "Resources/Articles/AssetBundle 与 Addressables 对比.md",
                         "relatedPaths": [
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
                             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-                            "Resources/Articles/Unity中的特殊文件夹.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                            "Resources/Articles/Unity中的特殊文件夹.md"
                         ],
                         "seriesPaths": []
                     },
@@ -4195,9 +4300,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "Resources/Articles/Addressables.md",
                         "nextPath": "Resources/Articles/Unity中的特殊文件夹.md",
                         "relatedPaths": [
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
                             "Resources/Articles/Addressables.md",
-                            "Resources/Articles/Unity中的特殊文件夹.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                            "Resources/Articles/Unity中的特殊文件夹.md"
                         ],
                         "seriesPaths": []
                     },
@@ -4247,9 +4352,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "Resources/Articles/AssetBundle 与 Addressables 对比.md",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
                             "Resources/Articles/Addressables.md",
-                            "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                            "Resources/Articles/AssetBundle 与 Addressables 对比.md"
                         ],
                         "seriesPaths": []
                     }
@@ -4284,9 +4389,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
+                    "Resources/Articles/AssetBundle从入门到进阶详解.md",
                     "Resources/Articles/Lua语言入门到进阶详解.md",
-                    "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                    "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+                    "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
                 ],
                 "seriesPaths": []
             },
@@ -4327,9 +4432,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
+                    "Resources/Articles/AssetBundle从入门到进阶详解.md",
                     "Resources/Articles/Lua语言入门到进阶详解.md",
-                    "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                    "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+                    "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
                 ],
                 "seriesPaths": []
             }
@@ -7584,9 +7689,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
-            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
         ],
         "seriesPaths": []
     },
@@ -7627,9 +7732,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
-            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
         ],
         "seriesPaths": []
     },
@@ -7691,9 +7796,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
-            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Unity-VContainer详细用法.md"
+            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
         ],
         "seriesPaths": []
     },
@@ -7956,8 +8061,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md",
-            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -8352,6 +8457,111 @@ export const BLOG_ARTICLES = [
         ]
     },
     {
+        "title": "AssetBundle 从入门到进阶详解",
+        "summary": "面向从未接触过 AB 包概念的 Unity 开发者，系统讲解 AssetBundle 的基本概念、打包流程、加载方式、依赖管理、Manifest、卸载、热更新、压缩策略、内存治理与工程实践。",
+        "tags": [
+            "Unity",
+            "AssetBundle",
+            "AB包",
+            "资源加载",
+            "资源热更新",
+            "性能优化"
+        ],
+        "category": "Unity",
+        "subcategory": "资源加载",
+        "series": "Unity 资源管理",
+        "seriesSlug": "unity-资源管理",
+        "order": 1,
+        "date": "2026-04-19T00:00:00.000Z",
+        "updatedAt": "2026-04-19T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/AssetBundle从入门到进阶详解.md",
+        "slug": "assetbundle-从入门到进阶详解",
+        "route": "#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+        "readMinutes": 21,
+        "headings": [
+            "assetbundle-从入门到进阶详解",
+            "1-这篇文章解决什么问题",
+            "2-为什么需要-assetbundle",
+            "2-1-传统资源放进主包的问题",
+            "2-2-ab-包解决的核心问题",
+            "2-3-ab-包和-resources-的区别",
+            "3-ab-包到底是什么",
+            "3-1-从文件角度看",
+            "3-2-从资源角度看",
+            "3-3-从运行时角度看",
+            "4-一个最小-ab-工作流",
+            "5-给资源设置-assetbundle-名称",
+            "5-1-inspector-设置方式",
+            "5-2-用代码批量设置",
+            "5-3-关键-api-解释",
+            "6-构建-assetbundle",
+            "6-1-最小构建脚本",
+            "6-2-buildpipeline-buildassetbundles-详解",
+            "6-3-常见构建选项",
+            "7-加载-assetbundle",
+            "7-1-从本地文件同步加载",
+            "7-2-assetbundle-loadfromfile-是什么",
+            "7-3-loadasset-t-是什么",
+            "8-异步加载-assetbundle-和资源",
+            "8-1-关键异步对象解释",
+            "9-从网络下载-assetbundle",
+            "9-1-unitywebrequestassetbundle-getassetbundle-是什么",
+            "10-assetbundle-依赖关系",
+            "10-1-什么是依赖",
+            "10-2-不加载依赖会怎样",
+            "10-3-为什么依赖管理是-ab-最核心难点",
+            "11-assetbundlemanifest",
+            "11-1-manifest-是什么",
+            "11-2-加载-manifest",
+            "11-3-查询依赖",
+            "12-带依赖加载的最小管理器",
+            "12-1-这个示例还缺什么",
+            "13-卸载-assetbundle",
+            "13-1-unload-false-和-unload-true",
+            "13-2-什么时候用-unload-false",
+            "13-3-什么时候用-unload-true",
+            "13-4-resources-unloadunusedassets",
+            "14-压缩方式怎么选",
+            "14-1-为什么常推荐-lz4",
+            "15-assetbundle-热更新流程",
+            "15-1-清单文件通常包含什么",
+            "15-2-本地目录优先级",
+            "16-ab-包划分策略",
+            "16-1-常见划分方式",
+            "16-2-一个实用建议",
+            "16-3-过大和过小都不好",
+            "17-shader-和材质问题",
+            "17-1-粉色材质常见原因",
+            "17-2-常见处理方式",
+            "18-场景-assetbundle",
+            "19-assetbundle-与-addressables-的关系",
+            "20-常见坑总结",
+            "20-1-依赖包没加载",
+            "20-2-bundle-重复加载",
+            "20-3-过早-unload-true",
+            "20-4-平台-bundle-混用",
+            "20-5-包划分不合理",
+            "21-从入门到进阶的学习路线",
+            "21-1-入门阶段",
+            "21-2-进阶阶段",
+            "21-3-实战阶段",
+            "22-推荐的一套最小工程结构",
+            "23-总结"
+        ],
+        "displayDate": "2026-04-19",
+        "displayUpdatedAt": "2026-04-19",
+        "previousPath": "",
+        "nextPath": "Resources/Articles/Addressables.md",
+        "relatedPaths": [
+            "Resources/Articles/Addressables.md",
+            "Resources/Articles/AssetBundle 与 Addressables 对比.md",
+            "Resources/Articles/Unity中的特殊文件夹.md"
+        ],
+        "seriesPaths": []
+    },
+    {
         "title": "Addressables",
         "summary": ":::abstract 最后更新时间：2026年2月2日11:21:35<br 笔记来源：Youtube CodeMonkey How to use Addressables FASTER Loading FREE Memory SMALL Download :::",
         "tags": [
@@ -8385,12 +8595,12 @@ export const BLOG_ARTICLES = [
         ],
         "displayDate": "2026-01-30",
         "displayUpdatedAt": "2026-02-02",
-        "previousPath": "",
+        "previousPath": "Resources/Articles/AssetBundle从入门到进阶详解.md",
         "nextPath": "Resources/Articles/AssetBundle 与 Addressables 对比.md",
         "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-            "Resources/Articles/Unity中的特殊文件夹.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/Unity中的特殊文件夹.md"
         ],
         "seriesPaths": []
     },
@@ -8440,9 +8650,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/Addressables.md",
         "nextPath": "Resources/Articles/Unity中的特殊文件夹.md",
         "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
-            "Resources/Articles/Unity中的特殊文件夹.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/Unity中的特殊文件夹.md"
         ],
         "seriesPaths": []
     },
@@ -8492,9 +8702,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/AssetBundle 与 Addressables 对比.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
-            "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/AssetBundle 与 Addressables 对比.md"
         ],
         "seriesPaths": []
     }
@@ -8613,6 +8823,27 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-02-09T00:00:00.000Z"
     },
     {
+        "name": "Unity",
+        "slug": "unity",
+        "count": 13,
+        "articlePaths": [
+            "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
+            "Resources/Articles/坐标变换系统.md",
+            "Resources/Articles/Layer.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity-VContainer详细用法.md",
+            "Resources/Articles/Unity-UniTask详细用法.md",
+            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
+            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+            "Resources/Articles/Addressables.md",
+            "Resources/Articles/AssetBundle 与 Addressables 对比.md",
+            "Resources/Articles/Unity中的特殊文件夹.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
         "name": "行为型模式",
         "slug": "行为型模式",
         "count": 12,
@@ -8631,26 +8862,6 @@ export const BLOG_TAGS = [
             "Resources/Articles/_行为型模式概要.md"
         ],
         "latestUpdatedAt": "2026-01-31T00:00:00.000Z"
-    },
-    {
-        "name": "Unity",
-        "slug": "unity",
-        "count": 12,
-        "articlePaths": [
-            "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
-            "Resources/Articles/坐标变换系统.md",
-            "Resources/Articles/Layer.md",
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity-UniTask详细用法.md",
-            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md",
-            "Resources/Articles/Addressables.md",
-            "Resources/Articles/AssetBundle 与 Addressables 对比.md",
-            "Resources/Articles/Unity中的特殊文件夹.md"
-        ],
-        "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
     {
         "name": "结构型设计模式",
@@ -8748,13 +8959,14 @@ export const BLOG_TAGS = [
     {
         "name": "资源加载",
         "slug": "资源加载",
-        "count": 3,
+        "count": 4,
         "articlePaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md"
         ],
-        "latestUpdatedAt": "2026-02-02T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
         "name": "Lua",
@@ -8798,6 +9010,16 @@ export const BLOG_TAGS = [
             "Resources/Articles/2.C#异步编程的入门概念及核心理念.md"
         ],
         "latestUpdatedAt": "2026-01-24T00:00:00.000Z"
+    },
+    {
+        "name": "性能优化",
+        "slug": "性能优化",
+        "count": 2,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
         "name": "依赖注入",
@@ -8958,15 +9180,6 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
     },
     {
-        "name": "性能优化",
-        "slug": "性能优化",
-        "count": 1,
-        "articlePaths": [
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
-        ],
-        "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
-    },
-    {
         "name": "异步编程",
         "slug": "异步编程",
         "count": 1,
@@ -8983,6 +9196,33 @@ export const BLOG_TAGS = [
             "Resources/Articles/常用注册表路径.md"
         ],
         "latestUpdatedAt": "2026-03-12T00:00:00.000Z"
+    },
+    {
+        "name": "资源热更新",
+        "slug": "资源热更新",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "AB包",
+        "slug": "ab包",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "AssetBundle",
+        "slug": "assetbundle",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
         "name": "async/await",
@@ -9114,6 +9354,19 @@ export const BLOG_SERIES = [
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
         "updatedAt": "2026-04-09T00:00:00.000Z"
+    },
+    {
+        "name": "Unity 资源管理",
+        "slug": "unity-资源管理",
+        "count": 1,
+        "categoryNames": [
+            "Unity"
+        ],
+        "categoryLabel": "Unity",
+        "articlePaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "updatedAt": "2026-04-19T00:00:00.000Z"
     }
 ];
 export const BLOG_ARCHIVES = [
@@ -9121,14 +9374,15 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 6,
+        "count": 7,
         "articlePaths": [
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ]
     },
     {
