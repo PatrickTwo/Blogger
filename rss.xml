@@ -7,6 +7,14 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity 协程开发者的 C# 异步编程与 UniTask 详解</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%8D%8F%E7%A8%8B%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84CSharp%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E4%B8%8EUniTask%E8%AF%A6%E8%A7%A3.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%8D%8F%E7%A8%8B%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84CSharp%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E4%B8%8EUniTask%E8%AF%A6%E8%A7%A3.md</guid>
+            <description>面向只使用过 Unity 协程、对 C# 异步编程仅有简单了解的开发者，系统讲解 async/await、Task、CancellationToken、异常处理、并发等待，以及 UniTask 在 Unity 项目中的推荐用法。</description>
+            <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>AssetBundle 从入门到进阶详解</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FAssetBundle%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</guid>
@@ -157,14 +165,6 @@
             <description>一、集合（set） 在C++中，主要的集合类有 、 、 、 。以下是它们的常用操作：</description>
             <pubDate>Sat, 07 Feb 2026 00:00:00 GMT</pubDate>
             <category>C++</category>
-        </item>
-        <item>
-            <title>扩展方法</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95.md</guid>
-            <description>:::abstract 最后修改时间：2026年2月3日11:28:39 笔记来源：Bilibli 十月的寒流 ::: 一、扩展方法基础概念</description>
-            <pubDate>Tue, 03 Feb 2026 00:00:00 GMT</pubDate>
-            <category>C#</category>
         </item>
     </channel>
 </rss>
