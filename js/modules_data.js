@@ -3569,6 +3569,7 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                             "Resources/Articles/Lua语言入门到进阶详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                         ]
                     },
@@ -3699,13 +3700,14 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                             "Resources/Articles/Lua语言入门到进阶详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                         ]
                     }
@@ -3859,6 +3861,7 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                             "Resources/Articles/Lua语言入门到进阶详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                         ]
                     },
@@ -3980,6 +3983,7 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Lua语言入门到进阶详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                         ]
                     },
@@ -4101,6 +4105,125 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
+                            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "网络同步",
+                "slug": "网络同步",
+                "path": "#/list?category=Unity&subcategory=%E7%BD%91%E7%BB%9C%E5%90%8C%E6%AD%A5",
+                "articles": [
+                    {
+                        "title": "Unity Mirror 多人游戏开发从入门到进阶详解",
+                        "summary": "面向只接触过简单 C# Socket 编程的 Unity 开发者，系统讲解 Mirror 的核心概念、服务器权威模型、NetworkManager、NetworkIdentity、NetworkBehaviour、Command、ClientRpc、SyncVar、对象生成、状态同步、移动同步与工程实践。",
+                        "tags": [
+                            "Unity",
+                            "Mirror",
+                            "多人游戏",
+                            "网络同步",
+                            "Socket",
+                            "服务器权威"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "网络同步",
+                        "series": "Unity 框架详解",
+                        "seriesSlug": "unity-框架详解",
+                        "order": 7,
+                        "date": "2026-04-19T00:00:00.000Z",
+                        "updatedAt": "2026-04-19T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
+                        "slug": "unity-mirror-多人游戏开发从入门到进阶详解",
+                        "route": "#/article?path=Resources%2FArticles%2FUnity-Mirror%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Mirror%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+                        "readMinutes": 21,
+                        "headings": [
+                            "unity-mirror-多人游戏开发从入门到进阶详解",
+                            "1-这篇文章适合谁",
+                            "2-从-socket-思维过渡到-mirror-思维",
+                            "3-mirror-的核心设计-服务器权威",
+                            "3-1-什么是服务器权威",
+                            "3-2-为什么不要让客户端直接决定结果",
+                            "4-mirror-工程最小搭建流程",
+                            "5-networkmanager-联机入口",
+                            "5-1-它负责什么",
+                            "5-2-host-server-client-区别",
+                            "6-transport-底层传输层",
+                            "7-networkidentity-网络对象的身份证",
+                            "7-1-它负责什么",
+                            "7-2-重要限制",
+                            "8-networkbehaviour-网络版-monobehaviour",
+                            "8-1-为什么不能只继承-monobehaviour",
+                            "8-2-常用属性",
+                            "8-3-只让本地玩家处理输入",
+                            "8-4-这段代码解决什么问题",
+                            "9-command-客户端请求服务器执行",
+                            "9-1-command-对应-socket-里的什么",
+                            "9-2-示例-客户端请求服务器移动",
+                            "9-3-为什么服务器还要校验输入",
+                            "10-clientrpc-服务器通知所有客户端",
+                            "10-1-clientrpc-对应-socket-里的什么",
+                            "10-2-示例-播放攻击特效",
+                            "10-3-command-和-clientrpc-的方向",
+                            "11-targetrpc-服务器只通知某一个客户端",
+                            "12-syncvar-服务器状态自动同步到客户端",
+                            "12-1-syncvar-对应-socket-里的什么",
+                            "12-2-示例-同步血量",
+                            "12-3-syncvar-的关键规则",
+                            "13-networktransform-位置同步",
+                            "13-1-它适合什么",
+                            "13-2-权威方向要看版本和组件配置",
+                            "14-生成网络对象-networkserver-spawn",
+                            "14-1-为什么普通-instantiate-不够",
+                            "14-2-示例-服务器生成子弹",
+                            "14-3-子弹-prefab-必须满足什么",
+                            "15-销毁网络对象",
+                            "16-自定义-networkmanager",
+                            "16-1-常见重写点",
+                            "16-2-示例-自定义玩家生成",
+                            "16-3-networkconnectiontoclient-是什么",
+                            "17-mirror-生命周期回调",
+                            "17-1-示例-区分服务端和客户端初始化",
+                            "17-2-host-模式要特别注意",
+                            "18-networkmessage-更接近-socket-的自定义消息",
+                            "18-1-示例-登录消息结构",
+                            "18-2-什么时候用-networkmessage",
+                            "19-一个最小战斗同步流程",
+                            "20-常见坑",
+                            "20-1-忘记添加-networkidentity",
+                            "20-2-只-instantiate-没有-networkserver-spawn",
+                            "20-3-客户端直接改-syncvar",
+                            "20-4-忘记-islocalplayer-判断",
+                            "20-5-把表现和状态混在一起",
+                            "20-6-滥用-command",
+                            "21-从入门到进阶的学习路线",
+                            "21-1-入门阶段",
+                            "21-2-基础同步阶段",
+                            "21-3-工程实践阶段",
+                            "21-4-进阶同步阶段",
+                            "22-推荐工程边界",
+                            "23-和纯-socket-开发相比-mirror-改变了什么",
+                            "24-总结",
+                            "25-参考资料"
+                        ],
+                        "displayDate": "2026-04-19",
+                        "displayUpdatedAt": "2026-04-19",
+                        "previousPath": "",
+                        "nextPath": "",
+                        "relatedPaths": [
+                            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/Unity-VContainer详细用法.md",
+                            "Resources/Articles/Unity-UniTask详细用法.md",
+                            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
+                            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
+                            "Resources/Articles/Lua语言入门到进阶详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                         ]
                     }
@@ -4208,14 +4331,15 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
                         ]
                     }
                 ]
@@ -4508,9 +4632,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
+                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
                     "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-                    "Resources/Articles/AssetBundle从入门到进阶详解.md",
-                    "Resources/Articles/Lua语言入门到进阶详解.md"
+                    "Resources/Articles/AssetBundle从入门到进阶详解.md"
                 ],
                 "seriesPaths": []
             },
@@ -4551,9 +4675,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
+                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
                     "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-                    "Resources/Articles/AssetBundle从入门到进阶详解.md",
-                    "Resources/Articles/Lua语言入门到进阶详解.md"
+                    "Resources/Articles/AssetBundle从入门到进阶详解.md"
                 ],
                 "seriesPaths": []
             }
@@ -7808,9 +7932,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ],
         "seriesPaths": []
     },
@@ -7851,9 +7975,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ],
         "seriesPaths": []
     },
@@ -8052,6 +8176,7 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ]
     },
@@ -8182,13 +8307,14 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ]
     },
@@ -8335,6 +8461,7 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ]
     },
@@ -8456,6 +8583,7 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ]
     },
@@ -8577,6 +8705,118 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
+            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+        ]
+    },
+    {
+        "title": "Unity Mirror 多人游戏开发从入门到进阶详解",
+        "summary": "面向只接触过简单 C# Socket 编程的 Unity 开发者，系统讲解 Mirror 的核心概念、服务器权威模型、NetworkManager、NetworkIdentity、NetworkBehaviour、Command、ClientRpc、SyncVar、对象生成、状态同步、移动同步与工程实践。",
+        "tags": [
+            "Unity",
+            "Mirror",
+            "多人游戏",
+            "网络同步",
+            "Socket",
+            "服务器权威"
+        ],
+        "category": "Unity",
+        "subcategory": "网络同步",
+        "series": "Unity 框架详解",
+        "seriesSlug": "unity-框架详解",
+        "order": 7,
+        "date": "2026-04-19T00:00:00.000Z",
+        "updatedAt": "2026-04-19T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
+        "slug": "unity-mirror-多人游戏开发从入门到进阶详解",
+        "route": "#/article?path=Resources%2FArticles%2FUnity-Mirror%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Mirror%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md",
+        "readMinutes": 21,
+        "headings": [
+            "unity-mirror-多人游戏开发从入门到进阶详解",
+            "1-这篇文章适合谁",
+            "2-从-socket-思维过渡到-mirror-思维",
+            "3-mirror-的核心设计-服务器权威",
+            "3-1-什么是服务器权威",
+            "3-2-为什么不要让客户端直接决定结果",
+            "4-mirror-工程最小搭建流程",
+            "5-networkmanager-联机入口",
+            "5-1-它负责什么",
+            "5-2-host-server-client-区别",
+            "6-transport-底层传输层",
+            "7-networkidentity-网络对象的身份证",
+            "7-1-它负责什么",
+            "7-2-重要限制",
+            "8-networkbehaviour-网络版-monobehaviour",
+            "8-1-为什么不能只继承-monobehaviour",
+            "8-2-常用属性",
+            "8-3-只让本地玩家处理输入",
+            "8-4-这段代码解决什么问题",
+            "9-command-客户端请求服务器执行",
+            "9-1-command-对应-socket-里的什么",
+            "9-2-示例-客户端请求服务器移动",
+            "9-3-为什么服务器还要校验输入",
+            "10-clientrpc-服务器通知所有客户端",
+            "10-1-clientrpc-对应-socket-里的什么",
+            "10-2-示例-播放攻击特效",
+            "10-3-command-和-clientrpc-的方向",
+            "11-targetrpc-服务器只通知某一个客户端",
+            "12-syncvar-服务器状态自动同步到客户端",
+            "12-1-syncvar-对应-socket-里的什么",
+            "12-2-示例-同步血量",
+            "12-3-syncvar-的关键规则",
+            "13-networktransform-位置同步",
+            "13-1-它适合什么",
+            "13-2-权威方向要看版本和组件配置",
+            "14-生成网络对象-networkserver-spawn",
+            "14-1-为什么普通-instantiate-不够",
+            "14-2-示例-服务器生成子弹",
+            "14-3-子弹-prefab-必须满足什么",
+            "15-销毁网络对象",
+            "16-自定义-networkmanager",
+            "16-1-常见重写点",
+            "16-2-示例-自定义玩家生成",
+            "16-3-networkconnectiontoclient-是什么",
+            "17-mirror-生命周期回调",
+            "17-1-示例-区分服务端和客户端初始化",
+            "17-2-host-模式要特别注意",
+            "18-networkmessage-更接近-socket-的自定义消息",
+            "18-1-示例-登录消息结构",
+            "18-2-什么时候用-networkmessage",
+            "19-一个最小战斗同步流程",
+            "20-常见坑",
+            "20-1-忘记添加-networkidentity",
+            "20-2-只-instantiate-没有-networkserver-spawn",
+            "20-3-客户端直接改-syncvar",
+            "20-4-忘记-islocalplayer-判断",
+            "20-5-把表现和状态混在一起",
+            "20-6-滥用-command",
+            "21-从入门到进阶的学习路线",
+            "21-1-入门阶段",
+            "21-2-基础同步阶段",
+            "21-3-工程实践阶段",
+            "21-4-进阶同步阶段",
+            "22-推荐工程边界",
+            "23-和纯-socket-开发相比-mirror-改变了什么",
+            "24-总结",
+            "25-参考资料"
+        ],
+        "displayDate": "2026-04-19",
+        "displayUpdatedAt": "2026-04-19",
+        "previousPath": "",
+        "nextPath": "",
+        "relatedPaths": [
+            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/Unity-VContainer详细用法.md",
+            "Resources/Articles/Unity-UniTask详细用法.md",
+            "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
+            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
+            "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ]
     },
@@ -8677,14 +8917,15 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ]
     },
     {
@@ -9057,7 +9298,7 @@ export const BLOG_TAGS = [
     {
         "name": "Unity",
         "slug": "unity",
-        "count": 14,
+        "count": 15,
         "articlePaths": [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/坐标变换系统.md",
@@ -9068,6 +9309,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
@@ -9363,6 +9605,24 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "多人游戏",
+        "slug": "多人游戏",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "服务器权威",
+        "slug": "服务器权威",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
         "name": "高级开发",
         "slug": "高级开发",
         "count": 1,
@@ -9444,6 +9704,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-02-07T00:00:00.000Z"
     },
     {
+        "name": "网络同步",
+        "slug": "网络同步",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
         "name": "杂项",
         "slug": "杂项",
         "count": 1,
@@ -9516,6 +9785,24 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "Mirror",
+        "slug": "mirror",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "Socket",
+        "slug": "socket",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
         "name": "Task",
         "slug": "task",
         "count": 1,
@@ -9547,7 +9834,7 @@ export const BLOG_SERIES = [
     {
         "name": "Unity 框架详解",
         "slug": "unity-框架详解",
-        "count": 6,
+        "count": 7,
         "categoryNames": [
             "Unity"
         ],
@@ -9558,6 +9845,7 @@ export const BLOG_SERIES = [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
         "updatedAt": "2026-04-19T00:00:00.000Z"
@@ -9621,7 +9909,7 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 8,
+        "count": 9,
         "articlePaths": [
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9629,6 +9917,7 @@ export const BLOG_ARCHIVES = [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ]
