@@ -3425,11 +3425,13 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/AssetBundle从入门到进阶详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md",
-                            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
+                            "Resources/Articles/Lua语言入门到进阶详解.md"
                         ],
-                        "seriesPaths": []
+                        "seriesPaths": [
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+                        ]
                     }
                 ]
             },
@@ -3700,7 +3702,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4214,9 +4216,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4225,6 +4227,137 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
                             "Resources/Articles/Lua语言入门到进阶详解.md",
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "性能优化",
+                "slug": "性能优化",
+                "path": "#/list?category=Unity&subcategory=%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96",
+                "articles": [
+                    {
+                        "title": "Unity 图形渲染与性能优化专题详解",
+                        "summary": "面向 Unity 开发者系统讲解图形、渲染与性能优化，从渲染管线、DrawCall、Batch、Shader、GPU/CPU 瓶颈、光照、阴影、后处理、UI、粒子、内存、Profiler 到移动端优化方法论。",
+                        "tags": [
+                            "Unity",
+                            "图形渲染",
+                            "性能优化",
+                            "渲染管线",
+                            "Shader",
+                            "Profiler",
+                            "GPU",
+                            "DrawCall"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "性能优化",
+                        "series": "Unity 工程进阶",
+                        "seriesSlug": "unity-工程进阶",
+                        "order": 2,
+                        "date": "2026-04-21T00:00:00.000Z",
+                        "updatedAt": "2026-04-21T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                        "slug": "unity-图形渲染与性能优化专题详解",
+                        "route": "#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md",
+                        "readMinutes": 30,
+                        "headings": [
+                            "unity-图形渲染与性能优化专题详解",
+                            "1-这篇文章解决什么问题",
+                            "2-先建立总地图-unity-性能问题分成几类",
+                            "3-unity-一帧里发生了什么",
+                            "4-渲染管线-built-in-urp-hdrp",
+                            "4-1-三种管线的定位",
+                            "4-2-管线选择不是越高级越好",
+                            "4-3-srp-batcher-是什么",
+                            "5-drawcall-batch-setpass-的真正含义",
+                            "5-1-drawcall-是什么",
+                            "5-2-batch-是什么",
+                            "5-3-setpass-是什么",
+                            "6-合批优化-不要只盯着-drawcall-数字",
+                            "6-1-static-batching",
+                            "6-2-dynamic-batching",
+                            "6-3-gpu-instancing",
+                            "6-4-materialpropertyblock",
+                            "7-gpu-瓶颈-顶点-像素-带宽",
+                            "7-1-顶点成本",
+                            "7-2-像素成本",
+                            "7-3-带宽成本",
+                            "8-overdraw-透明和-ui-的隐形杀手",
+                            "8-1-overdraw-是什么",
+                            "8-2-如何优化透明-overdraw",
+                            "8-3-ui-特别容易产生-overdraw",
+                            "9-shader-优化",
+                            "9-1-shader-成本从哪里来",
+                            "9-2-shadergraph-不是性能免费",
+                            "9-3-shader-关键词变体",
+                            "10-光照优化",
+                            "10-1-实时光照-烘焙光照-混合光照",
+                            "10-2-lightmap-优化",
+                            "11-阴影优化",
+                            "11-1-阴影成本来自哪里",
+                            "11-2-优化方式",
+                            "12-后处理优化",
+                            "13-ui-渲染优化",
+                            "13-1-canvas-重建",
+                            "13-2-ui-合批",
+                            "13-3-ui-透明-overdraw",
+                            "14-粒子与特效优化",
+                            "14-1-粒子成本来源",
+                            "14-2-优化建议",
+                            "15-模型-lod-与剔除",
+                            "15-1-模型面数不是越低越好",
+                            "15-2-lodgroup",
+                            "15-3-occlusion-culling",
+                            "16-skinnedmeshrenderer-与动画成本",
+                            "17-内存与纹理优化",
+                            "17-1-纹理内存往往是大头",
+                            "17-2-纹理格式建议",
+                            "17-3-mipmap",
+                            "18-gc-与脚本性能",
+                            "18-1-常见-gc-来源",
+                            "18-2-示例-缓存-waitforseconds",
+                            "18-3-对象池",
+                            "19-profiler-性能优化的第一工具",
+                            "19-1-必须真机-profiler",
+                            "19-2-profiler-常看模块",
+                            "19-3-timeline-比-hierarchy-更适合看卡顿",
+                            "20-frame-debugger-分析渲染批次",
+                            "21-memory-profiler-分析内存",
+                            "22-profile-analyzer-对比优化效果",
+                            "23-移动端优化重点",
+                            "23-1-分级画质",
+                            "23-2-动态分辨率",
+                            "24-热更新项目中的图形性能问题",
+                            "25-常见问题定位表",
+                            "26-一套推荐的优化流程",
+                            "27-团队协作中的性能预算",
+                            "27-1-常见预算项",
+                            "27-2-为什么预算比事后优化更重要",
+                            "28-常见误区",
+                            "28-1-误区一-drawcall-越低越好",
+                            "28-2-误区二-模型面数低就一定性能好",
+                            "28-3-误区三-优化就是降低画质",
+                            "28-4-误区四-编辑器不卡就代表真机不卡",
+                            "28-5-误区五-优化可以最后再做",
+                            "29-从入门到进阶的学习路线",
+                            "29-1-入门阶段",
+                            "29-2-进阶阶段",
+                            "29-3-实战阶段",
+                            "30-总结"
+                        ],
+                        "displayDate": "2026-04-21",
+                        "displayUpdatedAt": "2026-04-21",
+                        "previousPath": "",
+                        "nextPath": "",
+                        "relatedPaths": [
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ]
                     }
                 ]
@@ -4331,7 +4464,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4632,9 +4765,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
+                    "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                     "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-                    "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-                    "Resources/Articles/AssetBundle从入门到进阶详解.md"
+                    "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                 ],
                 "seriesPaths": []
             },
@@ -4675,9 +4808,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
+                    "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                     "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-                    "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-                    "Resources/Articles/AssetBundle从入门到进阶详解.md"
+                    "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                 ],
                 "seriesPaths": []
             }
@@ -7932,9 +8065,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
         "seriesPaths": []
     },
@@ -7975,9 +8108,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
         "seriesPaths": []
     },
@@ -8039,11 +8172,13 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md",
-            "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
+            "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
-        "seriesPaths": []
+        "seriesPaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ]
     },
     {
         "title": "Unity 中 VContainer 的详细用法",
@@ -8307,7 +8442,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -8807,9 +8942,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -8818,6 +8953,130 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+        ]
+    },
+    {
+        "title": "Unity 图形渲染与性能优化专题详解",
+        "summary": "面向 Unity 开发者系统讲解图形、渲染与性能优化，从渲染管线、DrawCall、Batch、Shader、GPU/CPU 瓶颈、光照、阴影、后处理、UI、粒子、内存、Profiler 到移动端优化方法论。",
+        "tags": [
+            "Unity",
+            "图形渲染",
+            "性能优化",
+            "渲染管线",
+            "Shader",
+            "Profiler",
+            "GPU",
+            "DrawCall"
+        ],
+        "category": "Unity",
+        "subcategory": "性能优化",
+        "series": "Unity 工程进阶",
+        "seriesSlug": "unity-工程进阶",
+        "order": 2,
+        "date": "2026-04-21T00:00:00.000Z",
+        "updatedAt": "2026-04-21T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+        "slug": "unity-图形渲染与性能优化专题详解",
+        "route": "#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md",
+        "readMinutes": 30,
+        "headings": [
+            "unity-图形渲染与性能优化专题详解",
+            "1-这篇文章解决什么问题",
+            "2-先建立总地图-unity-性能问题分成几类",
+            "3-unity-一帧里发生了什么",
+            "4-渲染管线-built-in-urp-hdrp",
+            "4-1-三种管线的定位",
+            "4-2-管线选择不是越高级越好",
+            "4-3-srp-batcher-是什么",
+            "5-drawcall-batch-setpass-的真正含义",
+            "5-1-drawcall-是什么",
+            "5-2-batch-是什么",
+            "5-3-setpass-是什么",
+            "6-合批优化-不要只盯着-drawcall-数字",
+            "6-1-static-batching",
+            "6-2-dynamic-batching",
+            "6-3-gpu-instancing",
+            "6-4-materialpropertyblock",
+            "7-gpu-瓶颈-顶点-像素-带宽",
+            "7-1-顶点成本",
+            "7-2-像素成本",
+            "7-3-带宽成本",
+            "8-overdraw-透明和-ui-的隐形杀手",
+            "8-1-overdraw-是什么",
+            "8-2-如何优化透明-overdraw",
+            "8-3-ui-特别容易产生-overdraw",
+            "9-shader-优化",
+            "9-1-shader-成本从哪里来",
+            "9-2-shadergraph-不是性能免费",
+            "9-3-shader-关键词变体",
+            "10-光照优化",
+            "10-1-实时光照-烘焙光照-混合光照",
+            "10-2-lightmap-优化",
+            "11-阴影优化",
+            "11-1-阴影成本来自哪里",
+            "11-2-优化方式",
+            "12-后处理优化",
+            "13-ui-渲染优化",
+            "13-1-canvas-重建",
+            "13-2-ui-合批",
+            "13-3-ui-透明-overdraw",
+            "14-粒子与特效优化",
+            "14-1-粒子成本来源",
+            "14-2-优化建议",
+            "15-模型-lod-与剔除",
+            "15-1-模型面数不是越低越好",
+            "15-2-lodgroup",
+            "15-3-occlusion-culling",
+            "16-skinnedmeshrenderer-与动画成本",
+            "17-内存与纹理优化",
+            "17-1-纹理内存往往是大头",
+            "17-2-纹理格式建议",
+            "17-3-mipmap",
+            "18-gc-与脚本性能",
+            "18-1-常见-gc-来源",
+            "18-2-示例-缓存-waitforseconds",
+            "18-3-对象池",
+            "19-profiler-性能优化的第一工具",
+            "19-1-必须真机-profiler",
+            "19-2-profiler-常看模块",
+            "19-3-timeline-比-hierarchy-更适合看卡顿",
+            "20-frame-debugger-分析渲染批次",
+            "21-memory-profiler-分析内存",
+            "22-profile-analyzer-对比优化效果",
+            "23-移动端优化重点",
+            "23-1-分级画质",
+            "23-2-动态分辨率",
+            "24-热更新项目中的图形性能问题",
+            "25-常见问题定位表",
+            "26-一套推荐的优化流程",
+            "27-团队协作中的性能预算",
+            "27-1-常见预算项",
+            "27-2-为什么预算比事后优化更重要",
+            "28-常见误区",
+            "28-1-误区一-drawcall-越低越好",
+            "28-2-误区二-模型面数低就一定性能好",
+            "28-3-误区三-优化就是降低画质",
+            "28-4-误区四-编辑器不卡就代表真机不卡",
+            "28-5-误区五-优化可以最后再做",
+            "29-从入门到进阶的学习路线",
+            "29-1-入门阶段",
+            "29-2-进阶阶段",
+            "29-3-实战阶段",
+            "30-总结"
+        ],
+        "displayDate": "2026-04-21",
+        "displayUpdatedAt": "2026-04-21",
+        "previousPath": "",
+        "nextPath": "",
+        "relatedPaths": [
+            "Resources/Articles/AssetBundle从入门到进阶详解.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ]
     },
     {
@@ -8917,7 +9176,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9298,7 +9557,7 @@ export const BLOG_TAGS = [
     {
         "name": "Unity",
         "slug": "unity",
-        "count": 15,
+        "count": 16,
         "articlePaths": [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/坐标变换系统.md",
@@ -9310,13 +9569,14 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md"
         ],
-        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
     },
     {
         "name": "行为型模式",
@@ -9444,6 +9704,17 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "性能优化",
+        "slug": "性能优化",
+        "count": 3,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
         "name": "Lua",
         "slug": "lua",
         "count": 3,
@@ -9493,16 +9764,6 @@ export const BLOG_TAGS = [
         "articlePaths": [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
-        ],
-        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
-    },
-    {
-        "name": "性能优化",
-        "slug": "性能优化",
-        "count": 2,
-        "articlePaths": [
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
@@ -9704,6 +9965,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-02-07T00:00:00.000Z"
     },
     {
+        "name": "图形渲染",
+        "slug": "图形渲染",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
         "name": "网络同步",
         "slug": "网络同步",
         "count": 1,
@@ -9711,6 +9981,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "渲染管线",
+        "slug": "渲染管线",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
     },
     {
         "name": "杂项",
@@ -9758,6 +10037,24 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
     },
     {
+        "name": "DrawCall",
+        "slug": "drawcall",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
+        "name": "GPU",
+        "slug": "gpu",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
         "name": "HybridCLR",
         "slug": "hybridclr",
         "count": 1,
@@ -9792,6 +10089,24 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "Profiler",
+        "slug": "profiler",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
+        "name": "Shader",
+        "slug": "shader",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
     },
     {
         "name": "Socket",
@@ -9865,6 +10180,20 @@ export const BLOG_SERIES = [
         "updatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "Unity 工程进阶",
+        "slug": "unity-工程进阶",
+        "count": 2,
+        "categoryNames": [
+            "Unity"
+        ],
+        "categoryLabel": "Unity",
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "updatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
         "name": "架构与解耦",
         "slug": "架构与解耦",
         "count": 1,
@@ -9876,19 +10205,6 @@ export const BLOG_SERIES = [
             "Resources/Articles/依赖注入.md"
         ],
         "updatedAt": "2026-03-12T00:00:00.000Z"
-    },
-    {
-        "name": "Unity 工程进阶",
-        "slug": "unity-工程进阶",
-        "count": 1,
-        "categoryNames": [
-            "Unity"
-        ],
-        "categoryLabel": "Unity",
-        "articlePaths": [
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
-        ],
-        "updatedAt": "2026-04-09T00:00:00.000Z"
     },
     {
         "name": "Unity 资源管理",
@@ -9909,7 +10225,7 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 9,
+        "count": 10,
         "articlePaths": [
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9918,6 +10234,7 @@ export const BLOG_ARCHIVES = [
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md",
             "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ]

@@ -7,6 +7,14 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity 图形渲染与性能优化专题详解</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md</guid>
+            <description>面向 Unity 开发者系统讲解图形、渲染与性能优化，从渲染管线、DrawCall、Batch、Shader、GPU/CPU 瓶颈、光照、阴影、后处理、UI、粒子、内存、Profiler 到移动端优化方法论。</description>
+            <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>Unity Mirror 多人游戏开发从入门到进阶详解</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Mirror%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity-Mirror%E5%A4%9A%E4%BA%BA%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%9B%E9%98%B6%E8%AF%A6%E8%A7%A3.md</guid>
@@ -157,14 +165,6 @@
             <description>牌种分类 ： - 饼牌：1-9饼，各4张 - 万牌：1-9万，各4张 - 条牌：1-9条，各4张 - 风牌：东、南、西、北，其中东风为风头，各4张 - 将牌：中、发、白，其中红中为将头，各4张 总计 ：136张牌</description>
             <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
             <category>Program设计文档</category>
-        </item>
-        <item>
-            <title>值类型与引用类型</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.md</guid>
-            <description>最根本的区别在于它们在内存中存储和传递的方式不同。</description>
-            <pubDate>Mon, 09 Feb 2026 00:00:00 GMT</pubDate>
-            <category>C#</category>
         </item>
     </channel>
 </rss>
