@@ -15,6 +15,22 @@
             <category>Unity</category>
         </item>
         <item>
+            <title>Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9AProfiler%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9AProfiler%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81.md</guid>
+            <description>系统讲清 Unity 性能分析方法论、Profiler 工具链、CPU/GPU/内存瓶颈定位、常见优化手段，以及如何建立可长期维护的性能优化工作流。</description>
+            <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
+            <title>Unity 渲染管线与 Draw Call 优化详解</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E4%B8%8E+Draw+Call+%E4%BC%98%E5%8C%96%E8%AF%A6%E8%A7%A3.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E4%B8%8E+Draw+Call+%E4%BC%98%E5%8C%96%E8%AF%A6%E8%A7%A3.md</guid>
+            <description>系统讲清 Unity 中 Built-in / URP / HDRP 的定位、渲染路径、Draw Call / Batch / SetPass 的含义，以及基于 Profiler、Frame Debugger、SRP Batcher、静态批处理、GPU Instancing 的完整优化工作流。</description>
+            <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>Unity 图形渲染与性能优化专题详解</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md</guid>
@@ -149,22 +165,6 @@
             <description>右键菜单修改 文件夹内空白处右键 HKEY CLASSES ROOT\Directory\Background\shell 文件夹右键 HKEY CLASSES ROOT\Directory\shell</description>
             <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
             <category>杂项</category>
-        </item>
-        <item>
-            <title>坐标变换系统</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E7%B3%BB%E7%BB%9F.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2%E7%B3%BB%E7%BB%9F.md</guid>
-            <description>Unity中的坐标变换系统 Unity的Inspector面板中的左边空间是当前所处的坐标空间的值 如果该物体没有父物体（或父物体的变换为0），那么该物体的坐标空间就是世界坐标空间 如果该物体有父物体，那么该物体会使用父物体的坐标空间进行变换 :::ref 文档原文参考 任何子游</description>
-            <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
-            <category>Unity</category>
-        </item>
-        <item>
-            <title>Layer</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLayer.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLayer.md</guid>
-            <description>Unity 中的 LayerMask 详解</description>
-            <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
-            <category>Unity</category>
         </item>
     </channel>
 </rss>

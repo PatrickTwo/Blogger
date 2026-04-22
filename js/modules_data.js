@@ -3479,13 +3479,15 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                         "relatedPaths": [
-                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
                         ]
                     },
                     {
@@ -3546,13 +3548,15 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-                            "Resources/Articles/Lua语言入门到进阶详解.md"
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
-                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
                         ]
                     }
                 ]
@@ -4339,8 +4343,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
-                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4472,15 +4476,272 @@ export const BLOG_CATEGORIES = [
                         "displayDate": "2026-04-21",
                         "displayUpdatedAt": "2026-04-21",
                         "previousPath": "",
+                        "nextPath": "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                        "relatedPaths": [
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+                            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                        ]
+                    },
+                    {
+                        "title": "Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流",
+                        "summary": "系统讲清 Unity 性能分析方法论、Profiler 工具链、CPU/GPU/内存瓶颈定位、常见优化手段，以及如何建立可长期维护的性能优化工作流。",
+                        "tags": [
+                            "Unity",
+                            "Profiler",
+                            "性能优化",
+                            "Memory Profiler",
+                            "Frame Debugger",
+                            "Burst",
+                            "工程实践"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "性能优化",
+                        "series": "Unity 工程进阶",
+                        "seriesSlug": "unity-工程进阶",
+                        "order": 2,
+                        "date": "2026-04-22T00:00:00.000Z",
+                        "updatedAt": "2026-04-22T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                        "slug": "unity-性能分析与优化实战-profiler-内存-渲染与工程工作流",
+                        "route": "#/article?path=Resources%2FArticles%2FUnity+%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9AProfiler%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9AProfiler%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+                        "readMinutes": 49,
+                        "headings": [
+                            "unity-性能分析与优化实战-profiler-内存-渲染与工程工作流",
+                            "1-为什么性能优化不能靠感觉",
+                            "1-1-卡-不是一个单一问题",
+                            "1-2-优化的目标是-达标-不是-无限快",
+                            "2-unity-性能工作的整体流程",
+                            "2-1-一套建议长期坚持的工作流",
+                            "2-2-性能分析的几个基本原则",
+                            "3-unity-官方性能工具链总览",
+                            "4-先搭好采样环境-再谈优化",
+                            "4-1-编辑器数据只能做参考-不能替代真机结论",
+                            "4-2-建议建立专门的性能测试场景",
+                            "4-3-开发构建与自动连接-profiler",
+                            "4-4-deep-profiling-要谨慎使用",
+                            "5-用-profiler-建立-先定位后优化-的主线",
+                            "5-1-profiler-的核心价值",
+                            "5-2-先看趋势-不要一上来盯单帧",
+                            "5-3-判断是-cpu-bound-还是-gpu-bound",
+                            "6-cpu-性能分析-先从主线程和渲染线程入手",
+                            "6-1-cpu-usage-模块怎么看",
+                            "6-2-main-thread-不是唯一重点",
+                            "6-3-先找-最贵的大块-再看细节",
+                            "7-cpu-优化的常见路径",
+                            "7-1-减少不必要的每帧执行",
+                            "7-2-避免-低价值分配-和-gc-抖动",
+                            "7-3-对象池不是万能药-但非常常用",
+                            "7-4-burst-与-c-job-system-适合-cpu-密集型任务",
+                            "7-5-自定义打点-比盲猜更可靠",
+                            "8-gpu-与渲染性能分析-别把所有渲染问题都叫-draw-call-高",
+                            "8-1-gpu-优化首先要确认-贵-在哪里",
+                            "8-2-rendering-statistics-适合快速观察趋势",
+                            "8-3-frame-debugger-是定位渲染细节问题的关键工具",
+                            "9-渲染优化的常见路径",
+                            "9-1-批处理不是越多越好-而是要看收益结构",
+                            "静态批处理",
+                            "动态批处理",
+                            "srp-batcher",
+                            "9-2-lod-遮挡剔除与可见性控制",
+                            "9-3-透明-粒子和后处理常常是-gpu-杀手",
+                            "10-内存分析-不要只盯-gc-还要盯资源生命周期",
+                            "10-1-memory-profiler-解决的不是-瞬时耗时-而是-内存结构",
+                            "10-2-memory-profiler-的典型用法",
+                            "10-3-常见内存问题类型",
+                            "10-4-内存优化往往比-cpu-优化更依赖-生命周期设计",
+                            "11-gc-优化-从-少分配-走向-可控分配",
+                            "11-1-gc-优化的核心不是零分配-而是减少尖峰",
+                            "11-2-常见容易忽视的分配点",
+                            "11-3-增量-gc-与禁用-gc-的取舍",
+                            "12-ui-性能优化-很多项目都低估了-ui-的成本",
+                            "12-1-ui-卡顿并不少见",
+                            "12-2-ui-优化的通用思路",
+                            "13-加载与初始化优化-首帧-切场景-首次触发都要管",
+                            "13-1-很多卡顿并不发生在常驻帧-而是在-第一次",
+                            "13-2-处理思路",
+                            "14-用-profile-analyzer-做多帧对比-而不是只比一帧",
+                            "14-1-为什么优化前后对比很容易出错",
+                            "14-2-profile-analyzer-适合做什么",
+                            "15-代码层面的性能可观测性建设",
+                            "15-1-profilermarker-负责打点-profilercounter-负责指标",
+                            "15-2-用-profilerrecorder-读取指标",
+                            "16-一个建议直接落地到项目中的优化工作流",
+                            "16-1-第一步-建立性能预算",
+                            "16-2-第二步-建立固定测试-case",
+                            "16-3-第三步-每次只改一类因素",
+                            "16-4-第四步-用-profile-analyzer-或同路径录制结果对比",
+                            "16-5-第五步-把经验沉淀成团队规范",
+                            "17-常见误区与反模式",
+                            "17-1-先上对象池-反正总没错",
+                            "17-2-draw-call-越少越好",
+                            "17-3-编辑器里不卡就说明项目没问题",
+                            "17-4-把-deep-profiling-一开-看到最细就是真相",
+                            "17-5-微优化一定有用",
+                            "18-推荐的学习路径",
+                            "18-1-入门阶段",
+                            "18-2-进阶阶段",
+                            "18-3-高级阶段",
+                            "19-总结",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-22",
+                        "displayUpdatedAt": "2026-04-22",
+                        "previousPath": "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                         "nextPath": "",
                         "relatedPaths": [
-                            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/UnityTestRunner工作流.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
-                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "渲染优化",
+                "slug": "渲染优化",
+                "path": "#/list?category=Unity&subcategory=%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96",
+                "articles": [
+                    {
+                        "title": "Unity 渲染管线与 Draw Call 优化详解",
+                        "summary": "系统讲清 Unity 中 Built-in / URP / HDRP 的定位、渲染路径、Draw Call / Batch / SetPass 的含义，以及基于 Profiler、Frame Debugger、SRP Batcher、静态批处理、GPU Instancing 的完整优化工作流。",
+                        "tags": [
+                            "Unity",
+                            "渲染管线",
+                            "Draw Call",
+                            "SRP Batcher",
+                            "GPU Instancing",
+                            "Frame Debugger",
+                            "Profiler",
+                            "工程实践"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "渲染优化",
+                        "series": "Unity 工程进阶",
+                        "seriesSlug": "unity-工程进阶",
+                        "order": 3,
+                        "date": "2026-04-22T00:00:00.000Z",
+                        "updatedAt": "2026-04-22T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+                        "slug": "unity-渲染管线与-draw-call-优化详解",
+                        "route": "#/article?path=Resources%2FArticles%2FUnity+%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E4%B8%8E+Draw+Call+%E4%BC%98%E5%8C%96%E8%AF%A6%E8%A7%A3.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E4%B8%8E+Draw+Call+%E4%BC%98%E5%8C%96%E8%AF%A6%E8%A7%A3.md",
+                        "readMinutes": 46,
+                        "headings": [
+                            "unity-渲染管线与-draw-call-优化详解",
+                            "1-为什么-渲染管线-和-draw-call-优化-必须一起讲",
+                            "2-unity-的渲染管线是什么",
+                            "2-1-渲染管线的本质",
+                            "2-2-built-in-urp-hdrp-的定位差异",
+                            "3-渲染路径与-draw-call-的关系",
+                            "3-1-built-in-中常见的渲染路径",
+                            "3-2-urp-中常见的渲染路径",
+                            "4-draw-call-batch-setpass-到底分别是什么",
+                            "4-1-draw-call",
+                            "4-2-batch",
+                            "4-3-setpass",
+                            "4-4-一个实战判断口诀",
+                            "5-unity-官方工具链-应该怎么分析渲染问题",
+                            "5-1-最基础-game-视图-statistics",
+                            "5-2-rendering-profiler-看整体趋势",
+                            "5-3-frame-debugger-看每一步到底发生了什么",
+                            "5-4-renderdoc-看更底层-gpu-细节",
+                            "6-draw-call-优化的底层逻辑",
+                            "6-1-真正昂贵的往往不是-画-而是-准备画",
+                            "6-2-为什么-setpass-很重要",
+                            "7-unity-官方推荐的-draw-call-优化优先级",
+                            "8-srp-batcher-srp-项目最该优先理解的优化手段",
+                            "8-1-srp-batcher-解决的是什么问题",
+                            "8-2-它为什么通常比传统批处理更值得先考虑",
+                            "8-3-srp-batcher-的典型排查方法",
+                            "8-4-materialpropertyblock-在-srp-里的坑",
+                            "9-静态批处理-适合真正不动的场景对象",
+                            "9-1-静态批处理的原理",
+                            "9-2-为什么静态批处理通常比动态批处理更靠谱",
+                            "9-3-什么时候适合用",
+                            "9-4-它的限制",
+                            "9-5-运行时静态批处理示例",
+                            "10-gpu-instancing-大量相同-mesh-相同材质时非常有效",
+                            "10-1-它适合什么场景",
+                            "10-2-它为什么有效",
+                            "10-3-它和-srp-batcher-的关系",
+                            "10-4-常见限制",
+                            "10-5-启用思路",
+                            "11-dynamic-batching-知道它是什么-但不要神化它",
+                            "11-1-它的原理",
+                            "11-2-为什么它在现代项目里经常不是最佳选项",
+                            "11-3-适用边界",
+                            "11-4-一个务实建议",
+                            "12-材质-shader-和纹理图集-很多项目真正的主战场",
+                            "12-1-共享材质比-看起来一样-更重要",
+                            "12-2-纹理图集的价值",
+                            "12-3-shader-variant-失控也是渲染提交杀手",
+                            "13-什么最容易打断批处理",
+                            "14-透明-阴影-后处理-这些问题常常比-draw-call-更大",
+                            "14-1-透明物体与-overdraw",
+                            "14-2-阴影",
+                            "14-3-后处理",
+                            "15-lod-occlusion-culling-与场景组织",
+                            "15-1-lod-不是-只降面数",
+                            "15-2-occlusion-culling-是减少-无效提交",
+                            "15-3-网格粒度不要极端",
+                            "16-按渲染管线分别给出优化建议",
+                            "16-1-built-in-render-pipeline-的重点",
+                            "16-2-urp-项目的重点",
+                            "16-3-hdrp-项目的重点",
+                            "17-一套真正可落地的渲染优化工作流",
+                            "17-1-第一步-先判断-cpu-还是-gpu",
+                            "17-2-第二步-看-draw-calls-setpass-batches-triangles",
+                            "17-3-第三步-用-frame-debugger-找-为什么没合批",
+                            "17-4-第四步-先做收益最大的动作",
+                            "17-5-第五步-做-a-b-对照验证",
+                            "18-一个用于运行时记录渲染指标的示例",
+                            "19-常见坑与纠错清单",
+                            "19-1-我把-renderer-material-用得到处都是",
+                            "19-2-我开了-enable-gpu-instancing-但为什么没有-instancing",
+                            "19-3-我用了-materialpropertyblock-为什么-urp-反而更慢了",
+                            "19-4-我已经做了静态批处理-为什么还是很多-draw-calls",
+                            "19-5-我把很多对象合成一个大-mesh-为什么没变快",
+                            "20-面向团队协作的实践建议",
+                            "20-1-给技术美术和程序定统一规则",
+                            "20-2-建立平台分层配置",
+                            "20-3-让性能分析成为日常流程-而不是上线前补救",
+                            "21-学习与排查路线图",
+                            "21-1-入门阶段",
+                            "21-2-进阶阶段",
+                            "21-3-高阶阶段",
+                            "22-总结",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-22",
+                        "displayUpdatedAt": "2026-04-22",
+                        "previousPath": "",
+                        "nextPath": "",
+                        "relatedPaths": [
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/UnityTestRunner工作流.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
                         ]
                     }
                 ]
@@ -4889,8 +5150,8 @@ export const BLOG_CATEGORIES = [
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
                     "Resources/Articles/UnityTestRunner工作流.md",
-                    "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                    "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                    "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
                 ],
                 "seriesPaths": []
             },
@@ -4932,8 +5193,8 @@ export const BLOG_CATEGORIES = [
                 "nextPath": "",
                 "relatedPaths": [
                     "Resources/Articles/UnityTestRunner工作流.md",
-                    "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                    "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                    "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
                 ],
                 "seriesPaths": []
             }
@@ -8189,8 +8450,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
         "seriesPaths": []
     },
@@ -8232,8 +8493,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
         "seriesPaths": []
     },
@@ -8349,13 +8610,15 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
         "relatedPaths": [
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ]
     },
     {
@@ -8416,13 +8679,15 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-            "Resources/Articles/Lua语言入门到进阶详解.md"
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ]
     },
     {
@@ -9188,8 +9453,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9314,15 +9579,265 @@ export const BLOG_ARTICLES = [
         "displayDate": "2026-04-21",
         "displayUpdatedAt": "2026-04-21",
         "previousPath": "",
+        "nextPath": "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+        "relatedPaths": [
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ]
+    },
+    {
+        "title": "Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流",
+        "summary": "系统讲清 Unity 性能分析方法论、Profiler 工具链、CPU/GPU/内存瓶颈定位、常见优化手段，以及如何建立可长期维护的性能优化工作流。",
+        "tags": [
+            "Unity",
+            "Profiler",
+            "性能优化",
+            "Memory Profiler",
+            "Frame Debugger",
+            "Burst",
+            "工程实践"
+        ],
+        "category": "Unity",
+        "subcategory": "性能优化",
+        "series": "Unity 工程进阶",
+        "seriesSlug": "unity-工程进阶",
+        "order": 2,
+        "date": "2026-04-22T00:00:00.000Z",
+        "updatedAt": "2026-04-22T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+        "slug": "unity-性能分析与优化实战-profiler-内存-渲染与工程工作流",
+        "route": "#/article?path=Resources%2FArticles%2FUnity+%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9AProfiler%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9AProfiler%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E6%B8%B2%E6%9F%93%E4%B8%8E%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+        "readMinutes": 49,
+        "headings": [
+            "unity-性能分析与优化实战-profiler-内存-渲染与工程工作流",
+            "1-为什么性能优化不能靠感觉",
+            "1-1-卡-不是一个单一问题",
+            "1-2-优化的目标是-达标-不是-无限快",
+            "2-unity-性能工作的整体流程",
+            "2-1-一套建议长期坚持的工作流",
+            "2-2-性能分析的几个基本原则",
+            "3-unity-官方性能工具链总览",
+            "4-先搭好采样环境-再谈优化",
+            "4-1-编辑器数据只能做参考-不能替代真机结论",
+            "4-2-建议建立专门的性能测试场景",
+            "4-3-开发构建与自动连接-profiler",
+            "4-4-deep-profiling-要谨慎使用",
+            "5-用-profiler-建立-先定位后优化-的主线",
+            "5-1-profiler-的核心价值",
+            "5-2-先看趋势-不要一上来盯单帧",
+            "5-3-判断是-cpu-bound-还是-gpu-bound",
+            "6-cpu-性能分析-先从主线程和渲染线程入手",
+            "6-1-cpu-usage-模块怎么看",
+            "6-2-main-thread-不是唯一重点",
+            "6-3-先找-最贵的大块-再看细节",
+            "7-cpu-优化的常见路径",
+            "7-1-减少不必要的每帧执行",
+            "7-2-避免-低价值分配-和-gc-抖动",
+            "7-3-对象池不是万能药-但非常常用",
+            "7-4-burst-与-c-job-system-适合-cpu-密集型任务",
+            "7-5-自定义打点-比盲猜更可靠",
+            "8-gpu-与渲染性能分析-别把所有渲染问题都叫-draw-call-高",
+            "8-1-gpu-优化首先要确认-贵-在哪里",
+            "8-2-rendering-statistics-适合快速观察趋势",
+            "8-3-frame-debugger-是定位渲染细节问题的关键工具",
+            "9-渲染优化的常见路径",
+            "9-1-批处理不是越多越好-而是要看收益结构",
+            "静态批处理",
+            "动态批处理",
+            "srp-batcher",
+            "9-2-lod-遮挡剔除与可见性控制",
+            "9-3-透明-粒子和后处理常常是-gpu-杀手",
+            "10-内存分析-不要只盯-gc-还要盯资源生命周期",
+            "10-1-memory-profiler-解决的不是-瞬时耗时-而是-内存结构",
+            "10-2-memory-profiler-的典型用法",
+            "10-3-常见内存问题类型",
+            "10-4-内存优化往往比-cpu-优化更依赖-生命周期设计",
+            "11-gc-优化-从-少分配-走向-可控分配",
+            "11-1-gc-优化的核心不是零分配-而是减少尖峰",
+            "11-2-常见容易忽视的分配点",
+            "11-3-增量-gc-与禁用-gc-的取舍",
+            "12-ui-性能优化-很多项目都低估了-ui-的成本",
+            "12-1-ui-卡顿并不少见",
+            "12-2-ui-优化的通用思路",
+            "13-加载与初始化优化-首帧-切场景-首次触发都要管",
+            "13-1-很多卡顿并不发生在常驻帧-而是在-第一次",
+            "13-2-处理思路",
+            "14-用-profile-analyzer-做多帧对比-而不是只比一帧",
+            "14-1-为什么优化前后对比很容易出错",
+            "14-2-profile-analyzer-适合做什么",
+            "15-代码层面的性能可观测性建设",
+            "15-1-profilermarker-负责打点-profilercounter-负责指标",
+            "15-2-用-profilerrecorder-读取指标",
+            "16-一个建议直接落地到项目中的优化工作流",
+            "16-1-第一步-建立性能预算",
+            "16-2-第二步-建立固定测试-case",
+            "16-3-第三步-每次只改一类因素",
+            "16-4-第四步-用-profile-analyzer-或同路径录制结果对比",
+            "16-5-第五步-把经验沉淀成团队规范",
+            "17-常见误区与反模式",
+            "17-1-先上对象池-反正总没错",
+            "17-2-draw-call-越少越好",
+            "17-3-编辑器里不卡就说明项目没问题",
+            "17-4-把-deep-profiling-一开-看到最细就是真相",
+            "17-5-微优化一定有用",
+            "18-推荐的学习路径",
+            "18-1-入门阶段",
+            "18-2-进阶阶段",
+            "18-3-高级阶段",
+            "19-总结",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-22",
+        "displayUpdatedAt": "2026-04-22",
+        "previousPath": "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
         "nextPath": "",
         "relatedPaths": [
-            "Resources/Articles/AssetBundle从入门到进阶详解.md",
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/UnityTestRunner工作流.md"
         ],
         "seriesPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ]
+    },
+    {
+        "title": "Unity 渲染管线与 Draw Call 优化详解",
+        "summary": "系统讲清 Unity 中 Built-in / URP / HDRP 的定位、渲染路径、Draw Call / Batch / SetPass 的含义，以及基于 Profiler、Frame Debugger、SRP Batcher、静态批处理、GPU Instancing 的完整优化工作流。",
+        "tags": [
+            "Unity",
+            "渲染管线",
+            "Draw Call",
+            "SRP Batcher",
+            "GPU Instancing",
+            "Frame Debugger",
+            "Profiler",
+            "工程实践"
+        ],
+        "category": "Unity",
+        "subcategory": "渲染优化",
+        "series": "Unity 工程进阶",
+        "seriesSlug": "unity-工程进阶",
+        "order": 3,
+        "date": "2026-04-22T00:00:00.000Z",
+        "updatedAt": "2026-04-22T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
+        "slug": "unity-渲染管线与-draw-call-优化详解",
+        "route": "#/article?path=Resources%2FArticles%2FUnity+%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E4%B8%8E+Draw+Call+%E4%BC%98%E5%8C%96%E8%AF%A6%E8%A7%A3.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E4%B8%8E+Draw+Call+%E4%BC%98%E5%8C%96%E8%AF%A6%E8%A7%A3.md",
+        "readMinutes": 46,
+        "headings": [
+            "unity-渲染管线与-draw-call-优化详解",
+            "1-为什么-渲染管线-和-draw-call-优化-必须一起讲",
+            "2-unity-的渲染管线是什么",
+            "2-1-渲染管线的本质",
+            "2-2-built-in-urp-hdrp-的定位差异",
+            "3-渲染路径与-draw-call-的关系",
+            "3-1-built-in-中常见的渲染路径",
+            "3-2-urp-中常见的渲染路径",
+            "4-draw-call-batch-setpass-到底分别是什么",
+            "4-1-draw-call",
+            "4-2-batch",
+            "4-3-setpass",
+            "4-4-一个实战判断口诀",
+            "5-unity-官方工具链-应该怎么分析渲染问题",
+            "5-1-最基础-game-视图-statistics",
+            "5-2-rendering-profiler-看整体趋势",
+            "5-3-frame-debugger-看每一步到底发生了什么",
+            "5-4-renderdoc-看更底层-gpu-细节",
+            "6-draw-call-优化的底层逻辑",
+            "6-1-真正昂贵的往往不是-画-而是-准备画",
+            "6-2-为什么-setpass-很重要",
+            "7-unity-官方推荐的-draw-call-优化优先级",
+            "8-srp-batcher-srp-项目最该优先理解的优化手段",
+            "8-1-srp-batcher-解决的是什么问题",
+            "8-2-它为什么通常比传统批处理更值得先考虑",
+            "8-3-srp-batcher-的典型排查方法",
+            "8-4-materialpropertyblock-在-srp-里的坑",
+            "9-静态批处理-适合真正不动的场景对象",
+            "9-1-静态批处理的原理",
+            "9-2-为什么静态批处理通常比动态批处理更靠谱",
+            "9-3-什么时候适合用",
+            "9-4-它的限制",
+            "9-5-运行时静态批处理示例",
+            "10-gpu-instancing-大量相同-mesh-相同材质时非常有效",
+            "10-1-它适合什么场景",
+            "10-2-它为什么有效",
+            "10-3-它和-srp-batcher-的关系",
+            "10-4-常见限制",
+            "10-5-启用思路",
+            "11-dynamic-batching-知道它是什么-但不要神化它",
+            "11-1-它的原理",
+            "11-2-为什么它在现代项目里经常不是最佳选项",
+            "11-3-适用边界",
+            "11-4-一个务实建议",
+            "12-材质-shader-和纹理图集-很多项目真正的主战场",
+            "12-1-共享材质比-看起来一样-更重要",
+            "12-2-纹理图集的价值",
+            "12-3-shader-variant-失控也是渲染提交杀手",
+            "13-什么最容易打断批处理",
+            "14-透明-阴影-后处理-这些问题常常比-draw-call-更大",
+            "14-1-透明物体与-overdraw",
+            "14-2-阴影",
+            "14-3-后处理",
+            "15-lod-occlusion-culling-与场景组织",
+            "15-1-lod-不是-只降面数",
+            "15-2-occlusion-culling-是减少-无效提交",
+            "15-3-网格粒度不要极端",
+            "16-按渲染管线分别给出优化建议",
+            "16-1-built-in-render-pipeline-的重点",
+            "16-2-urp-项目的重点",
+            "16-3-hdrp-项目的重点",
+            "17-一套真正可落地的渲染优化工作流",
+            "17-1-第一步-先判断-cpu-还是-gpu",
+            "17-2-第二步-看-draw-calls-setpass-batches-triangles",
+            "17-3-第三步-用-frame-debugger-找-为什么没合批",
+            "17-4-第四步-先做收益最大的动作",
+            "17-5-第五步-做-a-b-对照验证",
+            "18-一个用于运行时记录渲染指标的示例",
+            "19-常见坑与纠错清单",
+            "19-1-我把-renderer-material-用得到处都是",
+            "19-2-我开了-enable-gpu-instancing-但为什么没有-instancing",
+            "19-3-我用了-materialpropertyblock-为什么-urp-反而更慢了",
+            "19-4-我已经做了静态批处理-为什么还是很多-draw-calls",
+            "19-5-我把很多对象合成一个大-mesh-为什么没变快",
+            "20-面向团队协作的实践建议",
+            "20-1-给技术美术和程序定统一规则",
+            "20-2-建立平台分层配置",
+            "20-3-让性能分析成为日常流程-而不是上线前补救",
+            "21-学习与排查路线图",
+            "21-1-入门阶段",
+            "21-2-进阶阶段",
+            "21-3-高阶阶段",
+            "22-总结",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-22",
+        "displayUpdatedAt": "2026-04-22",
+        "previousPath": "",
+        "nextPath": "",
+        "relatedPaths": [
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/UnityTestRunner工作流.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
         ]
     },
     {
@@ -9803,7 +10318,7 @@ export const BLOG_TAGS = [
     {
         "name": "Unity",
         "slug": "unity",
-        "count": 17,
+        "count": 19,
         "articlePaths": [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/坐标变换系统.md",
@@ -9817,6 +10332,8 @@ export const BLOG_TAGS = [
             "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Addressables.md",
@@ -9939,6 +10456,18 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-01-31T00:00:00.000Z"
     },
     {
+        "name": "性能优化",
+        "slug": "性能优化",
+        "count": 4,
+        "articlePaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "资源加载",
         "slug": "资源加载",
         "count": 4,
@@ -9951,15 +10480,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
-        "name": "性能优化",
-        "slug": "性能优化",
+        "name": "工程实践",
+        "slug": "工程实践",
         "count": 3,
         "articlePaths": [
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
-        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "Lua",
@@ -9971,6 +10500,17 @@ export const BLOG_TAGS = [
             "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
+    },
+    {
+        "name": "Profiler",
+        "slug": "profiler",
+        "count": 3,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "Program设计文档",
@@ -10015,6 +10555,16 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "渲染管线",
+        "slug": "渲染管线",
+        "count": 2,
+        "articlePaths": [
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "依赖注入",
         "slug": "依赖注入",
         "count": 2,
@@ -10043,6 +10593,16 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "Frame Debugger",
+        "slug": "frame-debugger",
+        "count": 2,
+        "articlePaths": [
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "Mahjong",
@@ -10149,15 +10709,6 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-12T00:00:00.000Z"
     },
     {
-        "name": "工程实践",
-        "slug": "工程实践",
-        "count": 1,
-        "articlePaths": [
-            "Resources/Articles/UnityTestRunner工作流.md"
-        ],
-        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
-    },
-    {
         "name": "集合",
         "slug": "集合",
         "count": 1,
@@ -10239,15 +10790,6 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
-        "name": "渲染管线",
-        "slug": "渲染管线",
-        "count": 1,
-        "articlePaths": [
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
-        ],
-        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
-    },
-    {
         "name": "杂项",
         "slug": "杂项",
         "count": 1,
@@ -10293,6 +10835,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "Burst",
+        "slug": "burst",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "DI",
         "slug": "di",
         "count": 1,
@@ -10300,6 +10851,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-VContainer详细用法.md"
         ],
         "latestUpdatedAt": "2026-04-08T00:00:00.000Z"
+    },
+    {
+        "name": "Draw Call",
+        "slug": "draw-call",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "DrawCall",
@@ -10318,6 +10878,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
         ],
         "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
+        "name": "GPU Instancing",
+        "slug": "gpu-instancing",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "HybridCLR",
@@ -10347,6 +10916,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "Memory Profiler",
+        "slug": "memory-profiler",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "Mirror",
         "slug": "mirror",
         "count": 1,
@@ -10365,15 +10943,6 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
-        "name": "Profiler",
-        "slug": "profiler",
-        "count": 1,
-        "articlePaths": [
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
-        ],
-        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
-    },
-    {
         "name": "Shader",
         "slug": "shader",
         "count": 1,
@@ -10390,6 +10959,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "SRP Batcher",
+        "slug": "srp-batcher",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "Task",
@@ -10460,7 +11038,7 @@ export const BLOG_SERIES = [
     {
         "name": "Unity 工程进阶",
         "slug": "unity-工程进阶",
-        "count": 3,
+        "count": 5,
         "categoryNames": [
             "Unity"
         ],
@@ -10468,7 +11046,9 @@ export const BLOG_SERIES = [
         "articlePaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
         "updatedAt": "2026-04-22T00:00:00.000Z"
     },
@@ -10518,7 +11098,7 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 11,
+        "count": 13,
         "articlePaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
@@ -10529,6 +11109,8 @@ export const BLOG_ARCHIVES = [
             "Resources/Articles/Lua语言入门到进阶详解.md",
             "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/AssetBundle从入门到进阶详解.md"
         ]
