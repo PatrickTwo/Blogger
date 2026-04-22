@@ -3368,6 +3368,127 @@ export const BLOG_CATEGORIES = [
                 "path": "#/list?category=Unity&subcategory=%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5",
                 "articles": [
                     {
+                        "title": "Unity Test Runner 详解：从入门到落地的 Unity 测试工作流",
+                        "summary": "系统讲清 Unity Test Runner 与 Unity Test Framework 的关系、EditMode 与 PlayMode 的区别、测试程序集配置、命令行执行、覆盖率、CI 接入与常见坑。",
+                        "tags": [
+                            "Unity",
+                            "Unity Test Runner",
+                            "Unity Test Framework",
+                            "NUnit",
+                            "自动化测试",
+                            "工程实践"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "工程实践",
+                        "series": "Unity 工程进阶",
+                        "seriesSlug": "unity-工程进阶",
+                        "order": 1,
+                        "date": "2026-04-22T00:00:00.000Z",
+                        "updatedAt": "2026-04-22T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/UnityTestRunner工作流.md",
+                        "slug": "unity-test-runner-详解-从入门到落地的-unity-测试工作流",
+                        "route": "#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+                        "readMinutes": 33,
+                        "headings": [
+                            "unity-test-runner-详解-从入门到落地的-unity-测试工作流",
+                            "1-什么是-unity-test-runner",
+                            "1-1-test-runner-与-unity-test-framework-的关系",
+                            "1-2-它解决了什么问题",
+                            "2-unity-测试体系的整体工作流",
+                            "2-1-一张图看清测试工作流",
+                            "2-2-团队中的推荐节奏",
+                            "3-editmode-与-playmode-怎么选",
+                            "3-1-editmode-测试是什么",
+                            "3-2-playmode-测试是什么",
+                            "3-3-选择标准",
+                            "4-如何在-unity-中启用测试能力",
+                            "4-1-打开-test-runner-窗口",
+                            "4-2-unity-版本与包的关系",
+                            "4-3-创建测试程序集",
+                            "4-4-asmdef-为什么重要",
+                            "5-写第一个-editmode-测试",
+                            "5-1-先测试纯逻辑类",
+                            "5-2-这类测试为什么价值很高",
+                            "6-写第一个-playmode-测试",
+                            "6-1-unitytest-是什么",
+                            "6-2-什么时候必须用-playmode",
+                            "6-3-playmode-测试的设计原则",
+                            "7-常用测试特性与断言能力",
+                            "7-1-nunit-基础特性",
+                            "7-2-unity-扩展特性",
+                            "7-3-断言写法建议",
+                            "8-test-runner-窗口怎么用",
+                            "8-1-基本操作",
+                            "8-2-常见使用方式",
+                            "8-3-如何看失败结果",
+                            "9-日志测试-logassert-非常实用",
+                            "10-monobehaviour-场景与帧驱动测试",
+                            "10-1-测-monobehaviour-的推荐方式",
+                            "10-2-何时使用场景",
+                            "10-3-关于时间和等待",
+                            "11-从-ui-执行-到命令行执行",
+                            "11-1-为什么一定要学命令行",
+                            "11-2-一个基础命令",
+                            "11-3-最常用的命令行参数",
+                            "11-4-如何筛选测试",
+                            "12-ci-中如何落地-unity-测试",
+                            "12-1-最小可用-ci-思路",
+                            "12-2-推荐的分层执行策略",
+                            "12-3-为什么不要一股脑全跑",
+                            "13-测试覆盖率-code-coverage-怎么看",
+                            "13-1-覆盖率是什么",
+                            "13-2-基本使用流程",
+                            "13-3-覆盖率能帮助你什么",
+                            "13-4-不要误解覆盖率",
+                            "14-包测试与-testables",
+                            "14-1-开发-upm-包时怎么测",
+                            "14-2-什么是-testables",
+                            "14-3-什么时候你会遇到它",
+                            "15-从代码里运行测试-testrunnerapi",
+                            "15-1-什么时候需要-testrunnerapi",
+                            "15-2-一个基础示例",
+                            "15-3-它适合什么团队",
+                            "16-更进阶的测试能力",
+                            "16-1-unitysetup-unityteardown",
+                            "16-2-prebuildsetup-postbuildcleanup",
+                            "16-3-unityplatform",
+                            "16-4-monobehaviourtest",
+                            "16-5-图形测试与性能测试",
+                            "17-一套推荐的测试分层方案",
+                            "17-1-业务分层建议",
+                            "17-2-测试数量应该怎么分布",
+                            "17-3-一个现实落地模板",
+                            "18-unity-测试中的常见坑",
+                            "18-1-把测试写成-手工步骤脚本",
+                            "18-2-测试过度依赖场景",
+                            "18-3-在-playmode-测试里乱等帧",
+                            "18-4-把所有逻辑塞进-monobehaviour",
+                            "18-5-忽略测试清理",
+                            "18-6-把不稳定测试默默注释掉",
+                            "19-一条从零开始的学习路线",
+                            "19-1-入门阶段",
+                            "19-2-进阶阶段",
+                            "19-3-工程化阶段",
+                            "20-结语-真正有价值的-unity-测试-不是-测了多少-而是-挡住了多少风险",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-22",
+                        "displayUpdatedAt": "2026-04-22",
+                        "previousPath": "",
+                        "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                        "relatedPaths": [
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+                        ]
+                    },
+                    {
                         "title": "Unity高级开发工程师应掌握的技术栈",
                         "summary": "从语言基础、引擎能力、架构设计、性能优化、资源管理、热更新、网络与工程化等维度，系统梳理 Unity 高级开发工程师应掌握的核心技术栈。",
                         "tags": [
@@ -3422,7 +3543,7 @@ export const BLOG_CATEGORIES = [
                         ],
                         "displayDate": "2026-04-09",
                         "displayUpdatedAt": "2026-04-09",
-                        "previousPath": "",
+                        "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
@@ -3430,6 +3551,7 @@ export const BLOG_CATEGORIES = [
                             "Resources/Articles/Lua语言入门到进阶详解.md"
                         ],
                         "seriesPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
                         ]
                     }
@@ -3702,7 +3824,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+                            "Resources/Articles/UnityTestRunner工作流.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4216,9 +4338,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-                            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+                            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4354,9 +4476,10 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/AssetBundle从入门到进阶详解.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-                            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+                            "Resources/Articles/UnityTestRunner工作流.md"
                         ],
                         "seriesPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
                         ]
                     }
@@ -4464,7 +4587,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+                            "Resources/Articles/UnityTestRunner工作流.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4765,9 +4888,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
+                    "Resources/Articles/UnityTestRunner工作流.md",
                     "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-                    "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
                 ],
                 "seriesPaths": []
             },
@@ -4808,9 +4931,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
+                    "Resources/Articles/UnityTestRunner工作流.md",
                     "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-                    "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+                    "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
                 ],
                 "seriesPaths": []
             }
@@ -8065,9 +8188,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "seriesPaths": []
     },
@@ -8108,11 +8231,132 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md",
-            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
         ],
         "seriesPaths": []
+    },
+    {
+        "title": "Unity Test Runner 详解：从入门到落地的 Unity 测试工作流",
+        "summary": "系统讲清 Unity Test Runner 与 Unity Test Framework 的关系、EditMode 与 PlayMode 的区别、测试程序集配置、命令行执行、覆盖率、CI 接入与常见坑。",
+        "tags": [
+            "Unity",
+            "Unity Test Runner",
+            "Unity Test Framework",
+            "NUnit",
+            "自动化测试",
+            "工程实践"
+        ],
+        "category": "Unity",
+        "subcategory": "工程实践",
+        "series": "Unity 工程进阶",
+        "seriesSlug": "unity-工程进阶",
+        "order": 1,
+        "date": "2026-04-22T00:00:00.000Z",
+        "updatedAt": "2026-04-22T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/UnityTestRunner工作流.md",
+        "slug": "unity-test-runner-详解-从入门到落地的-unity-测试工作流",
+        "route": "#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md",
+        "readMinutes": 33,
+        "headings": [
+            "unity-test-runner-详解-从入门到落地的-unity-测试工作流",
+            "1-什么是-unity-test-runner",
+            "1-1-test-runner-与-unity-test-framework-的关系",
+            "1-2-它解决了什么问题",
+            "2-unity-测试体系的整体工作流",
+            "2-1-一张图看清测试工作流",
+            "2-2-团队中的推荐节奏",
+            "3-editmode-与-playmode-怎么选",
+            "3-1-editmode-测试是什么",
+            "3-2-playmode-测试是什么",
+            "3-3-选择标准",
+            "4-如何在-unity-中启用测试能力",
+            "4-1-打开-test-runner-窗口",
+            "4-2-unity-版本与包的关系",
+            "4-3-创建测试程序集",
+            "4-4-asmdef-为什么重要",
+            "5-写第一个-editmode-测试",
+            "5-1-先测试纯逻辑类",
+            "5-2-这类测试为什么价值很高",
+            "6-写第一个-playmode-测试",
+            "6-1-unitytest-是什么",
+            "6-2-什么时候必须用-playmode",
+            "6-3-playmode-测试的设计原则",
+            "7-常用测试特性与断言能力",
+            "7-1-nunit-基础特性",
+            "7-2-unity-扩展特性",
+            "7-3-断言写法建议",
+            "8-test-runner-窗口怎么用",
+            "8-1-基本操作",
+            "8-2-常见使用方式",
+            "8-3-如何看失败结果",
+            "9-日志测试-logassert-非常实用",
+            "10-monobehaviour-场景与帧驱动测试",
+            "10-1-测-monobehaviour-的推荐方式",
+            "10-2-何时使用场景",
+            "10-3-关于时间和等待",
+            "11-从-ui-执行-到命令行执行",
+            "11-1-为什么一定要学命令行",
+            "11-2-一个基础命令",
+            "11-3-最常用的命令行参数",
+            "11-4-如何筛选测试",
+            "12-ci-中如何落地-unity-测试",
+            "12-1-最小可用-ci-思路",
+            "12-2-推荐的分层执行策略",
+            "12-3-为什么不要一股脑全跑",
+            "13-测试覆盖率-code-coverage-怎么看",
+            "13-1-覆盖率是什么",
+            "13-2-基本使用流程",
+            "13-3-覆盖率能帮助你什么",
+            "13-4-不要误解覆盖率",
+            "14-包测试与-testables",
+            "14-1-开发-upm-包时怎么测",
+            "14-2-什么是-testables",
+            "14-3-什么时候你会遇到它",
+            "15-从代码里运行测试-testrunnerapi",
+            "15-1-什么时候需要-testrunnerapi",
+            "15-2-一个基础示例",
+            "15-3-它适合什么团队",
+            "16-更进阶的测试能力",
+            "16-1-unitysetup-unityteardown",
+            "16-2-prebuildsetup-postbuildcleanup",
+            "16-3-unityplatform",
+            "16-4-monobehaviourtest",
+            "16-5-图形测试与性能测试",
+            "17-一套推荐的测试分层方案",
+            "17-1-业务分层建议",
+            "17-2-测试数量应该怎么分布",
+            "17-3-一个现实落地模板",
+            "18-unity-测试中的常见坑",
+            "18-1-把测试写成-手工步骤脚本",
+            "18-2-测试过度依赖场景",
+            "18-3-在-playmode-测试里乱等帧",
+            "18-4-把所有逻辑塞进-monobehaviour",
+            "18-5-忽略测试清理",
+            "18-6-把不稳定测试默默注释掉",
+            "19-一条从零开始的学习路线",
+            "19-1-入门阶段",
+            "19-2-进阶阶段",
+            "19-3-工程化阶段",
+            "20-结语-真正有价值的-unity-测试-不是-测了多少-而是-挡住了多少风险",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-22",
+        "displayUpdatedAt": "2026-04-22",
+        "previousPath": "",
+        "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+        "relatedPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ]
     },
     {
         "title": "Unity高级开发工程师应掌握的技术栈",
@@ -8169,7 +8413,7 @@ export const BLOG_ARTICLES = [
         ],
         "displayDate": "2026-04-09",
         "displayUpdatedAt": "2026-04-09",
-        "previousPath": "",
+        "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
@@ -8177,6 +8421,7 @@ export const BLOG_ARTICLES = [
             "Resources/Articles/Lua语言入门到进阶详解.md"
         ],
         "seriesPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
         ]
     },
@@ -8442,7 +8687,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+            "Resources/Articles/UnityTestRunner工作流.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -8942,9 +9187,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
-            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
-            "Resources/Articles/AssetBundle从入门到进阶详解.md"
+            "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9073,9 +9318,10 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/AssetBundle从入门到进阶详解.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity-Mirror多人游戏开发从入门到进阶详解.md"
+            "Resources/Articles/UnityTestRunner工作流.md"
         ],
         "seriesPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
         ]
     },
@@ -9176,7 +9422,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+            "Resources/Articles/UnityTestRunner工作流.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9557,11 +9803,12 @@ export const BLOG_TAGS = [
     {
         "name": "Unity",
         "slug": "unity",
-        "count": 16,
+        "count": 17,
         "articlePaths": [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/坐标变换系统.md",
             "Resources/Articles/Layer.md",
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
@@ -9576,7 +9823,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md"
         ],
-        "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "行为型模式",
@@ -9902,6 +10149,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-12T00:00:00.000Z"
     },
     {
+        "name": "工程实践",
+        "slug": "工程实践",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "集合",
         "slug": "集合",
         "count": 1,
@@ -10010,6 +10266,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "自动化测试",
+        "slug": "自动化测试",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "AB包",
         "slug": "ab包",
         "count": 1,
@@ -10091,6 +10356,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "NUnit",
+        "slug": "nunit",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "Profiler",
         "slug": "profiler",
         "count": 1,
@@ -10125,6 +10399,24 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+    },
+    {
+        "name": "Unity Test Framework",
+        "slug": "unity-test-framework",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
+        "name": "Unity Test Runner",
+        "slug": "unity-test-runner",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md"
+        ],
+        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
         "name": "VContainer",
@@ -10166,6 +10458,21 @@ export const BLOG_SERIES = [
         "updatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "Unity 工程进阶",
+        "slug": "unity-工程进阶",
+        "count": 3,
+        "categoryNames": [
+            "Unity"
+        ],
+        "categoryLabel": "Unity",
+        "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
+        ],
+        "updatedAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
         "name": "界面架构对比",
         "slug": "界面架构对比",
         "count": 2,
@@ -10178,20 +10485,6 @@ export const BLOG_SERIES = [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
         ],
         "updatedAt": "2026-03-27T00:00:00.000Z"
-    },
-    {
-        "name": "Unity 工程进阶",
-        "slug": "unity-工程进阶",
-        "count": 2,
-        "categoryNames": [
-            "Unity"
-        ],
-        "categoryLabel": "Unity",
-        "articlePaths": [
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
-            "Resources/Articles/Unity图形渲染与性能优化专题详解.md"
-        ],
-        "updatedAt": "2026-04-21T00:00:00.000Z"
     },
     {
         "name": "架构与解耦",
@@ -10225,8 +10518,9 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 10,
+        "count": 11,
         "articlePaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",

@@ -7,6 +7,14 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity Test Runner 详解：从入门到落地的 Unity 测试工作流</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md</guid>
+            <description>系统讲清 Unity Test Runner 与 Unity Test Framework 的关系、EditMode 与 PlayMode 的区别、测试程序集配置、命令行执行、覆盖率、CI 接入与常见坑。</description>
+            <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
             <title>Unity 图形渲染与性能优化专题详解</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%93%E9%A2%98%E8%AF%A6%E8%A7%A3.md</guid>
@@ -157,14 +165,6 @@
             <description>Unity 中的 LayerMask 详解</description>
             <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
             <category>Unity</category>
-        </item>
-        <item>
-            <title>Mahjong规则文档</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E8%A7%84%E5%88%99%E6%96%87%E6%A1%A3.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E8%A7%84%E5%88%99%E6%96%87%E6%A1%A3.md</guid>
-            <description>牌种分类 ： - 饼牌：1-9饼，各4张 - 万牌：1-9万，各4张 - 条牌：1-9条，各4张 - 风牌：东、南、西、北，其中东风为风头，各4张 - 将牌：中、发、白，其中红中为将头，各4张 总计 ：136张牌</description>
-            <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
-            <category>Program设计文档</category>
         </item>
     </channel>
 </rss>
