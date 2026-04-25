@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/generate-data.js)",
+      "Bash(node scripts/build-site.js)",
+      "Bash(node C:/_Hetu/Project/Blogger/scripts/generate-data.js)",
+      "Bash(git status *)",
+      "Bash(powershell.exe -Command \"cd C:/_Hetu/Project/Blogger; git status\")",
+      "Bash(echo \"hello world\")",
+      "Read(//tmp/**)",
+      "Bash(echo \"hello\")",
+      "Read(//c/Users/Hetu/AppData/Local/Temp/**)",
+      "Bash(echo \"=== GIT STATUS ===\")",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" -C /c/_Hetu/Project/Blogger status)",
+      "Bash(echo \"=== GIT LOG ===\")",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" -C /c/_Hetu/Project/Blogger log --oneline -5)",
+      "Bash(echo \"=== GIT DIFF --STAT ===\")"
+    ]
+  }
+}

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 预览</title>
+    <link rel="stylesheet" href="./vendor/atom-one-dark.min.css">
+    <script src="./vendor/marked.min.js"></script>
+    <script src="./vendor/highlight.min.js"></script>
+    <script src="./vendor/csharp.min.js"></script>
+    <script src="./vendor/mermaid.min.js"></script>
+    <style>
+        :root {
+            --accent-color: #3B82F6;
+            --accent-hover: #2563EB;
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+            --block-bg: #F1F5F9;
+            --border-color: #E2E8F0;
+            --card-bg: #FFFFFF;
+            --info-text: #1D4ED8;
+            --info-bg: #EFF6FF;
+            --warning-text: #92400E;
+            --warning-bg: #FEF3C7;
+            --danger-text: #991B1B;
+            --danger-bg: #FEE2E2;
+            --hint-text: #047857;
+            --hint-bg: #D1FAE5;
+            --abstract-text: #374151;
+            --abstract-bg: #F3F4F6;
+            --ref-text: #6D28D9;
+            --ref-bg: #EDE9FE;
+            --summary-text: #0F766E;
+            --summary-bg: #CCFBF1;
+            --updates-text: #BE185D;
+            --updates-bg: #FCE7F3;
+            --radius-xl: 12px;
+            --radius-lg: 8px;
+            --radius-md: 6px;
+            --radius-sm: 4px;
+            --radius-pill: 999px;
+            --transition-base: 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-primary);
+            background-color: var(--card-bg);
+            padding: 24px;
+        }
+
+        /* 文章容器 */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Markdown 主体样式 */
+        .markdown-body {
+            font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+            word-wrap: break-word;
+        }
+
+        .markdown-body > *:first-child {
+            margin-top: 0;
+        }
+
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            position: relative;
+            margin-top: 1.7em;
+            margin-bottom: 0.75em;
+            color: var(--text-primary);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            scroll-margin-top: 120px;
+        }
+
+        .markdown-body h1 { font-size: 2rem; }
+        .markdown-body h2 {
+            padding-left: 18px;
+            font-size: 1.65rem;
+        }
+        .markdown-body h2::before {
+            content: "";
+            position: absolute;
+            top: 0.18em;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            background-color: var(--accent-color);
+            transform: rotate(12deg);
+        }
+        .markdown-body h3 { font-size: 1.28rem; }
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 { font-size: 1.05rem; }
+
+        .markdown-body p,
+        .markdown-body ul,
+        .markdown-body ol,
+        .markdown-body blockquote,
+        .markdown-body table,
+        .markdown-body .custom-block,
+        .markdown-body .code-block-wrapper {
+            margin-bottom: 1.4rem;
+        }
+
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 1.4rem;
+        }
+
+        .markdown-body li + li {
+            margin-top: 0.35rem;
+        }
+
+        .markdown-body a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .markdown-body a:hover {
+            color: var(--accent-hover);
+        }
+
+        .markdown-body strong {
+            font-weight: 700;
+        }
+
+        .markdown-body blockquote {
+            padding: 18px 20px;
+            border-left: 6px solid var(--accent-color);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            background-color: var(--block-bg);
+            color: var(--text-secondary);
+        }
+
+        .markdown-body img {
+            max-width: 100%;
+            height: auto;
+            margin: 1.6rem 0;
+            border-radius: var(--radius-lg);
+        }
+
+        .markdown-body code {
+            padding: 0.2em 0.45em;
+            border-radius: 4px;
+            background-color: var(--block-bg);
+            color: var(--accent-hover);
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+            font-size: 0.88em;
+        }
+
+        /* 代码块样式 */
+        .code-block-wrapper {
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            background-color: #111827;
+        }
+
+        .code-block-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 16px;
+            background-color: #1f2937;
+            color: #d1d5db;
+            font-size: 0.84rem;
+        }
+
+        .code-block-lang {
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #93c5fd;
+        }
+
+        .code-block-copy {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 0 10px;
+            border-radius: var(--radius-sm);
+            background-color: rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            font-size: 0.76rem;
+            font-weight: 600;
+            border: none;
+            color: #d1d5db;
+        }
+
+        .code-block-copy:hover {
+            background-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .code-block-copy.copied {
+            background-color: rgba(16, 185, 129, 0.22);
+            color: #a7f3d0;
+        }
+
+        .markdown-body pre {
+            margin: 0;
+            padding: 18px 16px;
+            overflow-x: auto;
+            background-color: transparent;
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #111827;
+        }
+
+        .markdown-body pre code {
+            display: inline;
+            padding: 0;
+            background-color: transparent;
+            color: #e5e7eb;
+            font-size: 0.92rem;
+        }
+
+        .markdown-body pre::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .markdown-body pre::-webkit-scrollbar-track {
+            background-color: #111827;
+        }
+
+        .markdown-body pre::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border-radius: 999px;
+        }
+
+        /* 表格样式 */
+        .markdown-body table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            border-collapse: collapse;
+        }
+
+        .markdown-body table th,
+        .markdown-body table td {
+            padding: 12px 14px;
+            border: 2px solid var(--border-color);
+            text-align: left;
+        }
+
+        .markdown-body table th {
+            background-color: var(--block-bg);
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .markdown-body table tr:nth-child(2n) td {
+            background-color: var(--block-bg);
+        }
+
+        /* Mermaid 图表样式 */
+        .mermaid-wrapper {
+            margin-bottom: 1.4rem;
+            padding: 18px;
+            overflow-x: auto;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            background-color: var(--card-bg);
+        }
+
+        .mermaid-diagram {
+            display: flex;
+            justify-content: center;
+            min-width: fit-content;
+        }
+
+        .mermaid-diagram svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .mermaid-wrapper.is-error {
+            border-color: var(--danger-text);
+            background-color: var(--danger-bg);
+        }
+
+        .mermaid-error-title {
+            margin-bottom: 12px;
+            color: var(--danger-text);
+            font-weight: 700;
+        }
+
+        .mermaid-source-code {
+            margin: 0;
+            padding: 16px;
+            overflow-x: auto;
+            border-radius: var(--radius-md);
+            background-color: rgba(17, 24, 39, 0.92);
+        }
+
+        .mermaid-source-code code {
+            color: #e5e7eb;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+            font-size: 0.9rem;
+        }
+
+        /* 自定义块样式 */
+        .custom-block {
+            position: relative;
+            padding: 18px 18px 18px 22px;
+            border-left: 8px solid;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        }
+
+        .custom-block .custom-block-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .custom-block .custom-block-title::before {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            height: 26px;
+            padding: 0 8px;
+            border-radius: var(--radius-pill);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .custom-block-content > *:last-child {
+            margin-bottom: 0;
+        }
+
+        .custom-block.info {
+            border-color: var(--info-text);
+            background-color: var(--info-bg);
+        }
+        .custom-block.info .custom-block-title { color: var(--info-text); }
+        .custom-block.info .custom-block-title::before {
+            content: "INFO";
+            background-color: rgba(29, 78, 216, 0.14);
+        }
+
+        .custom-block.warning {
+            border-color: var(--warning-text);
+            background-color: var(--warning-bg);
+        }
+        .custom-block.warning .custom-block-title { color: var(--warning-text); }
+        .custom-block.warning .custom-block-title::before {
+            content: "WARN";
+            background-color: rgba(146, 64, 14, 0.12);
+        }
+
+        .custom-block.danger {
+            border-color: var(--danger-text);
+            background-color: var(--danger-bg);
+        }
+        .custom-block.danger .custom-block-title { color: var(--danger-text); }
+        .custom-block.danger .custom-block-title::before {
+            content: "STOP";
+            background-color: rgba(185, 28, 28, 0.12);
+        }
+
+        .custom-block.hint {
+            border-color: var(--hint-text);
+            background-color: var(--hint-bg);
+        }
+        .custom-block.hint .custom-block-title { color: var(--hint-text); }
+        .custom-block.hint .custom-block-title::before {
+            content: "HINT";
+            background-color: rgba(4, 120, 87, 0.12);
+        }
+
+        .custom-block.abstract {
+            border-color: var(--abstract-text);
+            background-color: var(--abstract-bg);
+        }
+        .custom-block.abstract .custom-block-title { color: var(--abstract-text); }
+        .custom-block.abstract .custom-block-title::before {
+            content: "摘要";
+            background-color: rgba(55, 65, 81, 0.1);
+        }
+
+        .custom-block.ref {
+            border-color: var(--ref-text);
+            background-color: var(--ref-bg);
+        }
+        .custom-block.ref .custom-block-title { color: var(--ref-text); }
+        .custom-block.ref .custom-block-title::before {
+            content: "引用";
+            background-color: rgba(109, 40, 217, 0.1);
+        }
+
+        .custom-block.summary {
+            border-color: var(--summary-text);
+            background-color: var(--summary-bg);
+        }
+        .custom-block.summary .custom-block-title { color: var(--summary-text); }
+        .custom-block.summary .custom-block-title::before {
+            content: "总结";
+            background-color: rgba(15, 118, 110, 0.1);
+        }
+
+        .custom-block.updates {
+            border-color: var(--updates-text);
+            background-color: var(--updates-bg);
+        }
+        .custom-block.updates .custom-block-title { color: var(--updates-text); }
+        .custom-block.updates .custom-block-title::before {
+            content: "更新";
+            background-color: rgba(190, 24, 93, 0.1);
+        }
+
+        /* 标题锚点样式 */
+        .heading-anchor {
+            margin-left: 10px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.8em;
+            opacity: 0;
+            transition: opacity var(--transition-base), color var(--transition-base);
+        }
+
+        .markdown-body h1:hover .heading-anchor,
+        .markdown-body h2:hover .heading-anchor,
+        .markdown-body h3:hover .heading-anchor,
+        .markdown-body h4:hover .heading-anchor,
+        .heading-anchor.copied,
+        .heading-anchor:focus {
+            opacity: 1;
+        }
+
+        .heading-anchor:hover,
+        .heading-anchor.copied {
+            color: var(--accent-color);
+        }
+
+        /* 空状态样式 */
+        .empty-toc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <!-- Markdown 内容区域 -->
+        <div id="content" class="markdown-body"></div>
+    </div>
+
+    <script>
+        // #region 工具函数
+
+        /**
+         * HTML 转义
+         */
+        function escapeHtml(html) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                '\'': '&#039'
+            };
+            return String(html || '').replace(/[&<>"']/g, match => map[match]);
+        }
+
+        /**
+         * 生成 slug
+         */
+        function slugify(value) {
+            return String(value || '')
+                .trim()
+                .toLowerCase()
+                .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
+        /**
+         * 解析 Front Matter
+         */
+        function extractFrontMatter(rawText) {
+            const text = String(rawText || '').replace(/^\uFEFF/, '');
+            if (!text.startsWith('---')) {
+                return { metadata: {}, body: text };
+            }
+            const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+            if (!match) {
+                return { metadata: {}, body: text };
+            }
+            return {
+                metadata: {},
+                body: text.slice(match[0].length)
+            };
+        }
+
+        /**
+         * 复制文本到剪贴板
+         */
+        function copyCode(button) {
+            const wrapper = button ? button.closest('.code-block-wrapper') : null;
+            const code = wrapper ? wrapper.querySelector('code').innerText : '';
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '已复制';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(error => {
+                console.error('复制代码失败：', error);
+                button.innerText = '失败';
+            });
+        }
+
+        /**
+         * 复制标题锚点链接
+         */
+        function copyAnchorLink(anchorId, button) {
+            const url = window.location.href.split('#')[0] + '#' + anchorId;
+            navigator.clipboard.writeText(url).then(() => {
+                if (!button) return;
+                const originalText = button.innerText;
+                button.innerText = '已复制';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('copied');
+                }, 1800);
+            }).catch(error => {
+                console.error('复制锚点链接失败：', error);
+            });
+        }
+
+        // #endregion
+
+        // #region Markdown 解析配置
+
+        const tocItems = [];
+        const markdownRuntime = {
+            markedReady: typeof window.marked !== 'undefined',
+            markedRendererReady: typeof window.marked !== 'undefined' && typeof window.marked.Renderer === 'function',
+            highlightReady: typeof window.hljs !== 'undefined',
+            mermaidReady: typeof window.mermaid !== 'undefined'
+        };
+        let activeTocId = '';
+        let activeTocFrame = 0;
+
+        /**
+         * 显示运行时错误，避免 WebView2 只留下空白页面。
+         */
+        function showRuntimeError(message, sourceText) {
+            const contentElement = document.getElementById('content');
+
+            if (!contentElement) {
+                return;
+            }
+
+            const sourceHtml = sourceText
+                ? '<pre class="mermaid-source-code"><code>' + escapeHtml(sourceText) + '</code></pre>'
+                : '';
+
+            contentElement.innerHTML = '<div class="custom-block danger">' +
+                '<p class="custom-block-title">渲染失败</p>' +
+                '<div class="custom-block-content"><p>' + escapeHtml(message) + '</p>' + sourceHtml + '</div>' +
+                '</div>';
+
+            tocItems.length = 0;
+            publishToc();
+            publishActiveToc('');
+        }
+
+        /**
+         * 解析 Markdown 片段，运行时缺失时回退为可读原文。
+         */
+        function parseMarkdownFragment(content) {
+            if (!markdownRuntime.markedReady) {
+                return '<pre class="mermaid-source-code"><code>' + escapeHtml(content) + '</code></pre>';
+            }
+
+            return marked.parse(content, {
+                breaks: true,
+                gfm: true
+            });
+        }
+
+        // 配置 marked
+        if (markdownRuntime.markedReady) {
+            marked.setOptions({
+                breaks: true,
+                gfm: true
+            });
+        }
+
+        // 自定义代码块渲染
+        if (markdownRuntime.markedRendererReady) {
+        marked.Renderer.prototype.code = function(arg1, arg2) {
+            let code = '';
+            let language = '';
+            if (arg1 && typeof arg1 === 'object') {
+                code = arg1.text || '';
+                language = arg1.lang || '';
+            } else {
+                code = arg1 || '';
+                language = arg2 || '';
+            }
+            const normalizedLanguage = String(language || '').trim().toLowerCase();
+            const lang = normalizedLanguage || 'text';
+            const escapedCode = escapeHtml(code);
+
+            if (normalizedLanguage === 'mermaid') {
+                return '<div class="mermaid-wrapper" data-mermaid-source="' + escapedCode + '">' +
+                       '<div class="mermaid-diagram"></div></div>';
+            }
+
+            return '<div class="code-block-wrapper">' +
+                   '<div class="code-block-header">' +
+                   '<span class="code-block-lang">' + lang + '</span>' +
+                   '<span class="code-block-copy" onclick="copyCode(this)">复制</span>' +
+                   '</div>' +
+                   '<pre><code class="language-' + lang + '">' + escapedCode + '</code></pre>' +
+                   '</div>';
+        };
+        }
+
+        // 自定义标题渲染
+        if (markdownRuntime.markedRendererReady) {
+        marked.Renderer.prototype.heading = function(arg1, arg2) {
+            let titleText = '';
+            let level = 1;
+            if (arg1 && typeof arg1 === 'object') {
+                titleText = arg1.text || '';
+                level = arg1.depth || 1;
+            } else {
+                titleText = arg1 || '';
+                level = arg2 || 1;
+            }
+
+            const cleanText = titleText.replace(/\*\*|\*|__|~~/g, '');
+            const id = slugify(cleanText);
+            const minLevel = 2;
+            const maxLevel = 3;
+            const showSubLevel = true;
+            const isWithinRange = level >= minLevel && level <= maxLevel;
+            const isLevelAllowed = level === minLevel || showSubLevel;
+
+            if (isWithinRange && isLevelAllowed) {
+                const relativeLevel = level - minLevel + 1;
+                tocItems.push({ id, text: cleanText, level: relativeLevel });
+            }
+
+            const htmlText = marked.parseInline(titleText, { gfm: true });
+            const anchorButton = '<button class="heading-anchor" type="button" onclick="copyAnchorLink(\'' + id + '\', this)" aria-label="复制标题链接">#</button>';
+            return '<h' + level + ' id="' + id + '">' + htmlText + anchorButton + '</h' + level + '>';
+        };
+        }
+
+        /**
+         * 处理自定义块
+         */
+        function processCustomBlocks(content) {
+            const blockRegex = /:::(info|warning|danger|hint|abstract|ref|summary|updates)(?:[ \t]+(.*))?[\r\n]+([\s\S]*?)[\r\n]+:::/g;
+            const defaultTitles = {
+                info: '',
+                warning: '',
+                danger: '',
+                hint: '',
+                abstract: '',
+                ref: '引用',
+                summary: '摘要',
+                updates: '更新记录'
+            };
+
+            return content.replace(blockRegex, function(match, type, title, innerContent) {
+                const parsedInner = parseMarkdownFragment(innerContent.trim());
+                const displayTitle = title ? title.trim() : defaultTitles[type];
+                return '<div class="custom-block ' + type + '">' +
+                       '<p class="custom-block-title">' + displayTitle + '</p>' +
+                       '<div class="custom-block-content">' + parsedInner + '</div>' +
+                       '</div>';
+            });
+        }
+
+        /**
+         * 解析相对路径资源
+         */
+        function resolveRelativeMarkdownLinks(content) {
+            const baseDirectory = window.__baseDirectory || '';
+
+            if (!baseDirectory) {
+                return content;
+            }
+
+            const baseSegments = baseDirectory.split(/[/\\]/).filter(Boolean);
+
+            const toFileUri = function(pathText) {
+                const normalizedPath = String(pathText || '').replace(/\\/g, '/');
+                const encodedPath = normalizedPath
+                    .split('/')
+                    .map(function(segment, index) {
+                        if (index === 0 && /^[A-Za-z]:$/.test(segment)) {
+                            return segment;
+                        }
+
+                        return encodeURIComponent(segment);
+                    })
+                    .join('/');
+
+                return 'file:///' + encodedPath;
+            };
+
+            const resolveTarget = function(target) {
+                if (!target || /^https?:\/\//i.test(target) || /^mailto:/i.test(target) || target.startsWith('#')) {
+                    return target;
+                }
+
+                const [pathPart, hashPart = ''] = target.split('#');
+                const sameDirectorySegments = [...baseSegments, pathPart].filter(Boolean);
+                const normalizedSegments = [];
+
+                for (const segment of sameDirectorySegments) {
+                    if (segment === '.' || segment === '') continue;
+                    if (segment === '..') {
+                        normalizedSegments.pop();
+                        continue;
+                    }
+                    normalizedSegments.push(segment);
+                }
+
+                const normalizedPath = normalizedSegments.join('/');
+                const fileUri = toFileUri(normalizedPath);
+                return hashPart ? fileUri + '#' + hashPart : fileUri;
+            };
+
+            return content.replace(/(!?\[[^\]]*]\()([^)]+)(\))/g, function(match, prefix, target, suffix) {
+                return prefix + resolveTarget(target.trim()) + suffix;
+            });
+        }
+
+        // #endregion
+
+        // #region Mermaid 渲染
+
+        // 初始化 Mermaid
+        if (markdownRuntime.mermaidReady) {
+            mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: 'default'
+            });
+        }
+
+        /**
+         * 渲染 Mermaid 图表
+         */
+        function renderMermaid() {
+            const mermaidWrappers = document.querySelectorAll('.mermaid-wrapper');
+
+            if (mermaidWrappers.length === 0) {
+                return;
+            }
+
+            if (!markdownRuntime.mermaidReady) {
+                mermaidWrappers.forEach(function(wrapper) {
+                    const source = wrapper.getAttribute('data-mermaid-source') || '';
+                    wrapper.classList.add('is-error');
+                    wrapper.innerHTML = '<p class="mermaid-error-title">Mermaid 运行时加载失败，无法渲染图表。</p>' +
+                                      '<pre class="mermaid-source-code"><code>' + escapeHtml(source) + '</code></pre>';
+                });
+                return;
+            }
+
+            mermaidWrappers.forEach(function(wrapper, index) {
+                const diagramHost = wrapper.querySelector('.mermaid-diagram');
+                const source = wrapper.getAttribute('data-mermaid-source') || '';
+
+                if (!diagramHost || !source) {
+                    return;
+                }
+
+                try {
+                    const renderId = 'mermaid-diagram-' + Date.now() + '-' + index;
+                    mermaid.render(renderId, source).then(function(result) {
+                        wrapper.classList.remove('is-error');
+                        diagramHost.innerHTML = result.svg;
+                    }).catch(function(error) {
+                        console.error('Mermaid 图表渲染失败：', error);
+                        wrapper.classList.add('is-error');
+                        wrapper.innerHTML = '<p class="mermaid-error-title">Mermaid 图表渲染失败，请检查语法。</p>' +
+                                          '<pre class="mermaid-source-code"><code>' + escapeHtml(source) + '</code></pre>';
+                    });
+                } catch (error) {
+                    console.error('Mermaid 渲染异常：', error);
+                    wrapper.classList.add('is-error');
+                    wrapper.innerHTML = '<p class="mermaid-error-title">Mermaid 图表渲染失败，请检查语法。</p>' +
+                                      '<pre class="mermaid-source-code"><code>' + escapeHtml(source) + '</code></pre>';
+                }
+            });
+        }
+
+        // #endregion
+
+        // #region 目录渲染
+
+        /**
+         * 将目录发送给 WPF 外壳。
+         */
+        function publishToc() {
+            if (window.chrome && window.chrome.webview) {
+                window.chrome.webview.postMessage({
+                    type: 'toc',
+                    items: tocItems
+                });
+            }
+        }
+
+        /**
+         * 将当前阅读位置对应的目录项发送给 WPF 外壳。
+         */
+        function publishActiveToc(id) {
+            if (activeTocId === id) {
+                return;
+            }
+
+            activeTocId = id;
+
+            if (window.chrome && window.chrome.webview) {
+                window.chrome.webview.postMessage({
+                    type: 'activeToc',
+                    id: id
+                });
+            }
+        }
+
+        /**
+         * 根据滚动位置计算当前激活标题。
+         */
+        function updateActiveToc() {
+            if (tocItems.length === 0) {
+                publishActiveToc('');
+                return;
+            }
+
+            const headerOffset = 28;
+            let nextActiveId = tocItems[0].id;
+
+            for (const item of tocItems) {
+                const headingElement = document.getElementById(item.id);
+
+                if (!headingElement) {
+                    continue;
+                }
+
+                if (headingElement.getBoundingClientRect().top <= headerOffset) {
+                    nextActiveId = item.id;
+                    continue;
+                }
+
+                break;
+            }
+
+            publishActiveToc(nextActiveId);
+        }
+
+        /**
+         * 合并滚动事件，避免高频向 WPF 发送消息。
+         */
+        function requestActiveTocUpdate() {
+            if (activeTocFrame) {
+                return;
+            }
+
+            activeTocFrame = window.requestAnimationFrame(function() {
+                activeTocFrame = 0;
+                updateActiveToc();
+            });
+        }
+
+        /**
+         * 滚动到指定标题。
+         */
+        function scrollToHeading(id) {
+            const element = document.getElementById(id);
+
+            if (!element) {
+                return;
+            }
+
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            publishActiveToc(id);
+        }
+
+        // #endregion
+
+        // #region 代码高亮
+
+        /**
+         * 应用代码高亮
+         */
+        function highlightCode() {
+            document.querySelectorAll('pre code').forEach(function(element) {
+                if (!element.className) {
+                    element.classList.add('language-text');
+                }
+
+                if (markdownRuntime.highlightReady) {
+                    hljs.highlightElement(element);
+                }
+            });
+        }
+
+        // #endregion
+
+        // #region 主渲染函数
+
+        /**
+         * 渲染 Markdown
+         */
+        function renderMarkdown(payload) {
+            if (payload) {
+                window.__markdownContent = payload.content || '';
+                window.__baseDirectory = payload.baseDirectory || '';
+            }
+
+            const markdownContent = window.__markdownContent || '';
+            if (!markdownContent) {
+                document.getElementById('content').innerHTML = '<p>无内容</p>';
+                tocItems.length = 0;
+                publishToc();
+                publishActiveToc('');
+                return;
+            }
+
+            if (!markdownRuntime.markedReady) {
+                showRuntimeError('Markdown 解析运行时 marked.js 加载失败，请检查网络或本地依赖。', markdownContent);
+                return;
+            }
+
+            // 清空目录
+            tocItems.length = 0;
+
+            // 解析 Front Matter
+            const parsed = extractFrontMatter(markdownContent);
+            const body = parsed.body;
+
+            // 处理相对链接
+            const processedBody = resolveRelativeMarkdownLinks(body);
+
+            // 处理自定义块
+            const processedWithBlocks = processCustomBlocks(processedBody);
+
+            // 渲染 Markdown
+            const htmlContent = parseMarkdownFragment(processedWithBlocks);
+
+            // 更新内容
+            document.getElementById('content').innerHTML = htmlContent;
+
+            // 将目录交给 WPF 右侧目录栏显示。
+            publishToc();
+            activeTocId = '';
+            window.setTimeout(updateActiveToc, 0);
+
+            // 应用代码高亮
+            highlightCode();
+
+            // 渲染 Mermaid
+            renderMermaid();
+        }
+
+        // 暴露到全局
+        window.__renderMarkdown = renderMarkdown;
+        window.__scrollToHeading = scrollToHeading;
+        window.addEventListener('scroll', requestActiveTocUpdate, { passive: true });
+
+        // #endregion
+    </script>
+</body>
+</html>
