@@ -7,6 +7,38 @@
         <language>zh-CN</language>
         
         <item>
+            <title>Unity Timeline 详解：从入门到运行时控制与自定义扩展</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+Timeline+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+Timeline+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95.md</guid>
+            <description>系统讲清 Unity Timeline 的核心模型、编辑器工作流、Playable Director、运行时 API、自定义 Track 与常见坑。</description>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Unity</category>
+        </item>
+        <item>
+            <title>工厂方法模式</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md</guid>
+            <description>深入讲解工厂方法模式的核心概念、实现机制与实际应用场景，探讨它如何实现对象创建与使用解耦。</description>
+            <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+            <category>设计模式</category>
+        </item>
+        <item>
+            <title>抽象工厂模式</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md</guid>
+            <description>深入讲解抽象工厂模式的核心概念与实现机制，探讨它如何解决多维度产品族的创建问题，以及与工厂方法模式的区别与联系。</description>
+            <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+            <category>设计模式</category>
+        </item>
+        <item>
+            <title>Git 详解：从基础工作流到高阶实践</title>
+            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FGit+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E9%AB%98%E9%98%B6%E5%AE%9E%E8%B7%B5.md</link>
+            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FGit+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E9%AB%98%E9%98%B6%E5%AE%9E%E8%B7%B5.md</guid>
+            <description>系统讲清 Git 的对象模型、索引区、分支合并、远程协作、rebase、reflog、stash、submodule、hooks、bisect 与 worktree 等高阶内容。</description>
+            <pubDate>Sat, 25 Apr 2026 00:00:00 GMT</pubDate>
+            <category>Program设计文档</category>
+        </item>
+        <item>
             <title>Unity Test Runner 详解：从入门到落地的 Unity 测试工作流</title>
             <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md</link>
             <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnityTestRunner%E5%B7%A5%E4%BD%9C%E6%B5%81.md</guid>
@@ -133,38 +165,6 @@
             <description>结合技术栈特性，对比 Unity、现代前端和 WinForm 在 MVC、MVP、MVVM 之间更合适的实践选择。</description>
             <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
             <category>设计模式</category>
-        </item>
-        <item>
-            <title>C# LINQ常用查找操作</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FLINQ%E5%B8%B8%E7%94%A8%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md</guid>
-            <description>整理 C# 中最常见的 LINQ 查找、筛选、判定和取值操作，帮助快速选对 API。</description>
-            <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
-            <category>C#</category>
-        </item>
-        <item>
-            <title>Mahjong流程设计-对局</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%AF%B9%E5%B1%80.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FMahjong%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%AF%B9%E5%B1%80.md</guid>
-            <description>1.1 界面布局 左上角区域 : - 返回大厅按钮(ReturnLobbyBtn)</description>
-            <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
-            <category>Program设计文档</category>
-        </item>
-        <item>
-            <title>依赖注入</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5.md</guid>
-            <description>从问题背景、注入方式和 IoC 容器几个角度理解依赖注入，以及它为什么能降低耦合与提升可测试性。</description>
-            <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-            <category>设计模式</category>
-        </item>
-        <item>
-            <title>常用注册表路径</title>
-            <link>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%B8%B8%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84.md</link>
-            <guid>https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F%E5%B8%B8%E7%94%A8%E6%B3%A8%E5%86%8C%E8%A1%A8%E8%B7%AF%E5%BE%84.md</guid>
-            <description>右键菜单修改 文件夹内空白处右键 HKEY CLASSES ROOT\Directory\Background\shell 文件夹右键 HKEY CLASSES ROOT\Directory\shell</description>
-            <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
-            <category>杂项</category>
         </item>
     </channel>
 </rss>

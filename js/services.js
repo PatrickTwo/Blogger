@@ -3,6 +3,7 @@
  */
 
 import { AppUtils } from './utils.js';
+import { BLOG_ARTICLES } from './modules_data.js';
 
 function escapeHtml(html) {
     const map = {
@@ -14,6 +15,58 @@ function escapeHtml(html) {
     };
 
     return String(html || '').replace(/[&<>"']/g, match => map[match]);
+}
+
+const knownSiteRoutes = new Set(['/', '/article', '/list', '/search', '/archive', '/tags', '/series', '/about']);
+const articleAliasMap = new Map();
+
+for (const article of BLOG_ARTICLES || []) {
+    const fileName = String(article.path || '').split('/').pop() || '';
+    const baseName = fileName.replace(/\.md$/i, '');
+    const title = String(article.title || '').trim();
+
+    if (baseName && !articleAliasMap.has(baseName)) {
+        articleAliasMap.set(baseName, article.path);
+    }
+
+    if (title && !articleAliasMap.has(title)) {
+        articleAliasMap.set(title, article.path);
+    }
+}
+
+function createArticleRouteHref(articlePath, anchor = '') {
+    const searchParams = new URLSearchParams();
+    searchParams.set('path', articlePath);
+
+    if (anchor) {
+        searchParams.set('anchor', anchor);
+    }
+
+    return `#/article?${searchParams.toString()}`;
+}
+
+function resolveInternalSiteLink(target) {
+    const trimmedTarget = String(target || '').trim();
+
+    if (!trimmedTarget.startsWith('/')) {
+        return '';
+    }
+
+    const [pathPart, hashPart = ''] = trimmedTarget.split('#');
+    const routePath = pathPart.split('?')[0] || '/';
+
+    if (knownSiteRoutes.has(routePath)) {
+        return routePath === '/' ? '#/' : `#${pathPart}${hashPart ? `#${hashPart}` : ''}`;
+    }
+
+    const articleAlias = pathPart.replace(/^\/+/, '').replace(/\.md$/i, '').trim();
+    const articlePath = articleAliasMap.get(articleAlias);
+
+    if (!articlePath) {
+        return '';
+    }
+
+    return createArticleRouteHref(articlePath, hashPart);
 }
 
 export const MarkdownService = {
@@ -38,6 +91,11 @@ export const MarkdownService = {
             const resolveTarget = (target) => {
                 if (!target || /^https?:\/\//i.test(target) || /^mailto:/i.test(target) || target.startsWith('#')) {
                     return target;
+                }
+
+                const internalSiteLink = resolveInternalSiteLink(target);
+                if (internalSiteLink) {
+                    return internalSiteLink;
                 }
 
                 const [pathPart, hashPart = ''] = target.split('#');

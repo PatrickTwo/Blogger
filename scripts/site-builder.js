@@ -17,6 +17,7 @@ const dataOutputFile = path.join(projectRoot, 'js', 'modules_data.js');
 const rssOutputFile = path.join(projectRoot, 'rss.xml');
 const sitemapOutputFile = path.join(projectRoot, 'sitemap.xml');
 const robotsOutputFile = path.join(projectRoot, 'robots.txt');
+const knownSiteRoutes = new Set(['/', '/article', '/list', '/search', '/archive', '/tags', '/series', '/about']);
 
 const defaultConfig = {
     title: '开发日志',
@@ -181,6 +182,71 @@ function collectMarkdownLinks(markdownText) {
     }
 
     return links;
+}
+
+function normalizeArticleAlias(value) {
+    return String(value ?? '')
+        .trim()
+        .replace(/^\/+/, '')
+        .replace(/\.md$/i, '')
+        .trim();
+}
+
+function buildArticleAliasMap(articles) {
+    const aliasMap = new Map();
+
+    for (const article of articles) {
+        const aliases = [
+            normalizeArticleAlias(path.basename(article.path, '.md')),
+            normalizeArticleAlias(article.title)
+        ].filter(Boolean);
+
+        for (const alias of aliases) {
+            if (!aliasMap.has(alias)) {
+                aliasMap.set(alias, article.path);
+            }
+        }
+    }
+
+    return aliasMap;
+}
+
+function isKnownSiteRoute(targetPath) {
+    const routePath = String(targetPath ?? '').split('?')[0] || '/';
+    return knownSiteRoutes.has(routePath);
+}
+
+function resolveProjectRootPath(targetPath) {
+    const sanitizedPath = String(targetPath ?? '').replace(/^\/+/, '');
+
+    if (!sanitizedPath) {
+        return '';
+    }
+
+    return path.join(projectRoot, sanitizedPath);
+}
+
+function resolveMarkdownLinkTarget(fromFilePath, targetPath, articleAliasMap) {
+    const sanitizedTargetPath = String(targetPath ?? '').trim();
+
+    if (!sanitizedTargetPath) {
+        return '';
+    }
+
+    if (sanitizedTargetPath.startsWith('/')) {
+        if (isKnownSiteRoute(sanitizedTargetPath)) {
+            return '__site_route__';
+        }
+
+        const articleAlias = normalizeArticleAlias(sanitizedTargetPath);
+        if (articleAliasMap.has(articleAlias)) {
+            return '__article_route__';
+        }
+
+        return resolveProjectRootPath(sanitizedTargetPath);
+    }
+
+    return resolveLinkedFilePath(fromFilePath, sanitizedTargetPath);
 }
 
 function loadSiteConfig() {
@@ -506,6 +572,7 @@ function validateContent(allArticles) {
     const warnings = [];
     const errors = [];
     const titleMap = new Map();
+    const articleAliasMap = buildArticleAliasMap(allArticles);
 
     for (const article of allArticles) {
         const duplicatedPath = titleMap.get(article.title);
@@ -550,7 +617,11 @@ function validateContent(allArticles) {
                 continue;
             }
 
-            const resolvedPath = resolveLinkedFilePath(article.filePath, sanitizedLink);
+            const resolvedPath = resolveMarkdownLinkTarget(article.filePath, sanitizedLink, articleAliasMap);
+
+            if (resolvedPath === '__site_route__' || resolvedPath === '__article_route__') {
+                continue;
+            }
 
             if (!fileExists(resolvedPath)) {
                 errors.push(`文章存在无效相对路径：${article.path} -> ${link}`);

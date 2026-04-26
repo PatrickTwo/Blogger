@@ -23,6 +23,150 @@ export const BLOG_CATEGORIES = [
         "path": "#/list?category=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F",
         "subcategories": [
             {
+                "name": "创建型设计模式",
+                "slug": "创建型设计模式",
+                "path": "#/list?category=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&subcategory=%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F",
+                "articles": [
+                    {
+                        "title": "工厂方法模式",
+                        "summary": "深入讲解工厂方法模式的核心概念、实现机制与实际应用场景，探讨它如何实现对象创建与使用解耦。",
+                        "tags": [
+                            "设计模式",
+                            "工厂方法",
+                            "创建型模式",
+                            "面向对象",
+                            "C#"
+                        ],
+                        "category": "设计模式",
+                        "subcategory": "创建型设计模式",
+                        "series": "设计模式详解",
+                        "seriesSlug": "设计模式详解",
+                        "order": 1,
+                        "date": "2026-04-25T00:00:00.000Z",
+                        "updatedAt": "2026-04-25T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/1.工厂方法模式.md",
+                        "slug": "工厂方法模式",
+                        "route": "#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
+                        "readMinutes": 7,
+                        "headings": [
+                            "一-模式概述",
+                            "二-为什么需要工厂方法模式",
+                            "2-1-传统直接实例化的问题",
+                            "2-2-工厂方法模式的优势",
+                            "三-模式结构解析",
+                            "3-1-四要素详解",
+                            "3-2-代码实现",
+                            "抽象产品层",
+                            "抽象工厂层",
+                            "具体工厂层",
+                            "客户端使用",
+                            "四-模式变体与实现细节",
+                            "4-1-工厂方法的两种实现方式",
+                            "变体一-抽象工厂方法-具体工厂类",
+                            "变体二-参数化工厂方法",
+                            "4-2-使用泛型简化工厂",
+                            "五-实际应用场景",
+                            "5-1-日志系统",
+                            "5-2-数据库连接驱动",
+                            "5-3-unity-中的应用",
+                            "六-模式的优缺点分析",
+                            "6-1-优势",
+                            "6-2-缺点",
+                            "七-模式对比",
+                            "八-学习路线建议",
+                            "九-总结",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-25",
+                        "displayUpdatedAt": "2026-04-25",
+                        "previousPath": "",
+                        "nextPath": "Resources/Articles/2.抽象工厂模式.md",
+                        "relatedPaths": [
+                            "Resources/Articles/2.抽象工厂模式.md",
+                            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
+                            "Resources/Articles/依赖注入.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/2.抽象工厂模式.md"
+                        ]
+                    },
+                    {
+                        "title": "抽象工厂模式",
+                        "summary": "深入讲解抽象工厂模式的核心概念与实现机制，探讨它如何解决多维度产品族的创建问题，以及与工厂方法模式的区别与联系。",
+                        "tags": [
+                            "设计模式",
+                            "抽象工厂",
+                            "创建型模式",
+                            "产品族",
+                            "面向对象",
+                            "C#"
+                        ],
+                        "category": "设计模式",
+                        "subcategory": "创建型设计模式",
+                        "series": "设计模式详解",
+                        "seriesSlug": "设计模式详解",
+                        "order": 2,
+                        "date": "2026-04-25T00:00:00.000Z",
+                        "updatedAt": "2026-04-25T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/2.抽象工厂模式.md",
+                        "slug": "抽象工厂模式",
+                        "route": "#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
+                        "readMinutes": 11,
+                        "headings": [
+                            "一-模式概述",
+                            "二-一维-vs-二维-理解两种模式的关系",
+                            "2-1-场景对比",
+                            "2-2-可视化对比",
+                            "三-模式结构解析",
+                            "3-1-结构图",
+                            "3-2-四要素详解",
+                            "3-3-核心原则",
+                            "四-rpg-游戏装备系统实现",
+                            "4-1-需求分析",
+                            "4-2-抽象产品层",
+                            "4-3-具体产品层",
+                            "4-4-抽象工厂层",
+                            "4-5-具体工厂层",
+                            "4-6-客户端使用",
+                            "五-跨平台-ui-组件实例",
+                            "5-1-需求分析",
+                            "5-2-代码实现",
+                            "六-图形渲染后端实例",
+                            "6-1-需求分析",
+                            "6-2-简化实现",
+                            "七-模式的优缺点分析",
+                            "7-1-优势",
+                            "7-2-缺点",
+                            "八-工厂方法-vs-抽象工厂",
+                            "九-模式对比总结",
+                            "十-与其他模式的组合",
+                            "10-1-与单例模式组合",
+                            "10-2-与依赖注入组合",
+                            "十一-常见应用场景",
+                            "十二-学习路线建议",
+                            "十三-总结",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-25",
+                        "displayUpdatedAt": "2026-04-25",
+                        "previousPath": "Resources/Articles/1.工厂方法模式.md",
+                        "nextPath": "",
+                        "relatedPaths": [
+                            "Resources/Articles/1.工厂方法模式.md",
+                            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
+                            "Resources/Articles/依赖注入.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/1.工厂方法模式.md"
+                        ]
+                    }
+                ]
+            },
+            {
                 "name": "A.设计原则与设计模式概述",
                 "slug": "a-设计原则与设计模式概述",
                 "path": "#/list?category=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&subcategory=A.%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0",
@@ -65,9 +209,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
-                            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
-                            "Resources/Articles/依赖注入.md",
-                            "Resources/Articles/5.单例模式.md"
+                            "Resources/Articles/1.工厂方法模式.md",
+                            "Resources/Articles/2.抽象工厂模式.md",
+                            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md"
                         ],
                         "seriesPaths": []
                     }
@@ -78,90 +222,6 @@ export const BLOG_CATEGORIES = [
                 "slug": "b-创建型设计模式",
                 "path": "#/list?category=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F&subcategory=B.%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F",
                 "articles": [
-                    {
-                        "title": "1.工厂方法模式",
-                        "summary": "一、创建型设计模式概述 创建型设计模式关注对象创建过程，提供更多机制和步骤，能提升项目代码的灵活性和可复用性。",
-                        "tags": [
-                            "设计模式",
-                            "创建型设计模式"
-                        ],
-                        "category": "设计模式",
-                        "subcategory": "B.创建型设计模式",
-                        "series": "",
-                        "seriesSlug": "",
-                        "order": 1,
-                        "date": "2026-01-22T00:00:00.000Z",
-                        "updatedAt": "2026-01-21T00:00:00.000Z",
-                        "draft": false,
-                        "path": "Resources/Articles/1.工厂方法模式.md",
-                        "slug": "1-工厂方法模式",
-                        "route": "#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
-                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
-                        "readMinutes": 6,
-                        "headings": [
-                            "一-创建型设计模式概述",
-                            "二-工厂方法模式"
-                        ],
-                        "displayDate": "2026-01-22",
-                        "displayUpdatedAt": "2026-01-21",
-                        "previousPath": "",
-                        "nextPath": "Resources/Articles/2.抽象工厂模式.md",
-                        "relatedPaths": [
-                            "Resources/Articles/5.单例模式.md",
-                            "Resources/Articles/_创建型概要.md",
-                            "Resources/Articles/2.抽象工厂模式.md"
-                        ],
-                        "seriesPaths": []
-                    },
-                    {
-                        "title": "2.抽象工厂模式",
-                        "summary": "一、工厂方法 vs 抽象工厂（类比一维 vs 二维数组）",
-                        "tags": [
-                            "设计模式",
-                            "创建型设计模式"
-                        ],
-                        "category": "设计模式",
-                        "subcategory": "B.创建型设计模式",
-                        "series": "",
-                        "seriesSlug": "",
-                        "order": 2,
-                        "date": "2026-01-22T00:00:00.000Z",
-                        "updatedAt": "2026-01-21T00:00:00.000Z",
-                        "draft": false,
-                        "path": "Resources/Articles/2.抽象工厂模式.md",
-                        "slug": "2-抽象工厂模式",
-                        "route": "#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
-                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
-                        "readMinutes": 7,
-                        "headings": [
-                            "一-工厂方法-vs-抽象工厂-类比一维-vs-二维数组",
-                            "二-抽象工厂模式的核心思想",
-                            "三-以rpg游戏装备为例理解抽象工厂模式",
-                            "1-场景描述",
-                            "2-设计要素拆解",
-                            "1-抽象产品-abstract-products",
-                            "2-具体产品-concrete-products",
-                            "3-抽象工厂-abstract-factory",
-                            "4-具体工厂-concrete-factories",
-                            "3-客户端代码-游戏逻辑",
-                            "四-抽象工厂模式的构成要素",
-                            "五-抽象工厂模式的优劣",
-                            "优势",
-                            "劣势",
-                            "六-抽象工厂模式的典型应用场景",
-                            "七-抽象工厂模式-vs-工厂方法模式"
-                        ],
-                        "displayDate": "2026-01-22",
-                        "displayUpdatedAt": "2026-01-21",
-                        "previousPath": "Resources/Articles/1.工厂方法模式.md",
-                        "nextPath": "Resources/Articles/3.建造者模式.md",
-                        "relatedPaths": [
-                            "Resources/Articles/5.单例模式.md",
-                            "Resources/Articles/_创建型概要.md",
-                            "Resources/Articles/1.工厂方法模式.md"
-                        ],
-                        "seriesPaths": []
-                    },
                     {
                         "title": "3.建造者模式",
                         "summary": "建造者模式（Builder Pattern） ，也称为 生成器模式 ，是一种 创建型设计模式 。 与之前学习的 工厂方法模式 和 抽象工厂模式 不同，建造者模式 更关注对象构建的步骤与过程，而不是单纯的结构或分类 。 它适合用于 构建复杂对象 ，尤其是当该对象的构造涉及 多个组成",
@@ -206,12 +266,12 @@ export const BLOG_CATEGORIES = [
                         ],
                         "displayDate": "2026-01-22",
                         "displayUpdatedAt": "2026-01-21",
-                        "previousPath": "Resources/Articles/2.抽象工厂模式.md",
+                        "previousPath": "",
                         "nextPath": "Resources/Articles/4.原型模式.md",
                         "relatedPaths": [
                             "Resources/Articles/5.单例模式.md",
                             "Resources/Articles/_创建型概要.md",
-                            "Resources/Articles/1.工厂方法模式.md"
+                            "Resources/Articles/4.原型模式.md"
                         ],
                         "seriesPaths": []
                     },
@@ -250,7 +310,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/5.单例模式.md",
                             "Resources/Articles/_创建型概要.md",
-                            "Resources/Articles/1.工厂方法模式.md"
+                            "Resources/Articles/3.建造者模式.md"
                         ],
                         "seriesPaths": []
                     },
@@ -281,8 +341,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "Resources/Articles/_创建型概要.md",
                         "relatedPaths": [
                             "Resources/Articles/_创建型概要.md",
-                            "Resources/Articles/1.工厂方法模式.md",
-                            "Resources/Articles/2.抽象工厂模式.md"
+                            "Resources/Articles/3.建造者模式.md",
+                            "Resources/Articles/4.原型模式.md"
                         ],
                         "seriesPaths": []
                     },
@@ -313,8 +373,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/5.单例模式.md",
-                            "Resources/Articles/1.工厂方法模式.md",
-                            "Resources/Articles/2.抽象工厂模式.md"
+                            "Resources/Articles/3.建造者模式.md",
+                            "Resources/Articles/4.原型模式.md"
                         ],
                         "seriesPaths": []
                     }
@@ -1493,7 +1553,7 @@ export const BLOG_CATEGORIES = [
                 "relatedPaths": [
                     "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
                     "Resources/Articles/Unity-VContainer详细用法.md",
-                    "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
+                    "Resources/Articles/1.工厂方法模式.md"
                 ],
                 "seriesPaths": []
             }
@@ -3175,6 +3235,127 @@ export const BLOG_CATEGORIES = [
         "path": "#/list?category=Program%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3",
         "subcategories": [
             {
+                "name": "工程实践",
+                "slug": "工程实践",
+                "path": "#/list?category=Program%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3&subcategory=%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5",
+                "articles": [
+                    {
+                        "title": "Git 详解：从基础工作流到高阶实践",
+                        "summary": "系统讲清 Git 的对象模型、索引区、分支合并、远程协作、rebase、reflog、stash、submodule、hooks、bisect 与 worktree 等高阶内容。",
+                        "tags": [
+                            "Git",
+                            "版本控制",
+                            "Worktree",
+                            "Rebase",
+                            "工程实践"
+                        ],
+                        "category": "Program设计文档",
+                        "subcategory": "工程实践",
+                        "series": "开发工具与工程实践",
+                        "seriesSlug": "开发工具与工程实践",
+                        "order": 1,
+                        "date": "2026-04-25T00:00:00.000Z",
+                        "updatedAt": "2026-04-25T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Git 详解：从基础工作流到高阶实践.md",
+                        "slug": "git-详解-从基础工作流到高阶实践",
+                        "route": "#/article?path=Resources%2FArticles%2FGit+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E9%AB%98%E9%98%B6%E5%AE%9E%E8%B7%B5.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FGit+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E9%AB%98%E9%98%B6%E5%AE%9E%E8%B7%B5.md",
+                        "readMinutes": 29,
+                        "headings": [
+                            "git-详解-从基础工作流到高阶实践",
+                            "1-git-到底是什么",
+                            "1-1-git-与-github-gitlab-的关系",
+                            "2-先建立最重要的-git-心智模型",
+                            "2-1-git-的-三棵树",
+                            "2-2-git-存储的是-快照-不是传统意义上的补丁链",
+                            "2-3-commit-tree-blob-tag-分别是什么",
+                            "2-4-分支本质上只是一个可移动的引用",
+                            "2-5-head-是什么",
+                            "3-git-基础工作流-从创建仓库到提交代码",
+                            "3-1-创建与获取仓库",
+                            "3-2-查看状态",
+                            "3-3-提交的标准节奏",
+                            "3-4-为什么暂存区很重要",
+                            "4-撤销-恢复与-后悔药-git-最容易混乱的一组命令",
+                            "4-1-restore-reset-revert-reflog-的定位",
+                            "4-2-git-restore-恢复文件-比老式-checkout-file-更清晰",
+                            "4-3-git-reset-威力很大-也最容易误用",
+                            "4-4-git-revert-面向公开历史的安全回滚",
+                            "4-5-git-reflog-真正的-后悔药",
+                            "5-分支-合并与变基-git-协作的主战场",
+                            "5-1-为什么-git-鼓励频繁分支",
+                            "5-2-创建与切换分支",
+                            "5-3-merge-与-rebase-的核心区别",
+                            "5-4-什么时候用-merge-什么时候用-rebase",
+                            "5-5-交互式-rebase-真正能提升提交质量的高级工具",
+                            "5-6-cherry-pick-只摘取某几个提交",
+                            "5-7-tag-发布版本时的稳定锚点",
+                            "6-远程协作-fetch-pull-push-与分支同步",
+                            "6-1-远程分支与本地分支不是一回事",
+                            "6-2-fetch-与-pull-的区别",
+                            "6-3-推荐的团队同步节奏",
+                            "7-日常高频但常被低估的高级能力",
+                            "7-1-stash-临时收纳当前修改",
+                            "7-2-bisect-二分法定位引入-bug-的提交",
+                            "之后不断测试并标记-good-bad",
+                            "7-3-submodule-把另一个仓库作为子目录挂进来",
+                            "7-4-hooks-把规范自动化-而不是靠口头约束",
+                            "8-worktree-深度讲解-git-中最实用却常被忽视的高级功能",
+                            "8-1-worktree-是什么",
+                            "8-2-为什么需要-worktree",
+                            "8-3-worktree-与重新-clone-的区别",
+                            "8-4-worktree-的常用命令",
+                            "8-4-1-查看当前所有-worktree",
+                            "8-4-2-新建一个-worktree-并创建分支",
+                            "8-4-3-基于已有分支创建-worktree",
+                            "8-4-4-删除-worktree",
+                            "8-4-5-清理失效-worktree-元数据",
+                            "8-4-6-锁定与解锁-worktree",
+                            "8-4-7-修复-worktree-连接关系",
+                            "8-5-worktree-的底层机制应该怎么理解",
+                            "8-6-worktree-的典型应用场景",
+                            "8-6-1-同时维护-feature-与-hotfix",
+                            "主目录继续开发-feature-a",
+                            "新目录处理-hotfix",
+                            "8-6-2-同时打开-release-分支与-main-分支做对比验证",
+                            "8-6-3-代码评审或问题复现",
+                            "8-6-4-大型项目中减少-切分支触发重建-的成本",
+                            "8-7-worktree-的限制与常见坑",
+                            "9-团队里真正好用的-git-工作流应该长什么样",
+                            "9-1-常见推荐工作流",
+                            "9-2-一个比较稳的团队规范",
+                            "10-git-进阶排障-遇到复杂问题时怎么想",
+                            "10-1-为什么我明明改了文件-却不能切分支",
+                            "10-2-为什么-rebase-后提交全变了",
+                            "10-3-为什么-merge-冲突与-rebase-冲突处理体验不一样",
+                            "10-4-为什么找不到-刚才那个提交-了",
+                            "11-命令速查-从日常到高阶",
+                            "11-1-日常最常用",
+                            "11-2-历史整理与恢复",
+                            "11-3-高阶能力",
+                            "12-学习路线建议-如何真正学会-git",
+                            "12-1-第一阶段-先掌握最小闭环",
+                            "12-2-第二阶段-补齐历史修改能力",
+                            "12-3-第三阶段-进入工程级用法",
+                            "13-常见误区总结",
+                            "14-总结-把-git-从-命令集-升级为-历史管理系统",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-25",
+                        "displayUpdatedAt": "2026-04-25",
+                        "previousPath": "",
+                        "nextPath": "",
+                        "relatedPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                        ],
+                        "seriesPaths": []
+                    }
+                ]
+            },
+            {
                 "name": "Mahjong",
                 "slug": "mahjong",
                 "path": "#/list?category=Program%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3&subcategory=Mahjong",
@@ -3226,7 +3407,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "Resources/Articles/Mahjong流程设计-对局.md",
                         "relatedPaths": [
                             "Resources/Articles/Mahjong流程设计-对局.md",
-                            "Resources/Articles/Mahjong规则文档.md"
+                            "Resources/Articles/Mahjong规则文档.md",
+                            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
                         ],
                         "seriesPaths": []
                     },
@@ -3298,7 +3480,8 @@ export const BLOG_CATEGORIES = [
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/Mahjong流程设计-大厅.md",
-                            "Resources/Articles/Mahjong规则文档.md"
+                            "Resources/Articles/Mahjong规则文档.md",
+                            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
                         ],
                         "seriesPaths": []
                     }
@@ -3351,7 +3534,8 @@ export const BLOG_CATEGORIES = [
                 "nextPath": "",
                 "relatedPaths": [
                     "Resources/Articles/Mahjong流程设计-大厅.md",
-                    "Resources/Articles/Mahjong流程设计-对局.md"
+                    "Resources/Articles/Mahjong流程设计-对局.md",
+                    "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
                 ],
                 "seriesPaths": []
             }
@@ -3477,13 +3661,138 @@ export const BLOG_CATEGORIES = [
                         "displayDate": "2026-04-22",
                         "displayUpdatedAt": "2026-04-22",
                         "previousPath": "",
-                        "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                        "nextPath": "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                         "relatedPaths": [
                             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
                             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
-                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
                         ],
                         "seriesPaths": [
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                        ]
+                    },
+                    {
+                        "title": "Unity Timeline 详解：从入门到运行时控制与自定义扩展",
+                        "summary": "系统讲清 Unity Timeline 的核心模型、编辑器工作流、Playable Director、运行时 API、自定义 Track 与常见坑。",
+                        "tags": [
+                            "Unity",
+                            "Timeline",
+                            "PlayableDirector",
+                            "PlayableGraph",
+                            "动画系统",
+                            "过场动画"
+                        ],
+                        "category": "Unity",
+                        "subcategory": "工程实践",
+                        "series": "Unity 工程进阶",
+                        "seriesSlug": "unity-工程进阶",
+                        "order": 5,
+                        "date": "2026-04-26T00:00:00.000Z",
+                        "updatedAt": "2026-04-26T00:00:00.000Z",
+                        "draft": false,
+                        "path": "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
+                        "slug": "unity-timeline-详解-从入门到运行时控制与自定义扩展",
+                        "route": "#/article?path=Resources%2FArticles%2FUnity+Timeline+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95.md",
+                        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+Timeline+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95.md",
+                        "readMinutes": 42,
+                        "headings": [
+                            "unity-timeline-详解-从入门到运行时控制与自定义扩展",
+                            "1-timeline-是什么-它解决什么问题",
+                            "1-1-timeline-的本质",
+                            "1-2-timeline-适合哪些场景",
+                            "1-3-timeline-与-animator-animation-协程的关系",
+                            "2-timeline-的核心模型",
+                            "2-1-timeline-asset-与-timeline-instance",
+                            "2-2-playable-director-的职责",
+                            "2-3-track-clip-marker-binding",
+                            "2-4-playablegraph-与-timeline-的关系",
+                            "3-从零开始的-timeline-编辑器工作流",
+                            "3-1-创建-timeline-asset-与-timeline-instance",
+                            "3-2-一个完整的基础工作流图",
+                            "3-3-timeline-窗口中最重要的几个区域",
+                            "3-4-add-track-常见轨道类型",
+                            "4-playable-director-详解",
+                            "4-1-playable-属性-资源与实例的桥梁",
+                            "4-2-update-method-时间从哪里来",
+                            "4-3-wrap-mode-播完之后怎么办",
+                            "4-4-initial-time-与-play-on-awake",
+                            "5-常见-track-的深入讲解",
+                            "5-1-animation-track-timeline-的核心轨道",
+                            "5-1-1-绑定对象与自动补组件",
+                            "5-1-2-录制基础动画与-infinite-clip",
+                            "5-1-3-clip-编辑-trim-blend-ease-curves",
+                            "5-1-4-match-offsets-解决动画跳变",
+                            "5-1-5-track-offsets-与-clip-offsets",
+                            "5-1-6-avatar-mask-与-override-track",
+                            "5-2-activation-track-控制对象显隐和激活",
+                            "5-3-audio-track-处理时序化音频",
+                            "5-4-control-track-最容易被低估的高级轨道",
+                            "5-4-1-sub-timeline-把大演出拆成小演出",
+                            "5-4-2-control-track-与-itimecontrol",
+                            "5-5-signal-track-与-marker-时间点事件系统",
+                            "5-5-1-marker-是什么",
+                            "5-5-2-signal-的结构",
+                            "5-6-playable-track-承接自定义逻辑的入口",
+                            "6-timeline-的常见编辑技巧",
+                            "6-1-录制而不是手填关键帧",
+                            "6-2-curves-view-别只停留在-dope-sheet-视图",
+                            "6-3-lock-与-mute-只是编辑器级辅助-不完全等于运行保护",
+                            "7-在运行时控制-timeline",
+                            "7-1-最基本的控制-api",
+                            "7-1-1-什么时候用-pause-什么时候用-stop",
+                            "7-2-手动跳时间-time-evaluate",
+                            "7-3-手动更新-manual-模式",
+                            "7-4-运行时动态绑定-setgenericbinding",
+                            "7-5-监听播放事件",
+                            "8-自定义-timeline-从会用到能扩展",
+                            "8-1-自定义扩展的核心角色",
+                            "8-1-1-playableasset",
+                            "8-1-2-playablebehaviour",
+                            "8-1-3-trackasset",
+                            "8-1-4-常见-attribute",
+                            "8-2-一个最小可用的自定义-clip-示例",
+                            "8-3-带绑定对象的自定义-track",
+                            "8-4-需要混合时-重写-createtrackmixer",
+                            "8-5-自定义编辑器层扩展",
+                            "9-典型项目工作流",
+                            "9-1-过场动画型工作流",
+                            "9-2-玩法驱动型工作流",
+                            "9-3-模板化与复用",
+                            "10-timeline-常见坑与排查思路",
+                            "10-1-把-asset-和-instance-混为一谈",
+                            "10-2-改了时间但画面没刷新",
+                            "10-3-运行时改了绑定但没生效",
+                            "10-4-infinite-clip-不好编辑",
+                            "10-5-主-director-对象被-activation-track-关掉",
+                            "10-6-以为-lock-能防止一切改动",
+                            "10-7-混用-game-time-和-unscaled-game-time",
+                            "11-实践建议-如何在团队中用好-timeline",
+                            "11-1-把-timeline-当作内容编排层-而不是万能逻辑层",
+                            "11-2-每条-timeline-都要有清晰的-所有者",
+                            "11-3-复杂演出优先拆成子-timeline",
+                            "11-4-给策划-美术留出可调参数-而不是全写死",
+                            "12-学习路线建议",
+                            "12-1-入门阶段",
+                            "12-2-进阶阶段",
+                            "12-3-高阶阶段",
+                            "13-总结",
+                            "参考资料"
+                        ],
+                        "displayDate": "2026-04-26",
+                        "displayUpdatedAt": "2026-04-26",
+                        "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
+                        "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                        "relatedPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
+                        ],
+                        "seriesPaths": [
+                            "Resources/Articles/UnityTestRunner工作流.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
@@ -3545,7 +3854,7 @@ export const BLOG_CATEGORIES = [
                         ],
                         "displayDate": "2026-04-09",
                         "displayUpdatedAt": "2026-04-09",
-                        "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
+                        "previousPath": "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                         "nextPath": "",
                         "relatedPaths": [
                             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
@@ -3554,6 +3863,7 @@ export const BLOG_CATEGORIES = [
                         ],
                         "seriesPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
                             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
@@ -3828,7 +4138,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
                             "Resources/Articles/Unity-VContainer详细用法.md",
-                            "Resources/Articles/UnityTestRunner工作流.md"
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4342,9 +4652,9 @@ export const BLOG_CATEGORIES = [
                         "previousPath": "",
                         "nextPath": "",
                         "relatedPaths": [
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                             "Resources/Articles/UnityTestRunner工作流.md",
-                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-                            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -4484,6 +4794,7 @@ export const BLOG_CATEGORIES = [
                         ],
                         "seriesPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
                             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
@@ -4604,6 +4915,7 @@ export const BLOG_CATEGORIES = [
                         ],
                         "seriesPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
@@ -4739,6 +5051,7 @@ export const BLOG_CATEGORIES = [
                         ],
                         "seriesPaths": [
                             "Resources/Articles/UnityTestRunner工作流.md",
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
                             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
                             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
@@ -4848,7 +5161,7 @@ export const BLOG_CATEGORIES = [
                         "relatedPaths": [
                             "Resources/Articles/Unity-UniTask详细用法.md",
                             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-                            "Resources/Articles/UnityTestRunner工作流.md"
+                            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
                         ],
                         "seriesPaths": [
                             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -5149,9 +5462,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "",
                 "nextPath": "Resources/Articles/Layer.md",
                 "relatedPaths": [
+                    "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                     "Resources/Articles/UnityTestRunner工作流.md",
-                    "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-                    "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                    "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
                 ],
                 "seriesPaths": []
             },
@@ -5192,9 +5505,9 @@ export const BLOG_CATEGORIES = [
                 "previousPath": "Resources/Articles/坐标变换系统.md",
                 "nextPath": "",
                 "relatedPaths": [
+                    "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
                     "Resources/Articles/UnityTestRunner工作流.md",
-                    "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-                    "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+                    "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
                 ],
                 "seriesPaths": []
             }
@@ -5245,9 +5558,146 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
+            "Resources/Articles/1.工厂方法模式.md"
         ],
         "seriesPaths": []
+    },
+    {
+        "title": "工厂方法模式",
+        "summary": "深入讲解工厂方法模式的核心概念、实现机制与实际应用场景，探讨它如何实现对象创建与使用解耦。",
+        "tags": [
+            "设计模式",
+            "工厂方法",
+            "创建型模式",
+            "面向对象",
+            "C#"
+        ],
+        "category": "设计模式",
+        "subcategory": "创建型设计模式",
+        "series": "设计模式详解",
+        "seriesSlug": "设计模式详解",
+        "order": 1,
+        "date": "2026-04-25T00:00:00.000Z",
+        "updatedAt": "2026-04-25T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/1.工厂方法模式.md",
+        "slug": "工厂方法模式",
+        "route": "#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
+        "readMinutes": 7,
+        "headings": [
+            "一-模式概述",
+            "二-为什么需要工厂方法模式",
+            "2-1-传统直接实例化的问题",
+            "2-2-工厂方法模式的优势",
+            "三-模式结构解析",
+            "3-1-四要素详解",
+            "3-2-代码实现",
+            "抽象产品层",
+            "抽象工厂层",
+            "具体工厂层",
+            "客户端使用",
+            "四-模式变体与实现细节",
+            "4-1-工厂方法的两种实现方式",
+            "变体一-抽象工厂方法-具体工厂类",
+            "变体二-参数化工厂方法",
+            "4-2-使用泛型简化工厂",
+            "五-实际应用场景",
+            "5-1-日志系统",
+            "5-2-数据库连接驱动",
+            "5-3-unity-中的应用",
+            "六-模式的优缺点分析",
+            "6-1-优势",
+            "6-2-缺点",
+            "七-模式对比",
+            "八-学习路线建议",
+            "九-总结",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-25",
+        "displayUpdatedAt": "2026-04-25",
+        "previousPath": "",
+        "nextPath": "Resources/Articles/2.抽象工厂模式.md",
+        "relatedPaths": [
+            "Resources/Articles/2.抽象工厂模式.md",
+            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
+            "Resources/Articles/依赖注入.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/2.抽象工厂模式.md"
+        ]
+    },
+    {
+        "title": "抽象工厂模式",
+        "summary": "深入讲解抽象工厂模式的核心概念与实现机制，探讨它如何解决多维度产品族的创建问题，以及与工厂方法模式的区别与联系。",
+        "tags": [
+            "设计模式",
+            "抽象工厂",
+            "创建型模式",
+            "产品族",
+            "面向对象",
+            "C#"
+        ],
+        "category": "设计模式",
+        "subcategory": "创建型设计模式",
+        "series": "设计模式详解",
+        "seriesSlug": "设计模式详解",
+        "order": 2,
+        "date": "2026-04-25T00:00:00.000Z",
+        "updatedAt": "2026-04-25T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/2.抽象工厂模式.md",
+        "slug": "抽象工厂模式",
+        "route": "#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
+        "readMinutes": 11,
+        "headings": [
+            "一-模式概述",
+            "二-一维-vs-二维-理解两种模式的关系",
+            "2-1-场景对比",
+            "2-2-可视化对比",
+            "三-模式结构解析",
+            "3-1-结构图",
+            "3-2-四要素详解",
+            "3-3-核心原则",
+            "四-rpg-游戏装备系统实现",
+            "4-1-需求分析",
+            "4-2-抽象产品层",
+            "4-3-具体产品层",
+            "4-4-抽象工厂层",
+            "4-5-具体工厂层",
+            "4-6-客户端使用",
+            "五-跨平台-ui-组件实例",
+            "5-1-需求分析",
+            "5-2-代码实现",
+            "六-图形渲染后端实例",
+            "6-1-需求分析",
+            "6-2-简化实现",
+            "七-模式的优缺点分析",
+            "7-1-优势",
+            "7-2-缺点",
+            "八-工厂方法-vs-抽象工厂",
+            "九-模式对比总结",
+            "十-与其他模式的组合",
+            "10-1-与单例模式组合",
+            "10-2-与依赖注入组合",
+            "十一-常见应用场景",
+            "十二-学习路线建议",
+            "十三-总结",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-25",
+        "displayUpdatedAt": "2026-04-25",
+        "previousPath": "Resources/Articles/1.工厂方法模式.md",
+        "nextPath": "",
+        "relatedPaths": [
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
+            "Resources/Articles/依赖注入.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/1.工厂方法模式.md"
+        ]
     },
     {
         "title": "概述",
@@ -5287,93 +5737,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
-            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
-            "Resources/Articles/依赖注入.md",
-            "Resources/Articles/5.单例模式.md"
-        ],
-        "seriesPaths": []
-    },
-    {
-        "title": "1.工厂方法模式",
-        "summary": "一、创建型设计模式概述 创建型设计模式关注对象创建过程，提供更多机制和步骤，能提升项目代码的灵活性和可复用性。",
-        "tags": [
-            "设计模式",
-            "创建型设计模式"
-        ],
-        "category": "设计模式",
-        "subcategory": "B.创建型设计模式",
-        "series": "",
-        "seriesSlug": "",
-        "order": 1,
-        "date": "2026-01-22T00:00:00.000Z",
-        "updatedAt": "2026-01-21T00:00:00.000Z",
-        "draft": false,
-        "path": "Resources/Articles/1.工厂方法模式.md",
-        "slug": "1-工厂方法模式",
-        "route": "#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
-        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F1.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.md",
-        "readMinutes": 6,
-        "headings": [
-            "一-创建型设计模式概述",
-            "二-工厂方法模式"
-        ],
-        "displayDate": "2026-01-22",
-        "displayUpdatedAt": "2026-01-21",
-        "previousPath": "",
-        "nextPath": "Resources/Articles/2.抽象工厂模式.md",
-        "relatedPaths": [
-            "Resources/Articles/5.单例模式.md",
-            "Resources/Articles/_创建型概要.md",
-            "Resources/Articles/2.抽象工厂模式.md"
-        ],
-        "seriesPaths": []
-    },
-    {
-        "title": "2.抽象工厂模式",
-        "summary": "一、工厂方法 vs 抽象工厂（类比一维 vs 二维数组）",
-        "tags": [
-            "设计模式",
-            "创建型设计模式"
-        ],
-        "category": "设计模式",
-        "subcategory": "B.创建型设计模式",
-        "series": "",
-        "seriesSlug": "",
-        "order": 2,
-        "date": "2026-01-22T00:00:00.000Z",
-        "updatedAt": "2026-01-21T00:00:00.000Z",
-        "draft": false,
-        "path": "Resources/Articles/2.抽象工厂模式.md",
-        "slug": "2-抽象工厂模式",
-        "route": "#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
-        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2F2.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md",
-        "readMinutes": 7,
-        "headings": [
-            "一-工厂方法-vs-抽象工厂-类比一维-vs-二维数组",
-            "二-抽象工厂模式的核心思想",
-            "三-以rpg游戏装备为例理解抽象工厂模式",
-            "1-场景描述",
-            "2-设计要素拆解",
-            "1-抽象产品-abstract-products",
-            "2-具体产品-concrete-products",
-            "3-抽象工厂-abstract-factory",
-            "4-具体工厂-concrete-factories",
-            "3-客户端代码-游戏逻辑",
-            "四-抽象工厂模式的构成要素",
-            "五-抽象工厂模式的优劣",
-            "优势",
-            "劣势",
-            "六-抽象工厂模式的典型应用场景",
-            "七-抽象工厂模式-vs-工厂方法模式"
-        ],
-        "displayDate": "2026-01-22",
-        "displayUpdatedAt": "2026-01-21",
-        "previousPath": "Resources/Articles/1.工厂方法模式.md",
-        "nextPath": "Resources/Articles/3.建造者模式.md",
-        "relatedPaths": [
-            "Resources/Articles/5.单例模式.md",
-            "Resources/Articles/_创建型概要.md",
-            "Resources/Articles/1.工厂方法模式.md"
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md",
+            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md"
         ],
         "seriesPaths": []
     },
@@ -5421,12 +5787,12 @@ export const BLOG_ARTICLES = [
         ],
         "displayDate": "2026-01-22",
         "displayUpdatedAt": "2026-01-21",
-        "previousPath": "Resources/Articles/2.抽象工厂模式.md",
+        "previousPath": "",
         "nextPath": "Resources/Articles/4.原型模式.md",
         "relatedPaths": [
             "Resources/Articles/5.单例模式.md",
             "Resources/Articles/_创建型概要.md",
-            "Resources/Articles/1.工厂方法模式.md"
+            "Resources/Articles/4.原型模式.md"
         ],
         "seriesPaths": []
     },
@@ -5465,7 +5831,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/5.单例模式.md",
             "Resources/Articles/_创建型概要.md",
-            "Resources/Articles/1.工厂方法模式.md"
+            "Resources/Articles/3.建造者模式.md"
         ],
         "seriesPaths": []
     },
@@ -5496,8 +5862,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "Resources/Articles/_创建型概要.md",
         "relatedPaths": [
             "Resources/Articles/_创建型概要.md",
-            "Resources/Articles/1.工厂方法模式.md",
-            "Resources/Articles/2.抽象工厂模式.md"
+            "Resources/Articles/3.建造者模式.md",
+            "Resources/Articles/4.原型模式.md"
         ],
         "seriesPaths": []
     },
@@ -5528,8 +5894,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/5.单例模式.md",
-            "Resources/Articles/1.工厂方法模式.md",
-            "Resources/Articles/2.抽象工厂模式.md"
+            "Resources/Articles/3.建造者模式.md",
+            "Resources/Articles/4.原型模式.md"
         ],
         "seriesPaths": []
     },
@@ -8295,7 +8661,122 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Mahjong流程设计-大厅.md",
-            "Resources/Articles/Mahjong流程设计-对局.md"
+            "Resources/Articles/Mahjong流程设计-对局.md",
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
+        ],
+        "seriesPaths": []
+    },
+    {
+        "title": "Git 详解：从基础工作流到高阶实践",
+        "summary": "系统讲清 Git 的对象模型、索引区、分支合并、远程协作、rebase、reflog、stash、submodule、hooks、bisect 与 worktree 等高阶内容。",
+        "tags": [
+            "Git",
+            "版本控制",
+            "Worktree",
+            "Rebase",
+            "工程实践"
+        ],
+        "category": "Program设计文档",
+        "subcategory": "工程实践",
+        "series": "开发工具与工程实践",
+        "seriesSlug": "开发工具与工程实践",
+        "order": 1,
+        "date": "2026-04-25T00:00:00.000Z",
+        "updatedAt": "2026-04-25T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Git 详解：从基础工作流到高阶实践.md",
+        "slug": "git-详解-从基础工作流到高阶实践",
+        "route": "#/article?path=Resources%2FArticles%2FGit+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E9%AB%98%E9%98%B6%E5%AE%9E%E8%B7%B5.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FGit+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E9%AB%98%E9%98%B6%E5%AE%9E%E8%B7%B5.md",
+        "readMinutes": 29,
+        "headings": [
+            "git-详解-从基础工作流到高阶实践",
+            "1-git-到底是什么",
+            "1-1-git-与-github-gitlab-的关系",
+            "2-先建立最重要的-git-心智模型",
+            "2-1-git-的-三棵树",
+            "2-2-git-存储的是-快照-不是传统意义上的补丁链",
+            "2-3-commit-tree-blob-tag-分别是什么",
+            "2-4-分支本质上只是一个可移动的引用",
+            "2-5-head-是什么",
+            "3-git-基础工作流-从创建仓库到提交代码",
+            "3-1-创建与获取仓库",
+            "3-2-查看状态",
+            "3-3-提交的标准节奏",
+            "3-4-为什么暂存区很重要",
+            "4-撤销-恢复与-后悔药-git-最容易混乱的一组命令",
+            "4-1-restore-reset-revert-reflog-的定位",
+            "4-2-git-restore-恢复文件-比老式-checkout-file-更清晰",
+            "4-3-git-reset-威力很大-也最容易误用",
+            "4-4-git-revert-面向公开历史的安全回滚",
+            "4-5-git-reflog-真正的-后悔药",
+            "5-分支-合并与变基-git-协作的主战场",
+            "5-1-为什么-git-鼓励频繁分支",
+            "5-2-创建与切换分支",
+            "5-3-merge-与-rebase-的核心区别",
+            "5-4-什么时候用-merge-什么时候用-rebase",
+            "5-5-交互式-rebase-真正能提升提交质量的高级工具",
+            "5-6-cherry-pick-只摘取某几个提交",
+            "5-7-tag-发布版本时的稳定锚点",
+            "6-远程协作-fetch-pull-push-与分支同步",
+            "6-1-远程分支与本地分支不是一回事",
+            "6-2-fetch-与-pull-的区别",
+            "6-3-推荐的团队同步节奏",
+            "7-日常高频但常被低估的高级能力",
+            "7-1-stash-临时收纳当前修改",
+            "7-2-bisect-二分法定位引入-bug-的提交",
+            "之后不断测试并标记-good-bad",
+            "7-3-submodule-把另一个仓库作为子目录挂进来",
+            "7-4-hooks-把规范自动化-而不是靠口头约束",
+            "8-worktree-深度讲解-git-中最实用却常被忽视的高级功能",
+            "8-1-worktree-是什么",
+            "8-2-为什么需要-worktree",
+            "8-3-worktree-与重新-clone-的区别",
+            "8-4-worktree-的常用命令",
+            "8-4-1-查看当前所有-worktree",
+            "8-4-2-新建一个-worktree-并创建分支",
+            "8-4-3-基于已有分支创建-worktree",
+            "8-4-4-删除-worktree",
+            "8-4-5-清理失效-worktree-元数据",
+            "8-4-6-锁定与解锁-worktree",
+            "8-4-7-修复-worktree-连接关系",
+            "8-5-worktree-的底层机制应该怎么理解",
+            "8-6-worktree-的典型应用场景",
+            "8-6-1-同时维护-feature-与-hotfix",
+            "主目录继续开发-feature-a",
+            "新目录处理-hotfix",
+            "8-6-2-同时打开-release-分支与-main-分支做对比验证",
+            "8-6-3-代码评审或问题复现",
+            "8-6-4-大型项目中减少-切分支触发重建-的成本",
+            "8-7-worktree-的限制与常见坑",
+            "9-团队里真正好用的-git-工作流应该长什么样",
+            "9-1-常见推荐工作流",
+            "9-2-一个比较稳的团队规范",
+            "10-git-进阶排障-遇到复杂问题时怎么想",
+            "10-1-为什么我明明改了文件-却不能切分支",
+            "10-2-为什么-rebase-后提交全变了",
+            "10-3-为什么-merge-冲突与-rebase-冲突处理体验不一样",
+            "10-4-为什么找不到-刚才那个提交-了",
+            "11-命令速查-从日常到高阶",
+            "11-1-日常最常用",
+            "11-2-历史整理与恢复",
+            "11-3-高阶能力",
+            "12-学习路线建议-如何真正学会-git",
+            "12-1-第一阶段-先掌握最小闭环",
+            "12-2-第二阶段-补齐历史修改能力",
+            "12-3-第三阶段-进入工程级用法",
+            "13-常见误区总结",
+            "14-总结-把-git-从-命令集-升级为-历史管理系统",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-25",
+        "displayUpdatedAt": "2026-04-25",
+        "previousPath": "",
+        "nextPath": "",
+        "relatedPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
         "seriesPaths": []
     },
@@ -8346,7 +8827,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "Resources/Articles/Mahjong流程设计-对局.md",
         "relatedPaths": [
             "Resources/Articles/Mahjong流程设计-对局.md",
-            "Resources/Articles/Mahjong规则文档.md"
+            "Resources/Articles/Mahjong规则文档.md",
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
         ],
         "seriesPaths": []
     },
@@ -8418,7 +8900,8 @@ export const BLOG_ARTICLES = [
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Mahjong流程设计-大厅.md",
-            "Resources/Articles/Mahjong规则文档.md"
+            "Resources/Articles/Mahjong规则文档.md",
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
         ],
         "seriesPaths": []
     },
@@ -8449,9 +8932,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "Resources/Articles/Layer.md",
         "relatedPaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
         ],
         "seriesPaths": []
     },
@@ -8492,9 +8975,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "Resources/Articles/坐标变换系统.md",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
         ],
         "seriesPaths": []
     },
@@ -8608,13 +9091,138 @@ export const BLOG_ARTICLES = [
         "displayDate": "2026-04-22",
         "displayUpdatedAt": "2026-04-22",
         "previousPath": "",
-        "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+        "nextPath": "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
         "relatedPaths": [
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md",
-            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md"
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
         ],
         "seriesPaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ]
+    },
+    {
+        "title": "Unity Timeline 详解：从入门到运行时控制与自定义扩展",
+        "summary": "系统讲清 Unity Timeline 的核心模型、编辑器工作流、Playable Director、运行时 API、自定义 Track 与常见坑。",
+        "tags": [
+            "Unity",
+            "Timeline",
+            "PlayableDirector",
+            "PlayableGraph",
+            "动画系统",
+            "过场动画"
+        ],
+        "category": "Unity",
+        "subcategory": "工程实践",
+        "series": "Unity 工程进阶",
+        "seriesSlug": "unity-工程进阶",
+        "order": 5,
+        "date": "2026-04-26T00:00:00.000Z",
+        "updatedAt": "2026-04-26T00:00:00.000Z",
+        "draft": false,
+        "path": "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
+        "slug": "unity-timeline-详解-从入门到运行时控制与自定义扩展",
+        "route": "#/article?path=Resources%2FArticles%2FUnity+Timeline+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95.md",
+        "url": "https://patricktwo.github.io/Blogger/#/article?path=Resources%2FArticles%2FUnity+Timeline+%E8%AF%A6%E8%A7%A3%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8E%A7%E5%88%B6%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%89%A9%E5%B1%95.md",
+        "readMinutes": 42,
+        "headings": [
+            "unity-timeline-详解-从入门到运行时控制与自定义扩展",
+            "1-timeline-是什么-它解决什么问题",
+            "1-1-timeline-的本质",
+            "1-2-timeline-适合哪些场景",
+            "1-3-timeline-与-animator-animation-协程的关系",
+            "2-timeline-的核心模型",
+            "2-1-timeline-asset-与-timeline-instance",
+            "2-2-playable-director-的职责",
+            "2-3-track-clip-marker-binding",
+            "2-4-playablegraph-与-timeline-的关系",
+            "3-从零开始的-timeline-编辑器工作流",
+            "3-1-创建-timeline-asset-与-timeline-instance",
+            "3-2-一个完整的基础工作流图",
+            "3-3-timeline-窗口中最重要的几个区域",
+            "3-4-add-track-常见轨道类型",
+            "4-playable-director-详解",
+            "4-1-playable-属性-资源与实例的桥梁",
+            "4-2-update-method-时间从哪里来",
+            "4-3-wrap-mode-播完之后怎么办",
+            "4-4-initial-time-与-play-on-awake",
+            "5-常见-track-的深入讲解",
+            "5-1-animation-track-timeline-的核心轨道",
+            "5-1-1-绑定对象与自动补组件",
+            "5-1-2-录制基础动画与-infinite-clip",
+            "5-1-3-clip-编辑-trim-blend-ease-curves",
+            "5-1-4-match-offsets-解决动画跳变",
+            "5-1-5-track-offsets-与-clip-offsets",
+            "5-1-6-avatar-mask-与-override-track",
+            "5-2-activation-track-控制对象显隐和激活",
+            "5-3-audio-track-处理时序化音频",
+            "5-4-control-track-最容易被低估的高级轨道",
+            "5-4-1-sub-timeline-把大演出拆成小演出",
+            "5-4-2-control-track-与-itimecontrol",
+            "5-5-signal-track-与-marker-时间点事件系统",
+            "5-5-1-marker-是什么",
+            "5-5-2-signal-的结构",
+            "5-6-playable-track-承接自定义逻辑的入口",
+            "6-timeline-的常见编辑技巧",
+            "6-1-录制而不是手填关键帧",
+            "6-2-curves-view-别只停留在-dope-sheet-视图",
+            "6-3-lock-与-mute-只是编辑器级辅助-不完全等于运行保护",
+            "7-在运行时控制-timeline",
+            "7-1-最基本的控制-api",
+            "7-1-1-什么时候用-pause-什么时候用-stop",
+            "7-2-手动跳时间-time-evaluate",
+            "7-3-手动更新-manual-模式",
+            "7-4-运行时动态绑定-setgenericbinding",
+            "7-5-监听播放事件",
+            "8-自定义-timeline-从会用到能扩展",
+            "8-1-自定义扩展的核心角色",
+            "8-1-1-playableasset",
+            "8-1-2-playablebehaviour",
+            "8-1-3-trackasset",
+            "8-1-4-常见-attribute",
+            "8-2-一个最小可用的自定义-clip-示例",
+            "8-3-带绑定对象的自定义-track",
+            "8-4-需要混合时-重写-createtrackmixer",
+            "8-5-自定义编辑器层扩展",
+            "9-典型项目工作流",
+            "9-1-过场动画型工作流",
+            "9-2-玩法驱动型工作流",
+            "9-3-模板化与复用",
+            "10-timeline-常见坑与排查思路",
+            "10-1-把-asset-和-instance-混为一谈",
+            "10-2-改了时间但画面没刷新",
+            "10-3-运行时改了绑定但没生效",
+            "10-4-infinite-clip-不好编辑",
+            "10-5-主-director-对象被-activation-track-关掉",
+            "10-6-以为-lock-能防止一切改动",
+            "10-7-混用-game-time-和-unscaled-game-time",
+            "11-实践建议-如何在团队中用好-timeline",
+            "11-1-把-timeline-当作内容编排层-而不是万能逻辑层",
+            "11-2-每条-timeline-都要有清晰的-所有者",
+            "11-3-复杂演出优先拆成子-timeline",
+            "11-4-给策划-美术留出可调参数-而不是全写死",
+            "12-学习路线建议",
+            "12-1-入门阶段",
+            "12-2-进阶阶段",
+            "12-3-高阶阶段",
+            "13-总结",
+            "参考资料"
+        ],
+        "displayDate": "2026-04-26",
+        "displayUpdatedAt": "2026-04-26",
+        "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
+        "nextPath": "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+        "relatedPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
+        ],
+        "seriesPaths": [
+            "Resources/Articles/UnityTestRunner工作流.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
@@ -8676,7 +9284,7 @@ export const BLOG_ARTICLES = [
         ],
         "displayDate": "2026-04-09",
         "displayUpdatedAt": "2026-04-09",
-        "previousPath": "Resources/Articles/UnityTestRunner工作流.md",
+        "previousPath": "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
         "nextPath": "",
         "relatedPaths": [
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
@@ -8685,6 +9293,7 @@ export const BLOG_ARTICLES = [
         ],
         "seriesPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
@@ -8952,7 +9561,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
-            "Resources/Articles/UnityTestRunner工作流.md"
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9452,9 +10061,9 @@ export const BLOG_ARTICLES = [
         "previousPath": "",
         "nextPath": "",
         "relatedPaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -9587,6 +10196,7 @@ export const BLOG_ARTICLES = [
         ],
         "seriesPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
@@ -9707,6 +10317,7 @@ export const BLOG_ARTICLES = [
         ],
         "seriesPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
@@ -9835,6 +10446,7 @@ export const BLOG_ARTICLES = [
         ],
         "seriesPaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md"
@@ -9937,7 +10549,7 @@ export const BLOG_ARTICLES = [
         "relatedPaths": [
             "Resources/Articles/Unity-UniTask详细用法.md",
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
-            "Resources/Articles/UnityTestRunner工作流.md"
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
         ],
         "seriesPaths": [
             "Resources/Articles/Unity-VContainer详细用法.md",
@@ -10203,52 +10815,12 @@ export const BLOG_ARTICLES = [
 ];
 export const BLOG_TAGS = [
     {
-        "name": "设计模式",
-        "slug": "设计模式",
-        "count": 34,
-        "articlePaths": [
-            "Resources/Articles/依赖注入.md",
-            "Resources/Articles/概述.md",
-            "Resources/Articles/1.工厂方法模式.md",
-            "Resources/Articles/2.抽象工厂模式.md",
-            "Resources/Articles/3.建造者模式.md",
-            "Resources/Articles/4.原型模式.md",
-            "Resources/Articles/5.单例模式.md",
-            "Resources/Articles/_创建型概要.md",
-            "Resources/Articles/1.适配器模式.md",
-            "Resources/Articles/2.桥接模式.md",
-            "Resources/Articles/3.组合模式.md",
-            "Resources/Articles/4.装饰器模式.md",
-            "Resources/Articles/5.外观模式.md",
-            "Resources/Articles/6.享元模式.md",
-            "Resources/Articles/7.代理模式.md",
-            "Resources/Articles/_结构型概要.md",
-            "Resources/Articles/1.责任链模式.md",
-            "Resources/Articles/2.命令模式.md",
-            "Resources/Articles/3.迭代器模式.md",
-            "Resources/Articles/4.中介者模式.md",
-            "Resources/Articles/5.备忘录模式.md",
-            "Resources/Articles/6.观察者模式.md",
-            "Resources/Articles/7.状态模式.md",
-            "Resources/Articles/8.策略模式.md",
-            "Resources/Articles/9.模版方法模式.md",
-            "Resources/Articles/10.访问者模式.md",
-            "Resources/Articles/11.解释器模式.md",
-            "Resources/Articles/_行为型模式概要.md",
-            "Resources/Articles/1.设计模式面试常考点.md",
-            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
-            "Resources/Articles/2.数据局部性与系统性能优化.md",
-            "Resources/Articles/3.ECS架构设计.md",
-            "Resources/Articles/4.对象池设计浅析.md",
-            "Resources/Articles/5.架构设计.md"
-        ],
-        "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
-    },
-    {
         "name": "C#",
         "slug": "c",
-        "count": 33,
+        "count": 35,
         "articlePaths": [
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md",
             "Resources/Articles/1.C#多线程入门概念及技巧.md",
             "Resources/Articles/2.C#异步编程的入门概念及核心理念.md",
             "Resources/Articles/反射与特性A.md",
@@ -10283,7 +10855,49 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Lua与HybridCLR热更新详细教学.md",
             "Resources/Articles/Unity协程开发者的CSharp异步编程与UniTask详解.md"
         ],
-        "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
+        "name": "设计模式",
+        "slug": "设计模式",
+        "count": 34,
+        "articlePaths": [
+            "Resources/Articles/依赖注入.md",
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md",
+            "Resources/Articles/概述.md",
+            "Resources/Articles/3.建造者模式.md",
+            "Resources/Articles/4.原型模式.md",
+            "Resources/Articles/5.单例模式.md",
+            "Resources/Articles/_创建型概要.md",
+            "Resources/Articles/1.适配器模式.md",
+            "Resources/Articles/2.桥接模式.md",
+            "Resources/Articles/3.组合模式.md",
+            "Resources/Articles/4.装饰器模式.md",
+            "Resources/Articles/5.外观模式.md",
+            "Resources/Articles/6.享元模式.md",
+            "Resources/Articles/7.代理模式.md",
+            "Resources/Articles/_结构型概要.md",
+            "Resources/Articles/1.责任链模式.md",
+            "Resources/Articles/2.命令模式.md",
+            "Resources/Articles/3.迭代器模式.md",
+            "Resources/Articles/4.中介者模式.md",
+            "Resources/Articles/5.备忘录模式.md",
+            "Resources/Articles/6.观察者模式.md",
+            "Resources/Articles/7.状态模式.md",
+            "Resources/Articles/8.策略模式.md",
+            "Resources/Articles/9.模版方法模式.md",
+            "Resources/Articles/10.访问者模式.md",
+            "Resources/Articles/11.解释器模式.md",
+            "Resources/Articles/_行为型模式概要.md",
+            "Resources/Articles/1.设计模式面试常考点.md",
+            "Resources/Articles/6.MVC、MVP、MVVM架构的异同.md",
+            "Resources/Articles/2.数据局部性与系统性能优化.md",
+            "Resources/Articles/3.ECS架构设计.md",
+            "Resources/Articles/4.对象池设计浅析.md",
+            "Resources/Articles/5.架构设计.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
     },
     {
         "name": "概念",
@@ -10318,12 +10932,13 @@ export const BLOG_TAGS = [
     {
         "name": "Unity",
         "slug": "unity",
-        "count": 19,
+        "count": 20,
         "articlePaths": [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md",
             "Resources/Articles/坐标变换系统.md",
             "Resources/Articles/Layer.md",
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
@@ -10340,7 +10955,7 @@ export const BLOG_TAGS = [
             "Resources/Articles/AssetBundle 与 Addressables 对比.md",
             "Resources/Articles/Unity中的特殊文件夹.md"
         ],
-        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
+        "latestUpdatedAt": "2026-04-26T00:00:00.000Z"
     },
     {
         "name": "行为型模式",
@@ -10375,20 +10990,6 @@ export const BLOG_TAGS = [
             "Resources/Articles/6.享元模式.md",
             "Resources/Articles/7.代理模式.md",
             "Resources/Articles/_结构型概要.md"
-        ],
-        "latestUpdatedAt": "2026-01-31T00:00:00.000Z"
-    },
-    {
-        "name": "创建型设计模式",
-        "slug": "创建型设计模式",
-        "count": 6,
-        "articlePaths": [
-            "Resources/Articles/1.工厂方法模式.md",
-            "Resources/Articles/2.抽象工厂模式.md",
-            "Resources/Articles/3.建造者模式.md",
-            "Resources/Articles/4.原型模式.md",
-            "Resources/Articles/5.单例模式.md",
-            "Resources/Articles/_创建型概要.md"
         ],
         "latestUpdatedAt": "2026-01-31T00:00:00.000Z"
     },
@@ -10430,6 +11031,30 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-VContainer详细用法.md"
         ],
         "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
+    },
+    {
+        "name": "创建型设计模式",
+        "slug": "创建型设计模式",
+        "count": 4,
+        "articlePaths": [
+            "Resources/Articles/3.建造者模式.md",
+            "Resources/Articles/4.原型模式.md",
+            "Resources/Articles/5.单例模式.md",
+            "Resources/Articles/_创建型概要.md"
+        ],
+        "latestUpdatedAt": "2026-01-31T00:00:00.000Z"
+    },
+    {
+        "name": "工程实践",
+        "slug": "工程实践",
+        "count": 4,
+        "articlePaths": [
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md",
+            "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
+            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
     },
     {
         "name": "热更新",
@@ -10480,17 +11105,6 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
-        "name": "工程实践",
-        "slug": "工程实践",
-        "count": 3,
-        "articlePaths": [
-            "Resources/Articles/UnityTestRunner工作流.md",
-            "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
-            "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
-        ],
-        "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
-    },
-    {
         "name": "Lua",
         "slug": "lua",
         "count": 3,
@@ -10535,6 +11149,16 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-13T00:00:00.000Z"
     },
     {
+        "name": "创建型模式",
+        "slug": "创建型模式",
+        "count": 2,
+        "articlePaths": [
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
         "name": "多线程与异步编程",
         "slug": "多线程与异步编程",
         "count": 2,
@@ -10543,6 +11167,16 @@ export const BLOG_TAGS = [
             "Resources/Articles/2.C#异步编程的入门概念及核心理念.md"
         ],
         "latestUpdatedAt": "2026-01-24T00:00:00.000Z"
+    },
+    {
+        "name": "面向对象",
+        "slug": "面向对象",
+        "count": 2,
+        "articlePaths": [
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
     },
     {
         "name": "协程",
@@ -10655,6 +11289,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "版本控制",
+        "slug": "版本控制",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
         "name": "编程基础",
         "slug": "编程基础",
         "count": 1,
@@ -10671,6 +11314,33 @@ export const BLOG_TAGS = [
             "Resources/Articles/LINQ常用查找操作.md"
         ],
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
+    },
+    {
+        "name": "产品族",
+        "slug": "产品族",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/2.抽象工厂模式.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
+        "name": "抽象工厂",
+        "slug": "抽象工厂",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/2.抽象工厂模式.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
+        "name": "动画系统",
+        "slug": "动画系统",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
+        ],
+        "latestUpdatedAt": "2026-04-26T00:00:00.000Z"
     },
     {
         "name": "多人游戏",
@@ -10700,6 +11370,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-09T00:00:00.000Z"
     },
     {
+        "name": "工厂方法",
+        "slug": "工厂方法",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/1.工厂方法模式.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
         "name": "工程化",
         "slug": "工程化",
         "count": 1,
@@ -10707,6 +11386,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/Unity-Lua热更新从入门到进阶实战详解.md"
         ],
         "latestUpdatedAt": "2026-04-12T00:00:00.000Z"
+    },
+    {
+        "name": "过场动画",
+        "slug": "过场动画",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
+        ],
+        "latestUpdatedAt": "2026-04-26T00:00:00.000Z"
     },
     {
         "name": "集合",
@@ -10871,6 +11559,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-21T00:00:00.000Z"
     },
     {
+        "name": "Git",
+        "slug": "git",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
         "name": "GPU",
         "slug": "gpu",
         "count": 1,
@@ -10943,6 +11640,33 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-22T00:00:00.000Z"
     },
     {
+        "name": "PlayableDirector",
+        "slug": "playabledirector",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
+        ],
+        "latestUpdatedAt": "2026-04-26T00:00:00.000Z"
+    },
+    {
+        "name": "PlayableGraph",
+        "slug": "playablegraph",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
+        ],
+        "latestUpdatedAt": "2026-04-26T00:00:00.000Z"
+    },
+    {
+        "name": "Rebase",
+        "slug": "rebase",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
         "name": "Shader",
         "slug": "shader",
         "count": 1,
@@ -10979,6 +11703,15 @@ export const BLOG_TAGS = [
         "latestUpdatedAt": "2026-04-19T00:00:00.000Z"
     },
     {
+        "name": "Timeline",
+        "slug": "timeline",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md"
+        ],
+        "latestUpdatedAt": "2026-04-26T00:00:00.000Z"
+    },
+    {
         "name": "Unity Test Framework",
         "slug": "unity-test-framework",
         "count": 1,
@@ -11013,6 +11746,15 @@ export const BLOG_TAGS = [
             "Resources/Articles/7.Unity、前端、WinForm中更适合用哪一种架构.md"
         ],
         "latestUpdatedAt": "2026-03-27T00:00:00.000Z"
+    },
+    {
+        "name": "Worktree",
+        "slug": "worktree",
+        "count": 1,
+        "articlePaths": [
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
+        ],
+        "latestUpdatedAt": "2026-04-25T00:00:00.000Z"
     }
 ];
 export const BLOG_SERIES = [
@@ -11038,19 +11780,20 @@ export const BLOG_SERIES = [
     {
         "name": "Unity 工程进阶",
         "slug": "unity-工程进阶",
-        "count": 5,
+        "count": 6,
         "categoryNames": [
             "Unity"
         ],
         "categoryLabel": "Unity",
         "articlePaths": [
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity图形渲染与性能优化专题详解.md",
             "Resources/Articles/Unity 性能分析与优化实战：Profiler、内存、渲染与工程工作流.md",
             "Resources/Articles/Unity 渲染管线与 Draw Call 优化详解.md"
         ],
-        "updatedAt": "2026-04-22T00:00:00.000Z"
+        "updatedAt": "2026-04-26T00:00:00.000Z"
     },
     {
         "name": "界面架构对比",
@@ -11067,6 +11810,20 @@ export const BLOG_SERIES = [
         "updatedAt": "2026-03-27T00:00:00.000Z"
     },
     {
+        "name": "设计模式详解",
+        "slug": "设计模式详解",
+        "count": 2,
+        "categoryNames": [
+            "设计模式"
+        ],
+        "categoryLabel": "设计模式",
+        "articlePaths": [
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md"
+        ],
+        "updatedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
         "name": "架构与解耦",
         "slug": "架构与解耦",
         "count": 1,
@@ -11078,6 +11835,19 @@ export const BLOG_SERIES = [
             "Resources/Articles/依赖注入.md"
         ],
         "updatedAt": "2026-03-12T00:00:00.000Z"
+    },
+    {
+        "name": "开发工具与工程实践",
+        "slug": "开发工具与工程实践",
+        "count": 1,
+        "categoryNames": [
+            "Program设计文档"
+        ],
+        "categoryLabel": "Program设计文档",
+        "articlePaths": [
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md"
+        ],
+        "updatedAt": "2026-04-25T00:00:00.000Z"
     },
     {
         "name": "Unity 资源管理",
@@ -11098,9 +11868,13 @@ export const BLOG_ARCHIVES = [
         "key": "2026-04",
         "year": "2026",
         "month": "04",
-        "count": 13,
+        "count": 17,
         "articlePaths": [
+            "Resources/Articles/1.工厂方法模式.md",
+            "Resources/Articles/2.抽象工厂模式.md",
+            "Resources/Articles/Git 详解：从基础工作流到高阶实践.md",
             "Resources/Articles/UnityTestRunner工作流.md",
+            "Resources/Articles/Unity Timeline 详解：从入门到运行时控制与自定义扩展.md",
             "Resources/Articles/Unity高级开发工程师应掌握的技术栈.md",
             "Resources/Articles/Unity-VContainer详细用法.md",
             "Resources/Articles/Unity-UniTask详细用法.md",
@@ -11151,10 +11925,8 @@ export const BLOG_ARCHIVES = [
         "key": "2026-01",
         "year": "2026",
         "month": "01",
-        "count": 38,
+        "count": 36,
         "articlePaths": [
-            "Resources/Articles/1.工厂方法模式.md",
-            "Resources/Articles/2.抽象工厂模式.md",
             "Resources/Articles/3.建造者模式.md",
             "Resources/Articles/4.原型模式.md",
             "Resources/Articles/5.单例模式.md",
