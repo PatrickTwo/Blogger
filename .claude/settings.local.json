@@ -14,7 +14,8 @@
       "Bash(\"/c/Program Files/Git/cmd/git.exe\" -C /c/_Hetu/Project/Blogger status)",
       "Bash(echo \"=== GIT LOG ===\")",
       "Bash(\"/c/Program Files/Git/cmd/git.exe\" -C /c/_Hetu/Project/Blogger log --oneline -5)",
-      "Bash(echo \"=== GIT DIFF --STAT ===\")"
+      "Bash(echo \"=== GIT DIFF --STAT ===\")",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
